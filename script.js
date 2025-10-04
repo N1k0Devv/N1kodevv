@@ -1,6 +1,6 @@
 // Main JavaScript file
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("N1kodevv Portfolio loaded!");
+  console.log("N1kodevv პორტფოლიო ჩაიტვირთა!");
 
   // Initialize all functionality
   initializeNavigation();
@@ -10,13 +10,15 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeParallaxEffects();
   initializeInteractiveEffects();
   initializePerformanceOptimizations();
+  initializeProjectFiltering();
 });
 
-// Navigation functionality
+// Enhanced Navigation functionality
 function initializeNavigation() {
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.getElementById("nav-menu");
   const navLinks = document.querySelectorAll(".nav-link");
+  const navbar = document.querySelector(".navbar");
 
   if (!hamburger || !navMenu) return;
 
@@ -50,12 +52,44 @@ function initializeNavigation() {
     }
   });
 
-  // Update active nav link on scroll
+  // Enhanced scroll handling for navbar
+  let lastScrollTop = 0;
+  let scrollTimeout;
+
   window.addEventListener(
     "scroll",
     throttle(() => {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      // Clear existing timeout
+      clearTimeout(scrollTimeout);
+
+      // Add scrolled class for styling
+      if (scrollTop > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+
+      // Hide/show navbar on scroll
+      if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scrolling down
+        navbar.style.transform = "translateY(-100%)";
+      } else {
+        // Scrolling up
+        navbar.style.transform = "translateY(0)";
+      }
+
+      lastScrollTop = scrollTop;
+
+      // Update active nav link and other scroll effects
       updateActiveNavLink();
-      updateNavbarBackground();
+
+      // Reset navbar position after scroll stops
+      scrollTimeout = setTimeout(() => {
+        navbar.style.transform = "translateY(0)";
+      }, 150);
     }, 16)
   );
 }
@@ -87,21 +121,6 @@ function updateActiveNavLink() {
   });
 }
 
-// Update navbar background on scroll
-function updateNavbarBackground() {
-  const navbar = document.querySelector(".navbar");
-
-  if (!navbar) return;
-
-  if (window.scrollY > 50) {
-    navbar.style.background = "rgba(255, 255, 255, 0.98)";
-    navbar.style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.1)";
-  } else {
-    navbar.style.background = "rgba(255, 255, 255, 0.95)";
-    navbar.style.boxShadow = "none";
-  }
-}
-
 // Smooth scrolling for anchor links
 function initializeSmoothScrolling() {
   const links = document.querySelectorAll('a[href^="#"]');
@@ -114,7 +133,7 @@ function initializeSmoothScrolling() {
       const targetSection = document.querySelector(targetId);
 
       if (targetSection) {
-        const offsetTop = targetSection.offsetTop - 70;
+        const offsetTop = targetSection.offsetTop - 80;
 
         window.scrollTo({
           top: offsetTop,
@@ -149,17 +168,68 @@ function initializeScrollAnimations() {
           const index = Array.from(cards).indexOf(entry.target);
           entry.target.style.animationDelay = `${index * 0.1}s`;
         }
+
+        // Add stagger effect for footer sections
+        if (entry.target.classList.contains("footer-section")) {
+          const sections = document.querySelectorAll(".footer-section");
+          const index = Array.from(sections).indexOf(entry.target);
+          entry.target.style.animationDelay = `${index * 0.2}s`;
+        }
       }
     });
   }, observerOptions);
 
   // Add fade-in class to elements that should animate
   const animateElements = document.querySelectorAll(
-    ".project-card, .skill-category, .about-text, .contact-info, .contact-form"
+    ".project-card, .skill-category, .about-text, .contact-info, .contact-form, .benefit-card, .expertise-card, .footer-section, .footer-brand"
   );
   animateElements.forEach((el) => {
     el.classList.add("fade-in");
     observer.observe(el);
+  });
+}
+
+// Project filtering functionality
+function initializeProjectFiltering() {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-card");
+
+  if (filterButtons.length === 0 || projectCards.length === 0) return;
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Remove active class from all buttons
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      // Add active class to clicked button
+      button.classList.add("active");
+
+      const filterValue = button.getAttribute("data-filter");
+
+      projectCards.forEach((card, index) => {
+        const cardCategory = card.getAttribute("data-category");
+
+        if (filterValue === "all" || cardCategory === filterValue) {
+          card.style.display = "block";
+          card.style.opacity = "0";
+          card.style.transform = "translateY(20px)";
+
+          // Animate card appearance with stagger
+          setTimeout(() => {
+            card.style.transition = "all 0.5s ease";
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+          }, index * 100);
+        } else {
+          card.style.transition = "all 0.3s ease";
+          card.style.opacity = "0";
+          card.style.transform = "translateY(-20px)";
+
+          setTimeout(() => {
+            card.style.display = "none";
+          }, 300);
+        }
+      });
+    });
   });
 }
 
@@ -185,7 +255,7 @@ function initializeParallaxEffects() {
 function initializeInteractiveEffects() {
   // Add hover sound effects (visual feedback)
   const interactiveElements = document.querySelectorAll(
-    ".btn, .social-link, .project-card, .skill-tag"
+    ".btn, .social-link, .project-card, .skill-tag, .benefit-card, .expertise-card, .footer-social-link"
   );
 
   interactiveElements.forEach((element) => {
@@ -206,6 +276,33 @@ function initializeInteractiveEffects() {
 
   // Add particle effect on click
   initializeClickEffects();
+
+  // Initialize footer animations
+  initializeFooterAnimations();
+}
+
+// Footer specific animations
+function initializeFooterAnimations() {
+  const footerLinks = document.querySelectorAll(".footer-links a");
+  const footerSocialLinks = document.querySelectorAll(".footer-social-link");
+
+  // Animate footer links on hover
+  footerLinks.forEach((link) => {
+    link.addEventListener("mouseenter", () => {
+      link.style.transform = "translateX(10px)";
+    });
+
+    link.addEventListener("mouseleave", () => {
+      link.style.transform = "translateX(0)";
+    });
+  });
+
+  // Add ripple effect to social links
+  footerSocialLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      createRippleEffect(e);
+    });
+  });
 }
 
 // Typing effect for hero title
@@ -213,7 +310,7 @@ function initializeTypingEffect() {
   const heroTitle = document.querySelector(".hero-title");
   if (!heroTitle) return;
 
-  const text = "Hi, I'm N1kodevv";
+  const text = "გამარჯობა, მე ვარ N1kodevv";
   const highlight = "N1kodevv";
 
   // Only run on first load
@@ -242,7 +339,9 @@ function initializeTypingEffect() {
 
 // Floating animation for social links
 function initializeFloatingAnimation() {
-  const socialLinks = document.querySelectorAll(".social-link");
+  const socialLinks = document.querySelectorAll(
+    ".social-link, .footer-social-link"
+  );
 
   socialLinks.forEach((link, index) => {
     link.style.animationDelay = `${index * 0.2}s`;
@@ -256,7 +355,9 @@ function initializeClickEffects() {
     if (
       e.target.classList.contains("btn") ||
       e.target.classList.contains("social-link") ||
-      e.target.classList.contains("project-link")
+      e.target.classList.contains("project-link") ||
+      e.target.classList.contains("filter-btn") ||
+      e.target.classList.contains("footer-social-link")
     ) {
       createRippleEffect(e);
     }
@@ -319,7 +420,7 @@ function initializeContactForm() {
 
     // Validate all fields
     if (!validateForm()) {
-      showMessage("Please fill in all required fields correctly.", "error");
+      showMessage("გთხოვთ შეავსოთ ყველა აუცილებელი ველი სწორად.", "error");
       return;
     }
 
@@ -339,7 +440,7 @@ function initializeContactForm() {
     try {
       await simulateEmailSend(templateParams);
       showMessage(
-        "Message sent successfully! I'll get back to you soon.",
+        "შეტყობინება წარმატებით გაიგზავნა! მე მალე დაგიკავშირებთ.",
         "success"
       );
       contactForm.reset();
@@ -350,9 +451,9 @@ function initializeContactForm() {
         contactForm.classList.remove("success-animation");
       }, 1000);
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error("შეტყობინების გაგზავნის შეცდომა:", error);
       showMessage(
-        "Failed to send message. Please try again or contact me directly.",
+        "შეტყობინების გაგზავნა ვერ მოხერხდა. სცადეთ ახლიდან ან მომმართეთ პირდაპირ.",
         "error"
       );
     } finally {
@@ -367,12 +468,12 @@ function initializeContactForm() {
     clearFieldError(e);
 
     if (field.hasAttribute("required") && !value) {
-      showFieldError(field, "This field is required");
+      showFieldError(field, "ეს ველი აუცილებელია");
       return false;
     }
 
     if (field.type === "email" && value && !isValidEmail(value)) {
-      showFieldError(field, "Please enter a valid email address");
+      showFieldError(field, "გთხოვთ, შეიყვანოთ ვალიდური ელ.ფოსტის მისამართი");
       return false;
     }
 
@@ -464,10 +565,13 @@ function initializeContactForm() {
       setTimeout(() => {
         // Simulate success (95% success rate)
         if (Math.random() > 0.05) {
-          console.log("Email would be sent with params:", templateParams);
+          console.log(
+            "ელ.ფოსტა გაიგზავნებოდა შემდეგი პარამეტრებით:",
+            templateParams
+          );
           resolve();
         } else {
-          reject(new Error("Simulated network error"));
+          reject(new Error("სიმულირებული ქსელის შეცდომა"));
         }
       }, 2000);
     });
@@ -497,7 +601,7 @@ function initializePerformanceOptimizations() {
 
 function preloadCriticalResources() {
   const criticalResources = [
-    "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap",
+    "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css",
   ];
 
@@ -563,7 +667,7 @@ function addScrollProgress() {
         left: 0;
         width: 0%;
         height: 3px;
-        background: linear-gradient(90deg, #667eea, #764ba2);
+        background: linear-gradient(90deg, #667eea, #764ba2, #fbbf24);
         z-index: 9999;
         transition: width 0.1s ease;
         box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
@@ -639,6 +743,10 @@ function addDynamicStyles() {
             0% { left: -100%; }
             100% { left: 100%; }
         }
+
+        .navbar {
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
     `;
   document.head.appendChild(style);
 }
@@ -681,26 +789,27 @@ initializeAccessibility();
 
 // Add Easter eggs for developers
 console.log(`
-🚀 Welcome to N1kodevv's Portfolio!
-👨‍💻 Built with vanilla HTML, CSS, and JavaScript
-🎨 Enhanced with modern animations and interactions
-📱 Fully responsive and accessible
-⚡ Optimized for performance
-🎭 Packed with hover effects and smooth transitions
+🚀 კეთილი იყოს თქვენი თავი N1kodevv-ს განახლებულ პორტფოლიოში!
+👨‍💻 განვვითარდა სუფთა HTML, CSS და JavaScript-ით
+🎨 გაუმჯობესებულია თანამედროვე ანიმაციებით და ინტერაქციებით
+📱 სრულად რეაგირებადი და ხელმისაწვდომი
+⚡ ოპტიმიზირებული წარმადობისთვის
+🎭 დატვირთულია ჰოვერ-ეფექტებით და გლუვი ტრანზიციებით
+🌟 ახალი სტილური ჰედერი და ფუტერი
 
-Interested in the code? Check out the source!
+ახალი ფუნქციები:
+✨ დინამიური ნავიგაციის ზოლი
+🌊 გაუმჯობესებული ანიმაციები
+🎯 ინტერაქტიული ჰოვერ-ეფექტები
+📊 რეალურ დროში ფორმის ვალიდაცია
+🎨 დინამიური გრადიენტის ფონები
+🔄 სკროლ პროგრესის მაჩვენებელი
+💫 კლიკის რიპლ-ეფექტები
+🎪 დაფარვითი ანიმაციები
+🔍 პროექტების ფილტრაცია
+🏠 სტილური ფუტერი სოციალური ბმულებით
 
-Features:
-✨ Parallax scrolling
-🌊 Smooth animations
-🎯 Interactive hover effects
-📊 Real-time form validation
-🎨 Dynamic gradient backgrounds
-🔄 Scroll progress indicator
-💫 Click ripple effects
-🎪 Floating animations
-
-Press F12 to explore the code!
+დააჭირეთ F12 კოდის სანახავად!
 `);
 
 // Add performance monitoring
