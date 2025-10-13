@@ -756,31 +756,110 @@ function initializeTypingEffect() {
 function initializeProjectFilters() {
   const filterButtons = document.querySelectorAll(".filter-btn");
   const projectCards = document.querySelectorAll(".project-card");
+  const projectsSection = document.querySelector("#projects .container");
+  const projectsGrid = document.querySelector("#projects .projects-grid");
 
   if (!filterButtons.length || !projectCards.length) {
     console.warn("Project filter elements not found");
     return;
   }
 
+  // Accessibility: set aria-pressed and labels
+  filterButtons.forEach((btn) => {
+    btn.setAttribute("aria-pressed", btn.classList.contains("active") ? "true" : "false");
+    if (!btn.hasAttribute("aria-label")) {
+      btn.setAttribute("aria-label", `Filter: ${btn.textContent.trim()}`);
+    }
+  });
+
+  // Status region (live region for screen readers)
+  let statusEl = document.querySelector("#projects-filter-status");
+  if (!statusEl && projectsSection) {
+    statusEl = document.createElement("div");
+    statusEl.id = "projects-filter-status";
+    statusEl.setAttribute("aria-live", "polite");
+    statusEl.style.cssText = "margin: 0.5rem 0 1rem; color: #6b7280; font-size: 0.95rem;";
+    const filterBar = projectsSection.querySelector(".projects-filter");
+    if (filterBar) filterBar.insertAdjacentElement("afterend", statusEl);
+  }
+
+  // No results element
+  let noResultsEl = document.querySelector("#projects-no-results");
+  if (!noResultsEl && projectsGrid) {
+    noResultsEl = document.createElement("div");
+    noResultsEl.id = "projects-no-results";
+    noResultsEl.textContent = "ვერ მოიძებნა პროექტები ამ ფილტრისთვის";
+    noResultsEl.style.cssText = "display:none;padding:1.25rem;border:1px dashed #cbd5e1;border-radius:12px;color:#475569;background:#f8fafc;text-align:center;";
+    projectsGrid.insertAdjacentElement("beforebegin", noResultsEl);
+  }
+
   // Initialize all cards as visible
   projectCards.forEach((card) => {
     card.classList.add("visible");
+    card.style.display = "block";
   });
 
+  function setActiveButton(filter) {
+    filterButtons.forEach((btn) => {
+      const isActive = btn.getAttribute("data-filter") === filter;
+      btn.classList.toggle("active", isActive);
+      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  }
+
+  function updateStatus() {
+    const visibleCount = Array.from(projectCards).filter((c) => c.classList.contains("visible") && c.style.display !== "none").length;
+    const totalCount = projectCards.length;
+    if (statusEl) {
+      statusEl.textContent = `ნაჩვენებია ${visibleCount} / ${totalCount} პროექტი`;
+    }
+    if (noResultsEl) {
+      noResultsEl.style.display = visibleCount === 0 ? "block" : "none";
+    }
+  }
+
+  function applyFilter(filter) {
+    setActiveButton(filter);
+    // Update URL hash (deep-linking)
+    try {
+      const newHash = `#filter=${encodeURIComponent(filter)}`;
+      if (location.hash !== newHash) {
+        history.replaceState(null, "", newHash);
+      }
+    } catch (_) {}
+
+    // Apply filtering logic
+    filterProjects(filter, projectCards);
+
+    // After animation delay, update status
+    setTimeout(updateStatus, 450);
+  }
+
+  function getFilterFromHash() {
+    const match = window.location.hash.match(/filter=([^&]+)/);
+    return match ? decodeURIComponent(match[1]) : null;
+  }
+
+  // Wire up button clicks
   filterButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
       e.preventDefault();
-
-      const filter = button.getAttribute("data-filter");
-
-      // Update active button
-      filterButtons.forEach((btn) => btn.classList.remove("active"));
-      button.classList.add("active");
-
-      // Filter projects with smooth animation
-      filterProjects(filter, projectCards);
+      const filter = button.getAttribute("data-filter") || "all";
+      applyFilter(filter);
     });
   });
+
+  // Handle back/forward navigation (hash changes)
+  window.addEventListener("hashchange", () => {
+    const hashFilter = getFilterFromHash();
+    if (hashFilter) {
+      applyFilter(hashFilter);
+    }
+  });
+
+  // Initial filter from hash or default active button
+  const initial = getFilterFromHash() || (document.querySelector(".filter-btn.active")?.getAttribute("data-filter")) || "all";
+  applyFilter(initial);
 }
 
 function filterProjects(filter, projectCards) {
