@@ -923,18 +923,36 @@ function initializeContactForm() {
       return;
     }
 
+    // Check if EmailJS is configured
+    if (!window.EMAILJS_CONFIG || 
+        window.EMAILJS_CONFIG.PUBLIC_KEY === 'YOUR_PUBLIC_KEY_HERE' ||
+        window.EMAILJS_CONFIG.SERVICE_ID === 'YOUR_SERVICE_ID_HERE' ||
+        window.EMAILJS_CONFIG.TEMPLATE_ID === 'YOUR_TEMPLATE_ID_HERE') {
+      showMessage(
+        "EmailJS არ არის კონფიგურირებული. გთხოვთ იხილოთ emailjs-config.js ფაილი.",
+        "error"
+      );
+      return;
+    }
+
     setLoadingState(true);
 
     try {
-      // Simulate form submission (replace with actual endpoint)
-      await simulateFormSubmission();
+      // Send email using EmailJS
+      const result = await emailjs.sendForm(
+        window.EMAILJS_CONFIG.SERVICE_ID,
+        window.EMAILJS_CONFIG.TEMPLATE_ID,
+        contactForm
+      );
+      
+      console.log('📧 Email sent successfully:', result);
       showMessage(
         "წერილი წარმატებით გაიგზავნა! მალე დაგიკავშირდებით.",
         "success"
       );
       contactForm.reset();
     } catch (error) {
-      console.error("Form submission error:", error);
+      console.error("EmailJS error:", error);
       showMessage(
         "წერილის გაგზავნა ვერ მოხერხდა. გთხოვთ სცადოთ ხელახლა.",
         "error"
@@ -960,7 +978,7 @@ function initializeContactForm() {
       return false;
     }
 
-    if (field.name === "name" && value && value.length < 2) {
+    if (field.name === "from_name" && value && value.length < 2) {
       showFieldError(field, "სახელი უნდა იყოს მინიმუმ 2 სიმბოლო");
       return false;
     }
@@ -1073,13 +1091,6 @@ function initializeContactForm() {
     }, 5000);
   }
 
-  async function simulateFormSubmission() {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        Math.random() > 0.1 ? resolve() : reject(new Error("Network error"));
-      }, 1500);
-    });
-  }
 }
 
 // Utility functions

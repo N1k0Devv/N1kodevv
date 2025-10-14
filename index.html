@@ -55,1641 +55,1586 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css" />
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="./emailjs-config.js"></script>
   </head>
   <body>
-    <div id="smooth-wrapper">
-      <div id="smooth-content">
-        <!-- Navigation -->
-        <nav class="navbar" id="navbar">
-          <div class="nav-container">
-            <div class="nav-logo">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img
+            src="images/Generated_Image_October_03__2025_-_7_24PM-removebg-preview.png"
+            alt="N1kodevv Logo"
+            onerror="this.style.display='none'"
+          />
+          <div class="brand-text">
+            <a href="#home">N1kodevv</a>
+            <div class="brand-tagline">ვებ დეველოპერი</div>
+          </div>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+          <li>
+            <a href="#home" class="nav-link active"
+              ><i class="fas fa-home"></i> მთავარი</a
+            >
+          </li>
+          <li>
+            <a href="#about" class="nav-link"
+              ><i class="fas fa-user"></i> ჩემ შესახებ</a
+            >
+          </li>
+          <li>
+            <a href="#strategy" class="nav-link"
+              ><i class="fas fa-chess"></i> სტრატეგია</a
+            >
+          </li>
+          <li>
+            <a href="#why-choose" class="nav-link"
+              ><i class="fas fa-star"></i> რატომ მე</a
+            >
+          </li>
+          <li>
+            <a href="#expertise" class="nav-link"
+              ><i class="fas fa-code"></i> ექსპერტიზა</a
+            >
+          </li>
+          <li>
+            <a href="#projects" class="nav-link"
+              ><i class="fas fa-folder"></i> პროექტები</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="nav-link"
+              ><i class="fas fa-envelope"></i> კონტაქტი</a
+            >
+          </li>
+        </ul>
+        <div class="nav-cta">
+          <a href="#contact" class="nav-cta-btn">
+            <i class="fas fa-rocket"></i>
+            დაიწყეთ პროექტი
+            <span class="btn-shine"></span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-bg-animation"></div>
+      <div class="hero-particles"></div>
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-code"></i>
+            <span>ხელმისაწვდომი ახალი პროექტებისთვის</span>
+          </div>
+          <h1 class="hero-title">
+            გამარჯობა, მე ვარ <span class="highlight">N1kodevv</span>
+          </h1>
+          <p class="hero-subtitle">
+            <i class="fas fa-laptop-code"></i>
+            <span class="typing-text"
+              >ვებ დეველოპერი და UI/UX დიზაინერი<span class="cursor"
+                >|</span
+              ></span
+            >
+          </p>
+          <p class="hero-description">
+            ვქმნი თანამედროვე, ინოვაციურ ვებ გამოცდილებებს, რომლებიც აერთიანებს
+            დიზაინს, ფუნქციონალურობას და წარმადობას. ყოველი პროექტი არის
+            უნიკალური ისტორია ციფრულ სამყაროში.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fas fa-eye"></i>
+              ნახეთ ჩემი ნამუშევრები
+              <span class="btn-glow"></span>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i class="fas fa-comments"></i>
+              დავიწყოთ თანამშრომლობა
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number" data-count="50">50+</div>
+              <div class="stat-label">დასრულებული პროექტი</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="3">3+</div>
+              <div class="stat-label">წლიანი გამოცდილება</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="100">100%</div>
+              <div class="stat-label">კმაყოფილი კლიენტები</div>
+            </div>
+          </div>
+          <div class="social-links">
+            <a
+              href="https://github.com/N1kodevv"
+              target="_blank"
+              class="social-link"
+              aria-label="GitHub"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-github"></i>
+              <span class="social-tooltip">GitHub</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/nikoloz-bregadze-892338388/"
+              target="_blank"
+              class="social-link"
+              aria-label="LinkedIn"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-linkedin"></i>
+              <span class="social-tooltip">LinkedIn</span>
+            </a>
+            <a
+              href="https://twitter.com/N1kodevv"
+              target="_blank"
+              class="social-link"
+              aria-label="Twitter"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-twitter"></i>
+              <span class="social-tooltip">Twitter</span>
+            </a>
+            <a
+              href="https://instagram.com/N1kodevv"
+              target="_blank"
+              class="social-link"
+              aria-label="Instagram"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-instagram"></i>
+              <span class="social-tooltip">Instagram</span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="code-animation">
+            <div class="code-line">
+              <span class="code-keyword">const</span>
+              <span class="code-variable">developer</span>
+              <span class="code-operator">=</span>
+              <span class="code-bracket">{</span>
+            </div>
+            <div class="code-line">
+              &nbsp;&nbsp;<span class="code-property">name</span
+              ><span class="code-operator">:</span>
+              <span class="code-string">'N1kodevv'</span
+              ><span class="code-comma">,</span>
+            </div>
+            <div class="code-line">
+              &nbsp;&nbsp;<span class="code-property">skills</span
+              ><span class="code-operator">:</span>
+              <span class="code-bracket">[</span
+              ><span class="code-string">'React'</span
+              ><span class="code-comma">,</span>
+              <span class="code-string">'Node.js'</span
+              ><span class="code-bracket">]</span
+              ><span class="code-comma">,</span>
+            </div>
+            <div class="code-line">
+              &nbsp;&nbsp;<span class="code-property">passion</span
+              ><span class="code-operator">:</span>
+              <span class="code-string"
+                >'Creating Amazing Web Experiences'</span
+              >
+            </div>
+            <div class="code-line">
+              <span class="code-bracket">}</span
+              ><span class="code-semicolon">;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator">
+        <div class="scroll-arrow">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">ჩემ შესახებ</h2>
+          <p class="section-subtitle">
+            ვარ ვებ დეველოპერი, რომელიც ტექნოლოგიებს იყენებს იდეების რეალურ,
+            ფუნქციონალურ პროდუქტებად გარდაქმნისთვის
+          </p>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h3>ჩემი მისია</h3>
+              <p class="about-description">
+                ვქმნი ციფრულ გამოცდილებებს, რომლებიც არ არის მხოლოდ ლამაზი,
+                არამედ ფუნქციონალური, სწრაფი და მომხმარებელზე ორიენტირებული.
+                ყოველი პროექტი არის შესაძლებლობა რაღაც განსაკუთრებულის შექმნისა.
+              </p>
+            </div>
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h3>ჩემი მიდგომა</h3>
+              <p class="about-description">
+                მჯერა, რომ კარგი კოდი უნდა იყოს არა მხოლოდ ფუნქციონალური, არამედ
+                ელეგანტური და მასშტაბირებადი. ვიყენებ თანამედროვე ტექნოლოგიებს
+                და საუკეთესო პრაქტიკებს ყოველ პროექტში.
+              </p>
+            </div>
+          </div>
+          <div class="skills">
+            <h3>ჩემი უნარები</h3>
+            <div class="skills-grid">
+              <div class="skill-category">
+                <div class="category-header">
+                  <div class="category-icon">
+                    <i class="fab fa-js-square"></i>
+                  </div>
+                  <h4>Frontend</h4>
+                </div>
+                <div class="skill-tags">
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">React</span>
+                  <span class="skill-tag">Vue.js</span>
+                  <span class="skill-tag">TypeScript</span>
+                  <span class="skill-tag">HTML5</span>
+                  <span class="skill-tag">CSS3</span>
+                  <span class="skill-tag">Tailwind</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <div class="category-header">
+                  <div class="category-icon">
+                    <i class="fas fa-server"></i>
+                  </div>
+                  <h4>Backend</h4>
+                </div>
+                <div class="skill-tags">
+                  <span class="skill-tag">Node.js</span>
+                  <span class="skill-tag">Express</span>
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">MongoDB</span>
+                  <span class="skill-tag">PostgreSQL</span>
+                  <span class="skill-tag">REST API</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <div class="category-header">
+                  <div class="category-icon">
+                    <i class="fas fa-tools"></i>
+                  </div>
+                  <h4>ინსტრუმენტები</h4>
+                </div>
+                <div class="skill-tags">
+                  <span class="skill-tag">Git</span>
+                  <span class="skill-tag">Docker</span>
+                  <span class="skill-tag">AWS</span>
+                  <span class="skill-tag">Figma</span>
+                  <span class="skill-tag">Webpack</span>
+                  <span class="skill-tag">Jest</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strategy Section -->
+    <section id="strategy" class="strategy">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">ჩემი სტრატეგია</h2>
+          <p class="section-subtitle">
+            როგორ ვქმნი წარმატებულ ციფრულ პროდუქტებს - ნაბიჯ-ნაბიჯ მიდგომა
+          </p>
+        </div>
+
+        <div class="strategy-content">
+          <div class="strategy-intro">
+            <div class="intro-visual">
+              <div class="strategy-icon">
+                <i class="fas fa-chess-king"></i>
+              </div>
+              <div class="strategy-lines">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
+              </div>
+            </div>
+            <div class="intro-text">
+              <h3>სტრატეგიული მიდგომა</h3>
+              <p>
+                ყოველი პროექტი იწყება ღრმა ანალიზით და სტრატეგიული დაგეგმვით.
+                ვსწავლობ თქვენს ბიზნესს, მიზნებს და აუდიტორიას, რათა შევქმნა
+                ზუსტად ის, რაც გჭირდებათ წარმატებისთვის.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-header">
+            <h3>განვითარების პროცესი</h3>
+            <p>ოთხ ეტაპიანი მიდგომა იდეიდან რეალიზაციამდე</p>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-item" data-step="1">
+              <div class="timeline-marker">
+                <div class="marker-icon">
+                  <i class="fas fa-search"></i>
+                </div>
+                <div class="marker-number">01</div>
+              </div>
+              <div class="timeline-content">
+                <h4>კვლევა და ანალიზი</h4>
+                <p>
+                  ღრმა კვლევა თქვენი ბიზნესის, კონკურენტების და მიზნობრივი
+                  აუდიტორიის შესახებ
+                </p>
+                <ul class="timeline-features">
+                  <li>
+                    <i class="fas fa-check"></i> ბაზრის ანალიზი და კონკურენტების
+                    კვლევა
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> მომხმარებელთა ქცევის შესწავლა
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> ტექნიკური მოთხოვნების
+                    განსაზღვრა
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-step="2">
+              <div class="timeline-marker">
+                <div class="marker-icon">
+                  <i class="fas fa-pencil-ruler"></i>
+                </div>
+                <div class="marker-number">02</div>
+              </div>
+              <div class="timeline-content">
+                <h4>დიზაინი და პროტოტიპირება</h4>
+                <p>
+                  მომხმარებელზე ორიენტირებული დიზაინის შექმნა და ინტერაქტიული
+                  პროტოტიპების განვითარება
+                </p>
+                <ul class="timeline-features">
+                  <li>
+                    <i class="fas fa-check"></i> UX/UI დიზაინი და wireframe-ები
+                  </li>
+                  <li><i class="fas fa-check"></i> ინტერაქტიული პროტოტიპები</li>
+                  <li>
+                    <i class="fas fa-check"></i> მობილური და დესკტოპ ვერსიები
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-step="3">
+              <div class="timeline-marker">
+                <div class="marker-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <div class="marker-number">03</div>
+              </div>
+              <div class="timeline-content">
+                <h4>განვითარება და ტესტირება</h4>
+                <p>
+                  თანამედროვე ტექნოლოგიებით კოდირება და ყოვლისმომცველი ტესტირება
+                </p>
+                <ul class="timeline-features">
+                  <li><i class="fas fa-check"></i> სუფთა, ოპტიმიზებული კოდი</li>
+                  <li>
+                    <i class="fas fa-check"></i> მასშტაბირებადი არქიტექტურა
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> უსაფრთხოების მაღალი სტანდარტები
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-step="4">
+              <div class="timeline-marker">
+                <div class="marker-icon">
+                  <i class="fas fa-rocket"></i>
+                </div>
+                <div class="marker-number">04</div>
+              </div>
+              <div class="timeline-content">
+                <h4>ლონჩი და ოპტიმიზაცია</h4>
+                <p>
+                  წარმატებული ლონჩი და მუდმივი ოპტიმიზაცია მაქსიმალური
+                  შედეგებისთვის
+                </p>
+                <ul class="timeline-features">
+                  <li>
+                    <i class="fas fa-check"></i> SEO ოპტიმიზაცია და მარკეტინგი
+                  </li>
+                  <li><i class="fas fa-check"></i> წარმადობის მონიტორინგი</li>
+                  <li>
+                    <i class="fas fa-check"></i> მუდმივი მხარდაჭერა და
+                    განახლებები
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="strategy-principles">
+            <h3>ძირითადი პრინციპები</h3>
+            <div class="principles-grid">
+              <div class="principle-card">
+                <div class="principle-icon">
+                  <i class="fas fa-target"></i>
+                </div>
+                <h4>მიზნობრივობა</h4>
+                <p>
+                  ყოველი ელემენტი ემსახურება კონკრეტულ ბიზნეს მიზანს და ხელს
+                  უწყობს კონვერსიის ზრდას
+                </p>
+              </div>
+
+              <div class="principle-card">
+                <div class="principle-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h4>მომხმარებელზე ფოკუსი</h4>
+                <p>
+                  ყველაფერი იქმნება მომხმარებლის საჭიროებების გათვალისწინებით და
+                  მათთვის ოპტიმალური გამოცდილების უზრუნველსაყოფად
+                </p>
+              </div>
+
+              <div class="principle-card">
+                <div class="principle-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h4>მონაცემებზე დაფუძნება</h4>
+                <p>
+                  ყველა გადაწყვეტილება მიიღება რეალური მონაცემების ანალიზის
+                  საფუძველზე, არა მხოლოდ ინტუიციით
+                </p>
+              </div>
+
+              <div class="principle-card">
+                <div class="principle-icon">
+                  <i class="fas fa-sync-alt"></i>
+                </div>
+                <h4>მუდმივი განვითარება</h4>
+                <p>
+                  პროექტი არ მთავრდება ლონჩით - მუდმივი ოპტიმიზაცია და
+                  განვითარება უკეთესი შედეგებისთვის
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="strategy-results">
+            <div class="results-header">
+              <h3>შედეგები რომლებსაც ვიღებთ</h3>
+              <p>რეალური მეტრიკები ჩვენი სტრატეგიის ეფექტურობის დასტურად</p>
+            </div>
+
+            <div class="results-grid">
+              <div class="result-item">
+                <div class="result-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="result-number">300%</div>
+                <div class="result-label">კონვერსიის ზრდა</div>
+                <div class="result-description">საშუალოდ</div>
+              </div>
+
+              <div class="result-item">
+                <div class="result-icon">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <div class="result-number">95+</div>
+                <div class="result-label">PageSpeed ქულა</div>
+                <div class="result-description">ყველა პროექტში</div>
+              </div>
+
+              <div class="result-item">
+                <div class="result-icon">
+                  <i class="fas fa-search"></i>
+                </div>
+                <div class="result-number">TOP 3</div>
+                <div class="result-label">Google-ში პოზიცია</div>
+                <div class="result-description">მთავარ საძიებო სიტყვებზე</div>
+              </div>
+
+              <div class="result-item">
+                <div class="result-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="result-number">2 წამი</div>
+                <div class="result-label">საშუალო ჩატვირთვის დრო</div>
+                <div class="result-description">ყველა მოწყობილობაზე</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="strategy-cta">
+            <div class="cta-visual">
+              <div class="cta-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+            </div>
+            <div class="cta-content">
+              <h3>მზად ხართ თქვენი ბრენდის ტრანსფორმაციისთვის?</h3>
+              <p>
+                მოდით ერთად შევქმნათ სტრატეგია, რომელიც გადააქცევს თქვენს ვიზიას
+                წარმატებულ ბიზნესად!
+              </p>
+              <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                  <i class="fas fa-calendar-alt"></i>
+                  უფასო კონსულტაცია
+                </a>
+                <a href="#projects" class="btn btn-secondary">
+                  <i class="fas fa-eye"></i>
+                  ნახეთ შედეგები
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose N1kodevv Section -->
+    <section id="why-choose" class="why-choose">
+      <div class="container">
+        <div class="why-choose-header">
+          <h2 class="section-title">რატომ უნდა აირჩიოთ N1kodevv?</h2>
+          <p class="section-subtitle">
+            თქვენი ციფრული წარმატების საიმედო პარტნიორი
+          </p>
+        </div>
+
+        <div class="why-choose-content">
+          <div class="why-choose-intro">
+            <div class="intro-card">
+              <div class="intro-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h3>თქვენი ვიზიის რეალიზება</h3>
+              <p>
+                მე არ ვქმნი უბრალოდ ვებსაიტებს - მე ვქმნი ციფრულ გამოცდილებებს,
+                რომლებიც ასახავს თქვენი ბრენდის უნიკალურობას და ეხმარება
+                ბიზნესის ზრდაში.
+              </p>
+            </div>
+          </div>
+
+          <div class="advantages-grid">
+            <div class="advantage-card">
+              <div class="advantage-header">
+                <div class="advantage-icon">
+                  <i class="fas fa-lightning-bolt"></i>
+                </div>
+                <h3>სწრაფი და ეფექტური</h3>
+              </div>
+              <div class="advantage-content">
+                <p>
+                  თანამედროვე ტექნოლოგიები და ოპტიმიზებული კოდი უზრუნველყოფს
+                  თქვენი საიტის სწრაფ მუშაობას.
+                </p>
+                <ul>
+                  <li><i class="fas fa-check"></i> 95+ PageSpeed Score</li>
+                  <li><i class="fas fa-check"></i> 1-3 წამში ჩატვირთვა</li>
+                  <li><i class="fas fa-check"></i> SEO ოპტიმიზაცია</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="advantage-card">
+              <div class="advantage-header">
+                <div class="advantage-icon">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>რესპონსიული დიზაინი</h3>
+              </div>
+              <div class="advantage-content">
+                <p>
+                  თქვენი საიტი იდეალურად მუშაობს ყველა მოწყობილობაზე -
+                  ტელეფონიდან დესკტოპამდე.
+                </p>
+                <ul>
+                  <li><i class="fas fa-check"></i> Mobile-First მიდგომა</li>
+                  <li>
+                    <i class="fas fa-check"></i> Cross-Browser თავსებადობა
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Touch-Friendly ინტერფეისი
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="advantage-card">
+              <div class="advantage-header">
+                <div class="advantage-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>უსაფრთხოება და საიმედოობა</h3>
+              </div>
+              <div class="advantage-content">
+                <p>
+                  თქვენი მონაცემები და მომხმარებლების ინფორმაცია დაცულია
+                  უმაღლესი სტანდარტებით.
+                </p>
+                <ul>
+                  <li><i class="fas fa-check"></i> SSL სერტიფიკატები</li>
+                  <li><i class="fas fa-check"></i> მონაცემთა დაცვა</li>
+                  <li><i class="fas fa-check"></i> რეგულარული ბექაპები</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="advantage-card">
+              <div class="advantage-header">
+                <div class="advantage-icon">
+                  <i class="fas fa-cogs"></i>
+                </div>
+                <h3>მორგებული ფუნქციონალი</h3>
+              </div>
+              <div class="advantage-content">
+                <p>
+                  ყოველი პროექტი ინდივიდუალურად არის შექმნილი თქვენი კონკრეტული
+                  საჭიროებების მიხედვით.
+                </p>
+                <ul>
+                  <li><i class="fas fa-check"></i> კასტომ ფუნქციები</li>
+                  <li><i class="fas fa-check"></i> API ინტეგრაციები</li>
+                  <li><i class="fas fa-check"></i> CMS სისტემები</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="advantage-card">
+              <div class="advantage-header">
+                <div class="advantage-icon">
+                  <i class="fas fa-headset"></i>
+                </div>
+                <h3>24/7 მხარდაჭერა</h3>
+              </div>
+              <div class="advantage-content">
+                <p>
+                  პროექტის დასრულების შემდეგაც, ყოველთვის ხელმისაწვდომი ვარ
+                  ტექნიკური მხარდაჭერისთვის.
+                </p>
+                <ul>
+                  <li><i class="fas fa-check"></i> სწრაფი რეაგირება</li>
+                  <li><i class="fas fa-check"></i> უფასო კონსულტაციები</li>
+                  <li><i class="fas fa-check"></i> განახლებები და ფიქსები</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="advantage-card">
+              <div class="advantage-header">
+                <div class="advantage-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>ბიზნესზე ორიენტირება</h3>
+              </div>
+              <div class="advantage-content">
+                <p>
+                  მიზანი არ არის მხოლოდ ლამაზი საიტის შექმნა, არამედ თქვენი
+                  ბიზნესის ზრდის ხელშეწყობა.
+                </p>
+                <ul>
+                  <li><i class="fas fa-check"></i> კონვერსიის ოპტიმიზაცია</li>
+                  <li><i class="fas fa-check"></i> ანალიტიკის ინტეგრაცია</li>
+                  <li><i class="fas fa-check"></i> მარკეტინგ ინსტრუმენტები</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonials">
+            <h3>რას ამბობენ კლიენტები</h3>
+            <div class="testimonials-grid">
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    "N1kodevv-მ შექმნა ჩვენი კომპანიისთვის შესანიშნავი ვებსაიტი.
+                    პროფესიონალი, სწრაფი და ყოველთვის ხელმისაწვდომი!"
+                  </p>
+                </div>
+                <div class="testimonial-author">
+                  <div class="author-avatar">
+                    <i class="fas fa-user"></i>
+                  </div>
+                  <div class="author-info">
+                    <h4>გიორგი ბ.</h4>
+                    <span>ბიზნეს მფლობელი</span>
+                  </div>
+                </div>
+                <div class="testimonial-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    "ონლაინ მაღაზია, რომელიც N1kodevv-მ შექმნა, გაზარდა ჩვენი
+                    გაყიდვები 300%-ით! რეკომენდაცია ყველას!"
+                  </p>
+                </div>
+                <div class="testimonial-author">
+                  <div class="author-avatar">
+                    <i class="fas fa-user"></i>
+                  </div>
+                  <div class="author-info">
+                    <h4>ველიკი კ.</h4>
+                    <span>ბიზნეს მფლობელი</span>
+                  </div>
+                </div>
+                <div class="testimonial-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    "თანამშრომლობა N1kodevv-თან იყო ფანტასტიკური გამოცდილება.
+                    ყველაფერი დროულად და ხარისხიანად!"
+                  </p>
+                </div>
+                <div class="testimonial-author">
+                  <div class="author-avatar">
+                    <i class="fas fa-user"></i>
+                  </div>
+                  <div class="author-info">
+                    <h4>ხათუნა ქ.</h4>
+                    <span>ბიზნეს მფლობელი</span>
+                  </div>
+                </div>
+                <div class="testimonial-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="why-choose-cta">
+            <div class="cta-content">
+              <h3>მზად ხართ თქვენი ციფრული ტრანსფორმაციისთვის?</h3>
+              <p>
+                მოდით ერთად შევქმნათ რაღაც განსაკუთრებული, რაც გამოარჩევს თქვენს
+                ბიზნესს კონკურენტებისგან!
+              </p>
+              <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                  <i class="fas fa-rocket"></i>
+                  დავიწყოთ პროექტი
+                </a>
+                <a href="#projects" class="btn btn-secondary">
+                  <i class="fas fa-eye"></i>
+                  ნახეთ პორტფოლიო
+                </a>
+              </div>
+            </div>
+            <div class="cta-stats">
+              <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">კმაყოფილი კლიენტი</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">დროული მიწოდება</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">მხარდაჭერა</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Website Section -->
+    <section id="why-website" class="why-website">
+      <div class="container">
+        <h2 class="section-title">
+          რატომ არის მნიშვნელოვანი ვებსაიტი თქვენი ბიზნესისთვის
+        </h2>
+        <div class="why-website-content">
+          <div class="why-intro">
+            <p class="why-description">
+              თანამედროვე ციფრულ ეპოქაში, ვებსაიტი არ არის უბრალოდ ლუქსი - ეს
+              არის აუცილებლობა. ეს არის თქვენი ციფრული სახე, რომელიც მუშაობს
+              24/7 და აკავშირებს თქვენს ბიზნესს მსოფლიოსთან.
+            </p>
+          </div>
+
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <h3>გლობალური ხელმისაწვდომობა</h3>
+              <p>
+                თქვენი ბიზნესი ხელმისაწვდომი იქნება მსოფლიოს ნებისმიერი
+                წერტილიდან, 24 საათის განმავლობაში, 7 დღე კვირაში.
+              </p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3>ღია კომუნიკაცია</h3>
+              <p>
+                ვებსაიტი საშუალებას გაძლევთ პირდაპირ დაუკავშირდეთ თქვენს
+                მომხმარებლებს და მიიღოთ მათი უკუკავშირი.
+              </p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>ბიზნესის ზრდა</h3>
+              <p>
+                პროფესიონალური ვებსაიტი ზრდის თქვენი ბრენდის სანდოობას და
+                ეხმარება ახალი კლიენტების მოზიდვაში.
+              </p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3>მობილური ხელმისაწვდომობა</h3>
+              <p>
+                თანამედროვე რესპონსიული დიზაინით, თქვენი საიტი იდეალურად მუშაობს
+                ყველა მოწყობილობაზე.
+              </p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-search"></i>
+              </div>
+              <h3>SEO ოპტიმიზაცია</h3>
+              <p>
+                სწორად ოპტიმიზებული ვებსაიტი გაზრდის თქვენს ხილვადობას Google-ის
+                და სხვა ძიების სისტემებში.
+              </p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-dollar-sign"></i>
+              </div>
+              <h3>ეფექტური მარკეტინგი</h3>
+              <p>
+                ვებსაიტი არის ყველაზე ეფექტური და ეკონომიური მარკეტინგის
+                ინსტრუმენტი გრძელვადიან პერსპექტივაში.
+              </p>
+            </div>
+          </div>
+
+          <div class="cta-section">
+            <h3>მზად ხართ თქვენი ბიზნესის ციფრული ტრანსფორმაციისთვის?</h3>
+            <p>
+              მოდით ერთად შევქმნათ ვებსაიტი, რომელიც გაზრდის თქვენი ბიზნესის
+              პოტენციალს!
+            </p>
+            <a href="#contact" class="btn btn-primary">დაიწყეთ პროექტი</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise">
+      <div class="container">
+        <h2 class="section-title">ჩემი ექსპერტიზა</h2>
+        <div class="expertise-content">
+          <div class="expertise-intro">
+            <p class="expertise-description">
+              წლების განმავლობაში დაგროვილი გამოცდილება და ღრმა ცოდნა სხვადასხვა
+              ტექნოლოგიურ სფეროში
+            </p>
+          </div>
+
+          <div class="expertise-areas">
+            <div class="expertise-card">
+              <div class="expertise-header">
+                <div class="expertise-icon">
+                  <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>ფრონტენდ დეველოპმენტი</h3>
+              </div>
+              <div class="expertise-details">
+                <p>
+                  თანამედროვე, ინტერაქტიული და მომხმარებელზე ორიენტირებული ვებ
+                  ინტერფეისების შექმნა
+                </p>
+                <div class="expertise-skills">
+                  <span class="expertise-skill">React.js</span>
+                  <span class="expertise-skill">Vue.js</span>
+                  <span class="expertise-skill">JavaScript ES6+</span>
+                  <span class="expertise-skill">TypeScript</span>
+                  <span class="expertise-skill">HTML5/CSS3</span>
+                  <span class="expertise-skill">Tailwind CSS</span>
+                  <span class="expertise-skill">SASS/SCSS</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="expertise-card">
+              <div class="expertise-header">
+                <div class="expertise-icon">
+                  <i class="fas fa-server"></i>
+                </div>
+                <h3>ბექენდ დეველოპმენტი</h3>
+              </div>
+              <div class="expertise-details">
+                <p>
+                  მასშტაბირებადი და საიმედო სერვერული აპლიკაციების და API-ების
+                  განვითარება
+                </p>
+                <div class="expertise-skills">
+                  <span class="expertise-skill">Node.js</span>
+                  <span class="expertise-skill">Express.js</span>
+                  <span class="expertise-skill">Python</span>
+                  <span class="expertise-skill">Django</span>
+                  <span class="expertise-skill">REST APIs</span>
+                  <span class="expertise-skill">GraphQL</span>
+                  <span class="expertise-skill">JWT Authentication</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="expertise-card">
+              <div class="expertise-header">
+                <div class="expertise-icon">
+                  <i class="fas fa-database"></i>
+                </div>
+                <h3>მონაცემთა ბაზები</h3>
+              </div>
+              <div class="expertise-details">
+                <p>ეფექტური მონაცემთა ბაზების დიზაინი, ოპტიმიზაცია და მართვა</p>
+                <div class="expertise-skills">
+                  <span class="expertise-skill">PostgreSQL</span>
+                  <span class="expertise-skill">MongoDB</span>
+                  <span class="expertise-skill">MySQL</span>
+                  <span class="expertise-skill">Redis</span>
+                  <span class="expertise-skill">Database Design</span>
+                  <span class="expertise-skill">Query Optimization</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="expertise-card">
+              <div class="expertise-header">
+                <div class="expertise-icon">
+                  <i class="fas fa-cloud"></i>
+                </div>
+                <h3>DevOps და Cloud</h3>
+              </div>
+              <div class="expertise-details">
+                <p>
+                  აპლიკაციების deployment, მონიტორინგი და cloud ინფრასტრუქტურის
+                  მართვა
+                </p>
+                <div class="expertise-skills">
+                  <span class="expertise-skill">Docker</span>
+                  <span class="expertise-skill">AWS</span>
+                  <span class="expertise-skill">Vercel</span>
+                  <span class="expertise-skill">Netlify</span>
+                  <span class="expertise-skill">CI/CD</span>
+                  <span class="expertise-skill">Git/GitHub</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="expertise-card">
+              <div class="expertise-header">
+                <div class="expertise-icon">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>მობილური დეველოპმენტი</h3>
+              </div>
+              <div class="expertise-details">
+                <p>
+                  რესპონსიული ვებ აპლიკაციები და PWA-ები მობილური
+                  გამოცდილებისთვის
+                </p>
+                <div class="expertise-skills">
+                  <span class="expertise-skill">Responsive Design</span>
+                  <span class="expertise-skill">PWA</span>
+                  <span class="expertise-skill">Service Workers</span>
+                  <span class="expertise-skill">Mobile-First</span>
+                  <span class="expertise-skill">Touch Interactions</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="expertise-card">
+              <div class="expertise-header">
+                <div class="expertise-icon">
+                  <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>UI/UX დიზაინი</h3>
+              </div>
+              <div class="expertise-details">
+                <p>
+                  მომხმარებელზე ორიენტირებული ინტერფეისების დიზაინი და
+                  პროტოტიპირება
+                </p>
+                <div class="expertise-skills">
+                  <span class="expertise-skill">Figma</span>
+                  <span class="expertise-skill">Adobe XD</span>
+                  <span class="expertise-skill">Prototyping</span>
+                  <span class="expertise-skill">User Research</span>
+                  <span class="expertise-skill">Wireframing</span>
+                  <span class="expertise-skill">Design Systems</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="expertise-stats">
+            <div class="stat-item">
+              <div class="stat-number" data-count="50">50+</div>
+              <div class="stat-label">დასრულებული პროექტი</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="3">3+</div>
+              <div class="stat-label">წლიანი გამოცდილება</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="15">15+</div>
+              <div class="stat-label">ტექნოლოგია</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="100">100%</div>
+              <div class="stat-label">კმაყოფილი კლიენტები</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-title">ყველა პროექტი</h2>
+        <div class="projects-filter">
+          <button class="filter-btn active" data-filter="all">ყველა</button>
+          <button class="filter-btn" data-filter="web">ვებ აპლიკაციები</button>
+          <button class="filter-btn" data-filter="ecommerce">
+            ელექტრონული კომერცია
+          </button>
+          <button class="filter-btn" data-filter="business">
+            ბიზნეს საიტები
+          </button>
+          <button class="filter-btn" data-filter="portfolio">პორტფოლიო</button>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card" data-category="business">
+            <div class="project-image">
+              <div class="project-placeholder">🏭</div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">KutStone</h3>
+              <p class="project-description">
+                სრულფასოვანი ონლაინ მაღაზია მომხმარებელთა ავთენტიფიკაციით,
+                გადახდის ინტეგრაციით და ადმინისტრატორის პანელით. აშენებულია
+                HTML, Node.js, CSS და JavaScript-ის გამოყენებით.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://n1k0devv.github.io/kutaisisqvisqarxana/"
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a
+                  href="https://github.com/N1kodevv/kutaisisqvisqarxana"
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="business">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <i class="fas fa-hotel"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Kuresta</h3>
+              <p class="project-description">
+                თანამედროვე სასტუმროს საიტი, რომელიც ოპტიმიზირებულია ყველა
+                მოწყობილობაზე. სტუმრებს შეუძლიათ საკომფორტოდ ოთახების დაჯავშნა
+                და შეტყობინებების გაგზავნა პირდაპირ საიტის მეშვეობით.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">Email.js</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://n1k0devv.github.io/sastumro/"
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a
+                  href="https://github.com/N1kodevv/sastumro"
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="business">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <i class="fa-solid fa-tooth"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Dental Express</h3>
+              <p class="project-description">
+                ვებსაიტი სუფთა, კარგად ორგანიზებული და მარტივად სამართავია.
+                სანდოობას ქმნის დეტალური სერვისები, გამჭვირვალე ფასები და
+                პროფესიონალი გუნდი. თანამედროვე დიზაინი, ხარისხიანი ვიზუალი და
+                მარტივი დაჯავშნის სისტემა მას მიმზიდველს ხდის.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">Email.js</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://n1k0devv.github.io/dentisit/"
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a
+                  href="https://github.com/N1kodevv/dentisit"
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="ecommerce">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <i class="fa-solid fa-computer"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">techstore</h3>
+              <p class="project-description">
+                ვებსაიტს აქვს სუფთა, თანამედროვე ინტერფეისი მარტივი ნავიგაციით.
+                მონიშნულია ინტერაქტიული ფუნქციები, როგორიცაა კომპიუტერის
+                დამწყები, პროდუქტის ფილტრები და დეტალური სპეციფიკაციები.
+                მომხმარებლებს შეუძლიათ სწრაფად დაუკავშირდნენ მხარდაჭერას, ნახონ
+                აქციები და მარტივად შეასრულონ შეძენა რეაგირებადი დიზაინის
+                საშუალებით.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">Email.js</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://n1k0devv.github.io/pcshop/"
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a
+                  href="https://n1k0devv.github.io/pcshop/"
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="portfolio">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <i class="fas fa-user"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">პირადი პორტფოლიო</h3>
+              <p class="project-description">
+                თანამედროვე, ინტერაქტიული პორტფოლიო საიტი გლუვი ანიმაციებით,
+                პარალაქს ეფექტებით და სრული რესპონსიული დიზაინით.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">GSAP</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://n1kodevv.github.io/portfolio/"
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a
+                  href="https://github.com/N1kodevv/portfolio"
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="web">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <i class="fa-solid fa-gamepad"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Tamashix</h3>
+              <p class="project-description">
+                სუფთა და მყისიერად გასაგებ ინტერფეისში. აქ ყოველი გვერდი
+                დახვეწილი, ფუნქციონალური და ვიზუალურად მიმზიდველია. მარტივად
+                სამართავი, სწრაფი და ეფექტური – იდეალურია როგორც კომპიუტერზე,
+                ისე მობილურზე. სილამაზე და სიდიადე ერთმანეთში ნაზად ერწყმის,
+                რათა ყოველი სტუმარი დადებით ემოციებს მიიღებდეს. Tamashix–ში
+                ყველაფერი შექმნილია სიამოვნებისა და კომფორტისთვის.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">Ract</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">TypeScript</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://n1k0devv.github.io/tamashi/"
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a
+                  href="https://n1k0devv.github.io/tamashi/"
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects-cta">
+          <h3>გაქვთ იდეა პროექტისთვის?</h3>
+          <p>მოდით ერთად განვახორციელოთ თქვენი ვიზია!</p>
+          <a href="#contact" class="btn btn-primary">დაიწყეთ პროექტი</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">დაგიკავშირდით</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>მოდით ვიმუშაოთ ერთად</h3>
+            <p>
+              ყოველ ახალ გამოწვევას და საინტერესო პროექტს ღიად ვეგებები. თუ
+              გაქვთ შეკითხვა, თანამშრომლობის იდეა ან გსურთ პროფესიონალური
+              კონტაქტი — სიამოვნებით დაგეხმარებით. დამიკავშირდით თავისუფლად!
+            </p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span
+                  ><a href="mailto:n1kodevv1@gmail.com"
+                    >n1kodevv1@gmail.com</a
+                  ></span
+                >
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>ხელმისაწვდომი ვარ დისტანციური მუშაობისთვის</span>
+              </div>
+            </div>
+            <div class="social-links-contact">
+              <a
+                href="https://github.com/N1kodevv"
+                target="_blank"
+                class="social-link"
+                aria-label="GitHub"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/nikoloz-bregadze-892338388/"
+                target="_blank"
+                class="social-link"
+                aria-label="LinkedIn"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="https://twitter.com/N1kodevv"
+                target="_blank"
+                class="social-link"
+                aria-label="Twitter"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="https://instagram.com/N1kodevv"
+                target="_blank"
+                class="social-link"
+                aria-label="Instagram"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="from_name">სახელი</label>
+              <input
+                type="text"
+                id="from_name"
+                name="from_name"
+                required
+                autocomplete="name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="reply_to">ელ. ფოსტა</label>
+              <input
+                type="email"
+                id="reply_to"
+                name="reply_to"
+                required
+                autocomplete="email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="subject">თემა</label>
+              <input type="text" id="subject" name="subject" required />
+            </div>
+            <div class="form-group">
+              <label for="message">შეტყობინება</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="submit-btn">
+              <span class="btn-text">გაგზავნა</span>
+              <span class="btn-loading" style="display: none">
+                <i class="fas fa-spinner fa-spin"></i> იგზავნება...
+              </span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <div class="footer-logo">
               <img
                 src="images/Generated_Image_October_03__2025_-_7_24PM-removebg-preview.png"
                 alt="N1kodevv Logo"
                 onerror="this.style.display='none'"
               />
-              <div class="brand-text">
-                <a href="#home">N1kodevv</a>
-                <div class="brand-tagline">ვებ დეველოპერი</div>
-              </div>
+              <h3>N1kodevv</h3>
             </div>
-            <ul class="nav-menu" id="nav-menu">
-              <li>
-                <a href="#home" class="nav-link active"
-                  ><i class="fas fa-home"></i> მთავარი</a
-                >
-              </li>
-              <li>
-                <a href="#about" class="nav-link"
-                  ><i class="fas fa-user"></i> ჩემ შესახებ</a
-                >
-              </li>
-              <li>
-                <a href="#strategy" class="nav-link"
-                  ><i class="fas fa-chess"></i> სტრატეგია</a
-                >
-              </li>
-              <li>
-                <a href="#why-choose" class="nav-link"
-                  ><i class="fas fa-star"></i> რატომ მე</a
-                >
-              </li>
-              <li>
-                <a href="#expertise" class="nav-link"
-                  ><i class="fas fa-code"></i> ექსპერტიზა</a
-                >
-              </li>
-              <li>
-                <a href="#projects" class="nav-link"
-                  ><i class="fas fa-folder"></i> პროექტები</a
-                >
-              </li>
-              <li>
-                <a href="#contact" class="nav-link"
-                  ><i class="fas fa-envelope"></i> კონტაქტი</a
-                >
-              </li>
-            </ul>
-            <div class="nav-cta">
-              <a href="#contact" class="nav-cta-btn">
-                <i class="fas fa-rocket"></i>
-                დაიწყეთ პროექტი
-                <span class="btn-shine"></span>
+            <p class="footer-description">
+              ვქმნი თანამედროვე, ინოვაციურ ვებ გამოცდილებებს, რომლებიც
+              აერთიანებს დიზაინს, ფუნქციონალურობას და წარმადობას. ყოველი პროექტი
+              არის უნიკალური ისტორია ციფრულ სამყაროში.
+            </p>
+            <div class="footer-social">
+              <a
+                href="https://github.com/N1kodevv"
+                target="_blank"
+                class="footer-social-link"
+                aria-label="GitHub"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/nikoloz-bregadze-892338388/"
+                target="_blank"
+                class="footer-social-link"
+                aria-label="LinkedIn"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="https://twitter.com/N1kodevv"
+                target="_blank"
+                class="footer-social-link"
+                aria-label="Twitter"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="https://instagram.com/N1kodevv"
+                target="_blank"
+                class="footer-social-link"
+                aria-label="Instagram"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-instagram"></i>
               </a>
             </div>
-            
           </div>
-        </nav>
 
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-          <div class="hero-bg-animation"></div>
-          <div class="hero-particles"></div>
-          <div class="hero-container">
-            <div class="hero-content">
-              <div class="hero-badge">
-                <i class="fas fa-code"></i>
-                <span>ხელმისაწვდომი ახალი პროექტებისთვის</span>
-              </div>
-              <h1 class="hero-title">
-                გამარჯობა, მე ვარ <span class="highlight">N1kodevv</span>
-              </h1>
-              <p class="hero-subtitle">
-                <i class="fas fa-laptop-code"></i>
-                <span class="typing-text"
-                  >ვებ დეველოპერი და UI/UX დიზაინერი<span class="cursor"
-                    >|</span
-                  ></span
+          <div class="footer-section">
+            <h4>სერვისები</h4>
+            <ul class="footer-links">
+              <li><a href="#expertise">ვებ დეველოპმენტი</a></li>
+              <li><a href="#expertise">UI/UX დიზაინი</a></li>
+              <li><a href="#expertise">მობილური აპები</a></li>
+              <li><a href="#expertise">ელექტრონული კომერცია</a></li>
+              <li><a href="#expertise">SEO ოპტიმიზაცია</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>რესურსები</h4>
+            <ul class="footer-links">
+              <li><a href="#projects">პორტფოლიო</a></li>
+              <li><a href="#strategy">სტრატეგია</a></li>
+              <li><a href="#about">ჩემ შესახებ</a></li>
+              <li><a href="#contact">კონტაქტი</a></li>
+              <li><a href="#expertise">ექსპერტიზა</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>კონტაქტი</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="mailto:n1kodevv1@gmail.com">n1kodevv1@gmail.com</a>
                 >
-              </p>
-              <p class="hero-description">
-                ვქმნი თანამედროვე, ინოვაციურ ვებ გამოცდილებებს, რომლებიც
-                აერთიანებს დიზაინს, ფუნქციონალურობას და წარმადობას. ყოველი
-                პროექტი არის უნიკალური ისტორია ციფრულ სამყაროში.
-              </p>
-              <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">
-                  <i class="fas fa-eye"></i>
-                  ნახეთ ჩემი ნამუშევრები
-                  <span class="btn-glow"></span>
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                  <i class="fas fa-comments"></i>
-                  დავიწყოთ თანამშრომლობა
-                </a>
-              </div>
-              <div class="hero-stats">
-                <div class="stat-item">
-                  <div class="stat-number" data-count="50">50+</div>
-                  <div class="stat-label">დასრულებული პროექტი</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number" data-count="3">3+</div>
-                  <div class="stat-label">წლიანი გამოცდილება</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number" data-count="100">100%</div>
-                  <div class="stat-label">კმაყოფილი კლიენტები</div>
-                </div>
-              </div>
-              <div class="social-links">
-                <a
-                  href="https://github.com/N1kodevv"
-                  target="_blank"
-                  class="social-link"
-                  aria-label="GitHub"
-                  rel="noopener noreferrer"
-                >
-                  <i class="fab fa-github"></i>
-                  <span class="social-tooltip">GitHub</span>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/nikoloz-bregadze-892338388/"
-                  target="_blank"
-                  class="social-link"
-                  aria-label="LinkedIn"
-                  rel="noopener noreferrer"
-                >
-                  <i class="fab fa-linkedin"></i>
-                  <span class="social-tooltip">LinkedIn</span>
-                </a>
-                <a
-                  href="https://twitter.com/N1kodevv"
-                  target="_blank"
-                  class="social-link"
-                  aria-label="Twitter"
-                  rel="noopener noreferrer"
-                >
-                  <i class="fab fa-twitter"></i>
-                  <span class="social-tooltip">Twitter</span>
-                </a>
-                <a
-                  href="https://instagram.com/N1kodevv"
-                  target="_blank"
-                  class="social-link"
-                  aria-label="Instagram"
-                  rel="noopener noreferrer"
-                >
-                  <i class="fab fa-instagram"></i>
-                  <span class="social-tooltip">Instagram</span>
-                </a>
-              </div>
-            </div>
-            <div class="hero-visual">
-              <div class="code-animation">
-                <div class="code-line">
-                  <span class="code-keyword">const</span>
-                  <span class="code-variable">developer</span>
-                  <span class="code-operator">=</span>
-                  <span class="code-bracket">{</span>
-                </div>
-                <div class="code-line">
-                  &nbsp;&nbsp;<span class="code-property">name</span
-                  ><span class="code-operator">:</span>
-                  <span class="code-string">'N1kodevv'</span
-                  ><span class="code-comma">,</span>
-                </div>
-                <div class="code-line">
-                  &nbsp;&nbsp;<span class="code-property">skills</span
-                  ><span class="code-operator">:</span>
-                  <span class="code-bracket">[</span
-                  ><span class="code-string">'React'</span
-                  ><span class="code-comma">,</span>
-                  <span class="code-string">'Node.js'</span
-                  ><span class="code-bracket">]</span
-                  ><span class="code-comma">,</span>
-                </div>
-                <div class="code-line">
-                  &nbsp;&nbsp;<span class="code-property">passion</span
-                  ><span class="code-operator">:</span>
-                  <span class="code-string"
-                    >'Creating Amazing Web Experiences'</span
-                  >
-                </div>
-                <div class="code-line">
-                  <span class="code-bracket">}</span
-                  ><span class="code-semicolon">;</span>
-                </div>
-              </div>
-            </div>
+              </li>
+              <li><a href="#contact">პროექტის განხილვა</a></li>
+              <li><a href="#contact">უფასო კონსულტაცია</a></li>
+              <li><a href="#contact">ტექნიკური მხარდაჭერა</a></li>
+            </ul>
           </div>
-          <div class="hero-scroll-indicator">
-            <div class="scroll-arrow">
-              <i class="fas fa-chevron-down"></i>
-            </div>
-            
-          </div>
-        </section>
+        </div>
 
-        <!-- About Section -->
-        <section id="about" class="about">
-          <div class="container">
-            <div class="section-header">
-              <h2 class="section-title">ჩემ შესახებ</h2>
-              <p class="section-subtitle">
-                ვარ ვებ დეველოპერი, რომელიც ტექნოლოგიებს იყენებს იდეების რეალურ,
-                ფუნქციონალურ პროდუქტებად გარდაქმნისთვის
-              </p>
-            </div>
-            <div class="about-content">
-              <div class="about-text">
-                <div class="about-card">
-                  <div class="card-icon">
-                    <i class="fas fa-lightbulb"></i>
-                  </div>
-                  <h3>ჩემი მისია</h3>
-                  <p class="about-description">
-                    ვქმნი ციფრულ გამოცდილებებს, რომლებიც არ არის მხოლოდ ლამაზი,
-                    არამედ ფუნქციონალური, სწრაფი და მომხმარებელზე ორიენტირებული.
-                    ყოველი პროექტი არის შესაძლებლობა რაღაც განსაკუთრებულის
-                    შექმნისა.
-                  </p>
-                </div>
-                <div class="about-card">
-                  <div class="card-icon">
-                    <i class="fas fa-rocket"></i>
-                  </div>
-                  <h3>ჩემი მიდგომა</h3>
-                  <p class="about-description">
-                    მჯერა, რომ კარგი კოდი უნდა იყოს არა მხოლოდ ფუნქციონალური,
-                    არამედ ელეგანტური და მასშტაბირებადი. ვიყენებ თანამედროვე
-                    ტექნოლოგიებს და საუკეთესო პრაქტიკებს ყოველ პროექტში.
-                  </p>
-                </div>
-              </div>
-              <div class="skills">
-                <h3>ჩემი უნარები</h3>
-                <div class="skills-grid">
-                  <div class="skill-category">
-                    <div class="category-header">
-                      <div class="category-icon">
-                        <i class="fab fa-js-square"></i>
-                      </div>
-                      <h4>Frontend</h4>
-                    </div>
-                    <div class="skill-tags">
-                      <span class="skill-tag">JavaScript</span>
-                      <span class="skill-tag">React</span>
-                      <span class="skill-tag">Vue.js</span>
-                      <span class="skill-tag">TypeScript</span>
-                      <span class="skill-tag">HTML5</span>
-                      <span class="skill-tag">CSS3</span>
-                      <span class="skill-tag">Tailwind</span>
-                    </div>
-                  </div>
-                  <div class="skill-category">
-                    <div class="category-header">
-                      <div class="category-icon">
-                        <i class="fas fa-server"></i>
-                      </div>
-                      <h4>Backend</h4>
-                    </div>
-                    <div class="skill-tags">
-                      <span class="skill-tag">Node.js</span>
-                      <span class="skill-tag">Express</span>
-                      <span class="skill-tag">Python</span>
-                      <span class="skill-tag">MongoDB</span>
-                      <span class="skill-tag">PostgreSQL</span>
-                      <span class="skill-tag">REST API</span>
-                    </div>
-                  </div>
-                  <div class="skill-category">
-                    <div class="category-header">
-                      <div class="category-icon">
-                        <i class="fas fa-tools"></i>
-                      </div>
-                      <h4>ინსტრუმენტები</h4>
-                    </div>
-                    <div class="skill-tags">
-                      <span class="skill-tag">Git</span>
-                      <span class="skill-tag">Docker</span>
-                      <span class="skill-tag">AWS</span>
-                      <span class="skill-tag">Figma</span>
-                      <span class="skill-tag">Webpack</span>
-                      <span class="skill-tag">Jest</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Strategy Section -->
-        <section id="strategy" class="strategy">
-          <div class="container">
-            <div class="section-header">
-              <h2 class="section-title">ჩემი სტრატეგია</h2>
-              <p class="section-subtitle">
-                როგორ ვქმნი წარმატებულ ციფრულ პროდუქტებს - ნაბიჯ-ნაბიჯ მიდგომა
-              </p>
-            </div>
-
-            <div class="strategy-content">
-              <div class="strategy-intro">
-                <div class="intro-visual">
-                  <div class="strategy-icon">
-                    <i class="fas fa-chess-king"></i>
-                  </div>
-                  <div class="strategy-lines">
-                    <div class="line line-1"></div>
-                    <div class="line line-2"></div>
-                    <div class="line line-3"></div>
-                  </div>
-                </div>
-                <div class="intro-text">
-                  <h3>სტრატეგიული მიდგომა</h3>
-                  <p>
-                    ყოველი პროექტი იწყება ღრმა ანალიზით და სტრატეგიული
-                    დაგეგმვით. ვსწავლობ თქვენს ბიზნესს, მიზნებს და აუდიტორიას,
-                    რათა შევქმნა ზუსტად ის, რაც გჭირდებათ წარმატებისთვის.
-                  </p>
-                </div>
-              </div>
-
-              <div class="timeline-header">
-                <h3>განვითარების პროცესი</h3>
-                <p>ოთხ ეტაპიანი მიდგომა იდეიდან რეალიზაციამდე</p>
-              </div>
-
-              <div class="timeline">
-                <div class="timeline-item" data-step="1">
-                  <div class="timeline-marker">
-                    <div class="marker-icon">
-                      <i class="fas fa-search"></i>
-                    </div>
-                    <div class="marker-number">01</div>
-                  </div>
-                  <div class="timeline-content">
-                    <h4>კვლევა და ანალიზი</h4>
-                    <p>
-                      ღრმა კვლევა თქვენი ბიზნესის, კონკურენტების და მიზნობრივი
-                      აუდიტორიის შესახებ
-                    </p>
-                    <ul class="timeline-features">
-                      <li>
-                        <i class="fas fa-check"></i> ბაზრის ანალიზი და
-                        კონკურენტების კვლევა
-                      </li>
-                      <li>
-                        <i class="fas fa-check"></i> მომხმარებელთა ქცევის
-                        შესწავლა
-                      </li>
-                      <li>
-                        <i class="fas fa-check"></i> ტექნიკური მოთხოვნების
-                        განსაზღვრა
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="timeline-item" data-step="2">
-                  <div class="timeline-marker">
-                    <div class="marker-icon">
-                      <i class="fas fa-pencil-ruler"></i>
-                    </div>
-                    <div class="marker-number">02</div>
-                  </div>
-                  <div class="timeline-content">
-                    <h4>დიზაინი და პროტოტიპირება</h4>
-                    <p>
-                      მომხმარებელზე ორიენტირებული დიზაინის შექმნა და
-                      ინტერაქტიული პროტოტიპების განვითარება
-                    </p>
-                    <ul class="timeline-features">
-                      <li>
-                        <i class="fas fa-check"></i> UX/UI დიზაინი და
-                        wireframe-ები
-                      </li>
-                      <li>
-                        <i class="fas fa-check"></i> ინტერაქტიული პროტოტიპები
-                      </li>
-                      <li>
-                        <i class="fas fa-check"></i> მობილური და დესკტოპ
-                        ვერსიები
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="timeline-item" data-step="3">
-                  <div class="timeline-marker">
-                    <div class="marker-icon">
-                      <i class="fas fa-code"></i>
-                    </div>
-                    <div class="marker-number">03</div>
-                  </div>
-                  <div class="timeline-content">
-                    <h4>განვითარება და ტესტირება</h4>
-                    <p>
-                      თანამედროვე ტექნოლოგიებით კოდირება და ყოვლისმომცველი
-                      ტესტირება
-                    </p>
-                    <ul class="timeline-features">
-                      <li>
-                        <i class="fas fa-check"></i> სუფთა, ოპტიმიზებული კოდი
-                      </li>
-                      <li>
-                        <i class="fas fa-check"></i> მასშტაბირებადი არქიტექტურა
-                      </li>
-                      <li>
-                        <i class="fas fa-check"></i> უსაფრთხოების მაღალი
-                        სტანდარტები
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="timeline-item" data-step="4">
-                  <div class="timeline-marker">
-                    <div class="marker-icon">
-                      <i class="fas fa-rocket"></i>
-                    </div>
-                    <div class="marker-number">04</div>
-                  </div>
-                  <div class="timeline-content">
-                    <h4>ლონჩი და ოპტიმიზაცია</h4>
-                    <p>
-                      წარმატებული ლონჩი და მუდმივი ოპტიმიზაცია მაქსიმალური
-                      შედეგებისთვის
-                    </p>
-                    <ul class="timeline-features">
-                      <li>
-                        <i class="fas fa-check"></i> SEO ოპტიმიზაცია და
-                        მარკეტინგი
-                      </li>
-                      <li>
-                        <i class="fas fa-check"></i> წარმადობის მონიტორინგი
-                      </li>
-                      <li>
-                        <i class="fas fa-check"></i> მუდმივი მხარდაჭერა და
-                        განახლებები
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="strategy-principles">
-                <h3>ძირითადი პრინციპები</h3>
-                <div class="principles-grid">
-                  <div class="principle-card">
-                    <div class="principle-icon">
-                      <i class="fas fa-target"></i>
-                    </div>
-                    <h4>მიზნობრივობა</h4>
-                    <p>
-                      ყოველი ელემენტი ემსახურება კონკრეტულ ბიზნეს მიზანს და ხელს
-                      უწყობს კონვერსიის ზრდას
-                    </p>
-                  </div>
-
-                  <div class="principle-card">
-                    <div class="principle-icon">
-                      <i class="fas fa-users"></i>
-                    </div>
-                    <h4>მომხმარებელზე ფოკუსი</h4>
-                    <p>
-                      ყველაფერი იქმნება მომხმარებლის საჭიროებების
-                      გათვალისწინებით და მათთვის ოპტიმალური გამოცდილების
-                      უზრუნველსაყოფად
-                    </p>
-                  </div>
-
-                  <div class="principle-card">
-                    <div class="principle-icon">
-                      <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h4>მონაცემებზე დაფუძნება</h4>
-                    <p>
-                      ყველა გადაწყვეტილება მიიღება რეალური მონაცემების ანალიზის
-                      საფუძველზე, არა მხოლოდ ინტუიციით
-                    </p>
-                  </div>
-
-                  <div class="principle-card">
-                    <div class="principle-icon">
-                      <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h4>მუდმივი განვითარება</h4>
-                    <p>
-                      პროექტი არ მთავრდება ლონჩით - მუდმივი ოპტიმიზაცია და
-                      განვითარება უკეთესი შედეგებისთვის
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="strategy-results">
-                <div class="results-header">
-                  <h3>შედეგები რომლებსაც ვიღებთ</h3>
-                  <p>რეალური მეტრიკები ჩვენი სტრატეგიის ეფექტურობის დასტურად</p>
-                </div>
-
-                <div class="results-grid">
-                  <div class="result-item">
-                    <div class="result-icon">
-                      <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="result-number">300%</div>
-                    <div class="result-label">კონვერსიის ზრდა</div>
-                    <div class="result-description">საშუალოდ</div>
-                  </div>
-
-                  <div class="result-item">
-                    <div class="result-icon">
-                      <i class="fas fa-tachometer-alt"></i>
-                    </div>
-                    <div class="result-number">95+</div>
-                    <div class="result-label">PageSpeed ქულა</div>
-                    <div class="result-description">ყველა პროექტში</div>
-                  </div>
-
-                  <div class="result-item">
-                    <div class="result-icon">
-                      <i class="fas fa-search"></i>
-                    </div>
-                    <div class="result-number">TOP 3</div>
-                    <div class="result-label">Google-ში პოზიცია</div>
-                    <div class="result-description">
-                      მთავარ საძიებო სიტყვებზე
-                    </div>
-                  </div>
-
-                  <div class="result-item">
-                    <div class="result-icon">
-                      <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="result-number">2 წამი</div>
-                    <div class="result-label">საშუალო ჩატვირთვის დრო</div>
-                    <div class="result-description">ყველა მოწყობილობაზე</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="strategy-cta">
-                <div class="cta-visual">
-                  <div class="cta-icon">
-                    <i class="fas fa-handshake"></i>
-                  </div>
-                </div>
-                <div class="cta-content">
-                  <h3>მზად ხართ თქვენი ბრენდის ტრანსფორმაციისთვის?</h3>
-                  <p>
-                    მოდით ერთად შევქმნათ სტრატეგია, რომელიც გადააქცევს თქვენს
-                    ვიზიას წარმატებულ ბიზნესად!
-                  </p>
-                  <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                      <i class="fas fa-calendar-alt"></i>
-                      უფასო კონსულტაცია
-                    </a>
-                    <a href="#projects" class="btn btn-secondary">
-                      <i class="fas fa-eye"></i>
-                      ნახეთ შედეგები
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Why Choose N1kodevv Section -->
-        <section id="why-choose" class="why-choose">
-          <div class="container">
-            <div class="why-choose-header">
-              <h2 class="section-title">რატომ უნდა აირჩიოთ N1kodevv?</h2>
-              <p class="section-subtitle">
-                თქვენი ციფრული წარმატების საიმედო პარტნიორი
-              </p>
-            </div>
-
-            <div class="why-choose-content">
-              <div class="why-choose-intro">
-                <div class="intro-card">
-                  <div class="intro-icon">
-                    <i class="fas fa-rocket"></i>
-                  </div>
-                  <h3>თქვენი ვიზიის რეალიზება</h3>
-                  <p>
-                    მე არ ვქმნი უბრალოდ ვებსაიტებს - მე ვქმნი ციფრულ
-                    გამოცდილებებს, რომლებიც ასახავს თქვენი ბრენდის უნიკალურობას
-                    და ეხმარება ბიზნესის ზრდაში.
-                  </p>
-                </div>
-              </div>
-
-              <div class="advantages-grid">
-                <div class="advantage-card">
-                  <div class="advantage-header">
-                    <div class="advantage-icon">
-                      <i class="fas fa-lightning-bolt"></i>
-                    </div>
-                    <h3>სწრაფი და ეფექტური</h3>
-                  </div>
-                  <div class="advantage-content">
-                    <p>
-                      თანამედროვე ტექნოლოგიები და ოპტიმიზებული კოდი უზრუნველყოფს
-                      თქვენი საიტის სწრაფ მუშაობას.
-                    </p>
-                    <ul>
-                      <li><i class="fas fa-check"></i> 95+ PageSpeed Score</li>
-                      <li><i class="fas fa-check"></i> 1-3 წამში ჩატვირთვა</li>
-                      <li><i class="fas fa-check"></i> SEO ოპტიმიზაცია</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="advantage-card">
-                  <div class="advantage-header">
-                    <div class="advantage-icon">
-                      <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>რესპონსიული დიზაინი</h3>
-                  </div>
-                  <div class="advantage-content">
-                    <p>
-                      თქვენი საიტი იდეალურად მუშაობს ყველა მოწყობილობაზე -
-                      ტელეფონიდან დესკტოპამდე.
-                    </p>
-                    <ul>
-                      <li><i class="fas fa-check"></i> Mobile-First მიდგომა</li>
-                      <li>
-                        <i class="fas fa-check"></i> Cross-Browser თავსებადობა
-                      </li>
-                      <li>
-                        <i class="fas fa-check"></i> Touch-Friendly ინტერფეისი
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="advantage-card">
-                  <div class="advantage-header">
-                    <div class="advantage-icon">
-                      <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>უსაფრთხოება და საიმედოობა</h3>
-                  </div>
-                  <div class="advantage-content">
-                    <p>
-                      თქვენი მონაცემები და მომხმარებლების ინფორმაცია დაცულია
-                      უმაღლესი სტანდარტებით.
-                    </p>
-                    <ul>
-                      <li><i class="fas fa-check"></i> SSL სერტიფიკატები</li>
-                      <li><i class="fas fa-check"></i> მონაცემთა დაცვა</li>
-                      <li><i class="fas fa-check"></i> რეგულარული ბექაპები</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="advantage-card">
-                  <div class="advantage-header">
-                    <div class="advantage-icon">
-                      <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>მორგებული ფუნქციონალი</h3>
-                  </div>
-                  <div class="advantage-content">
-                    <p>
-                      ყოველი პროექტი ინდივიდუალურად არის შექმნილი თქვენი
-                      კონკრეტული საჭიროებების მიხედვით.
-                    </p>
-                    <ul>
-                      <li><i class="fas fa-check"></i> კასტომ ფუნქციები</li>
-                      <li><i class="fas fa-check"></i> API ინტეგრაციები</li>
-                      <li><i class="fas fa-check"></i> CMS სისტემები</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="advantage-card">
-                  <div class="advantage-header">
-                    <div class="advantage-icon">
-                      <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>24/7 მხარდაჭერა</h3>
-                  </div>
-                  <div class="advantage-content">
-                    <p>
-                      პროექტის დასრულების შემდეგაც, ყოველთვის ხელმისაწვდომი ვარ
-                      ტექნიკური მხარდაჭერისთვის.
-                    </p>
-                    <ul>
-                      <li><i class="fas fa-check"></i> სწრაფი რეაგირება</li>
-                      <li><i class="fas fa-check"></i> უფასო კონსულტაციები</li>
-                      <li>
-                        <i class="fas fa-check"></i> განახლებები და ფიქსები
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="advantage-card">
-                  <div class="advantage-header">
-                    <div class="advantage-icon">
-                      <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>ბიზნესზე ორიენტირება</h3>
-                  </div>
-                  <div class="advantage-content">
-                    <p>
-                      მიზანი არ არის მხოლოდ ლამაზი საიტის შექმნა, არამედ თქვენი
-                      ბიზნესის ზრდის ხელშეწყობა.
-                    </p>
-                    <ul>
-                      <li>
-                        <i class="fas fa-check"></i> კონვერსიის ოპტიმიზაცია
-                      </li>
-                      <li>
-                        <i class="fas fa-check"></i> ანალიტიკის ინტეგრაცია
-                      </li>
-                      <li>
-                        <i class="fas fa-check"></i> მარკეტინგ ინსტრუმენტები
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="testimonials">
-                <h3>რას ამბობენ კლიენტები</h3>
-                <div class="testimonials-grid">
-                  <div class="testimonial-card">
-                    <div class="testimonial-content">
-                      <p>
-                        "N1kodevv-მ შექმნა ჩვენი კომპანიისთვის შესანიშნავი
-                        ვებსაიტი. პროფესიონალი, სწრაფი და ყოველთვის
-                        ხელმისაწვდომი!"
-                      </p>
-                    </div>
-                    <div class="testimonial-author">
-                      <div class="author-avatar">
-                        <i class="fas fa-user"></i>
-                      </div>
-                      <div class="author-info">
-                        <h4>გიორგი ბ.</h4>
-                        <span>ბიზნეს მფლობელი</span>
-                      </div>
-                    </div>
-                    <div class="testimonial-rating">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                    </div>
-                  </div>
-
-                  <div class="testimonial-card">
-                    <div class="testimonial-content">
-                      <p>
-                        "ონლაინ მაღაზია, რომელიც N1kodevv-მ შექმნა, გაზარდა
-                        ჩვენი გაყიდვები 300%-ით! რეკომენდაცია ყველას!"
-                      </p>
-                    </div>
-                    <div class="testimonial-author">
-                      <div class="author-avatar">
-                        <i class="fas fa-user"></i>
-                      </div>
-                      <div class="author-info">
-                        <h4>ველიკი კ.</h4>
-                        <span>ბიზნეს მფლობელი</span>
-                      </div>
-                    </div>
-                    <div class="testimonial-rating">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                    </div>
-                  </div>
-
-                  <div class="testimonial-card">
-                    <div class="testimonial-content">
-                      <p>
-                        "თანამშრომლობა N1kodevv-თან იყო ფანტასტიკური
-                        გამოცდილება. ყველაფერი დროულად და ხარისხიანად!"
-                      </p>
-                    </div>
-                    <div class="testimonial-author">
-                      <div class="author-avatar">
-                        <i class="fas fa-user"></i>
-                      </div>
-                      <div class="author-info">
-                        <h4>ხათუნა ქ.</h4>
-                        <span>ბიზნეს მფლობელი</span>
-                      </div>
-                    </div>
-                    <div class="testimonial-rating">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="why-choose-cta">
-                <div class="cta-content">
-                  <h3>მზად ხართ თქვენი ციფრული ტრანსფორმაციისთვის?</h3>
-                  <p>
-                    მოდით ერთად შევქმნათ რაღაც განსაკუთრებული, რაც გამოარჩევს
-                    თქვენს ბიზნესს კონკურენტებისგან!
-                  </p>
-                  <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                      <i class="fas fa-rocket"></i>
-                      დავიწყოთ პროექტი
-                    </a>
-                    <a href="#projects" class="btn btn-secondary">
-                      <i class="fas fa-eye"></i>
-                      ნახეთ პორტფოლიო
-                    </a>
-                  </div>
-                </div>
-                <div class="cta-stats">
-                  <div class="stat-item">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">კმაყოფილი კლიენტი</div>
-                  </div>
-                  <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">დროული მიწოდება</div>
-                  </div>
-                  <div class="stat-item">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">მხარდაჭერა</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Why Website Section -->
-        <section id="why-website" class="why-website">
-          <div class="container">
-            <h2 class="section-title">
-              რატომ არის მნიშვნელოვანი ვებსაიტი თქვენი ბიზნესისთვის
-            </h2>
-            <div class="why-website-content">
-              <div class="why-intro">
-                <p class="why-description">
-                  თანამედროვე ციფრულ ეპოქაში, ვებსაიტი არ არის უბრალოდ ლუქსი -
-                  ეს არის აუცილებლობა. ეს არის თქვენი ციფრული სახე, რომელიც
-                  მუშაობს 24/7 და აკავშირებს თქვენს ბიზნესს მსოფლიოსთან.
-                </p>
-              </div>
-
-              <div class="benefits-grid">
-                <div class="benefit-card">
-                  <div class="benefit-icon">
-                    <i class="fas fa-globe"></i>
-                  </div>
-                  <h3>გლობალური ხელმისაწვდომობა</h3>
-                  <p>
-                    თქვენი ბიზნესი ხელმისაწვდომი იქნება მსოფლიოს ნებისმიერი
-                    წერტილიდან, 24 საათის განმავლობაში, 7 დღე კვირაში.
-                  </p>
-                </div>
-
-                <div class="benefit-card">
-                  <div class="benefit-icon">
-                    <i class="fas fa-users"></i>
-                  </div>
-                  <h3>ღია კომუნიკაცია</h3>
-                  <p>
-                    ვებსაიტი საშუალებას გაძლევთ პირდაპირ დაუკავშირდეთ თქვენს
-                    მომხმარებლებს და მიიღოთ მათი უკუკავშირი.
-                  </p>
-                </div>
-
-                <div class="benefit-card">
-                  <div class="benefit-icon">
-                    <i class="fas fa-chart-line"></i>
-                  </div>
-                  <h3>ბიზნესის ზრდა</h3>
-                  <p>
-                    პროფესიონალური ვებსაიტი ზრდის თქვენი ბრენდის სანდოობას და
-                    ეხმარება ახალი კლიენტების მოზიდვაში.
-                  </p>
-                </div>
-
-                <div class="benefit-card">
-                  <div class="benefit-icon">
-                    <i class="fas fa-mobile-alt"></i>
-                  </div>
-                  <h3>მობილური ხელმისაწვდომობა</h3>
-                  <p>
-                    თანამედროვე რესპონსიული დიზაინით, თქვენი საიტი იდეალურად
-                    მუშაობს ყველა მოწყობილობაზე.
-                  </p>
-                </div>
-
-                <div class="benefit-card">
-                  <div class="benefit-icon">
-                    <i class="fas fa-search"></i>
-                  </div>
-                  <h3>SEO ოპტიმიზაცია</h3>
-                  <p>
-                    სწორად ოპტიმიზებული ვებსაიტი გაზრდის თქვენს ხილვადობას
-                    Google-ის და სხვა ძიების სისტემებში.
-                  </p>
-                </div>
-
-                <div class="benefit-card">
-                  <div class="benefit-icon">
-                    <i class="fas fa-dollar-sign"></i>
-                  </div>
-                  <h3>ეფექტური მარკეტინგი</h3>
-                  <p>
-                    ვებსაიტი არის ყველაზე ეფექტური და ეკონომიური მარკეტინგის
-                    ინსტრუმენტი გრძელვადიან პერსპექტივაში.
-                  </p>
-                </div>
-              </div>
-
-              <div class="cta-section">
-                <h3>მზად ხართ თქვენი ბიზნესის ციფრული ტრანსფორმაციისთვის?</h3>
-                <p>
-                  მოდით ერთად შევქმნათ ვებსაიტი, რომელიც გაზრდის თქვენი ბიზნესის
-                  პოტენციალს!
-                </p>
-                <a href="#contact" class="btn btn-primary">დაიწყეთ პროექტი</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Expertise Section -->
-        <section id="expertise" class="expertise">
-          <div class="container">
-            <h2 class="section-title">ჩემი ექსპერტიზა</h2>
-            <div class="expertise-content">
-              <div class="expertise-intro">
-                <p class="expertise-description">
-                  წლების განმავლობაში დაგროვილი გამოცდილება და ღრმა ცოდნა
-                  სხვადასხვა ტექნოლოგიურ სფეროში
-                </p>
-              </div>
-
-              <div class="expertise-areas">
-                <div class="expertise-card">
-                  <div class="expertise-header">
-                    <div class="expertise-icon">
-                      <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>ფრონტენდ დეველოპმენტი</h3>
-                  </div>
-                  <div class="expertise-details">
-                    <p>
-                      თანამედროვე, ინტერაქტიული და მომხმარებელზე ორიენტირებული
-                      ვებ ინტერფეისების შექმნა
-                    </p>
-                    <div class="expertise-skills">
-                      <span class="expertise-skill">React.js</span>
-                      <span class="expertise-skill">Vue.js</span>
-                      <span class="expertise-skill">JavaScript ES6+</span>
-                      <span class="expertise-skill">TypeScript</span>
-                      <span class="expertise-skill">HTML5/CSS3</span>
-                      <span class="expertise-skill">Tailwind CSS</span>
-                      <span class="expertise-skill">SASS/SCSS</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="expertise-card">
-                  <div class="expertise-header">
-                    <div class="expertise-icon">
-                      <i class="fas fa-server"></i>
-                    </div>
-                    <h3>ბექენდ დეველოპმენტი</h3>
-                  </div>
-                  <div class="expertise-details">
-                    <p>
-                      მასშტაბირებადი და საიმედო სერვერული აპლიკაციების და
-                      API-ების განვითარება
-                    </p>
-                    <div class="expertise-skills">
-                      <span class="expertise-skill">Node.js</span>
-                      <span class="expertise-skill">Express.js</span>
-                      <span class="expertise-skill">Python</span>
-                      <span class="expertise-skill">Django</span>
-                      <span class="expertise-skill">REST APIs</span>
-                      <span class="expertise-skill">GraphQL</span>
-                      <span class="expertise-skill">JWT Authentication</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="expertise-card">
-                  <div class="expertise-header">
-                    <div class="expertise-icon">
-                      <i class="fas fa-database"></i>
-                    </div>
-                    <h3>მონაცემთა ბაზები</h3>
-                  </div>
-                  <div class="expertise-details">
-                    <p>
-                      ეფექტური მონაცემთა ბაზების დიზაინი, ოპტიმიზაცია და მართვა
-                    </p>
-                    <div class="expertise-skills">
-                      <span class="expertise-skill">PostgreSQL</span>
-                      <span class="expertise-skill">MongoDB</span>
-                      <span class="expertise-skill">MySQL</span>
-                      <span class="expertise-skill">Redis</span>
-                      <span class="expertise-skill">Database Design</span>
-                      <span class="expertise-skill">Query Optimization</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="expertise-card">
-                  <div class="expertise-header">
-                    <div class="expertise-icon">
-                      <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3>DevOps და Cloud</h3>
-                  </div>
-                  <div class="expertise-details">
-                    <p>
-                      აპლიკაციების deployment, მონიტორინგი და cloud
-                      ინფრასტრუქტურის მართვა
-                    </p>
-                    <div class="expertise-skills">
-                      <span class="expertise-skill">Docker</span>
-                      <span class="expertise-skill">AWS</span>
-                      <span class="expertise-skill">Vercel</span>
-                      <span class="expertise-skill">Netlify</span>
-                      <span class="expertise-skill">CI/CD</span>
-                      <span class="expertise-skill">Git/GitHub</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="expertise-card">
-                  <div class="expertise-header">
-                    <div class="expertise-icon">
-                      <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>მობილური დეველოპმენტი</h3>
-                  </div>
-                  <div class="expertise-details">
-                    <p>
-                      რესპონსიული ვებ აპლიკაციები და PWA-ები მობილური
-                      გამოცდილებისთვის
-                    </p>
-                    <div class="expertise-skills">
-                      <span class="expertise-skill">Responsive Design</span>
-                      <span class="expertise-skill">PWA</span>
-                      <span class="expertise-skill">Service Workers</span>
-                      <span class="expertise-skill">Mobile-First</span>
-                      <span class="expertise-skill">Touch Interactions</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="expertise-card">
-                  <div class="expertise-header">
-                    <div class="expertise-icon">
-                      <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3>UI/UX დიზაინი</h3>
-                  </div>
-                  <div class="expertise-details">
-                    <p>
-                      მომხმარებელზე ორიენტირებული ინტერფეისების დიზაინი და
-                      პროტოტიპირება
-                    </p>
-                    <div class="expertise-skills">
-                      <span class="expertise-skill">Figma</span>
-                      <span class="expertise-skill">Adobe XD</span>
-                      <span class="expertise-skill">Prototyping</span>
-                      <span class="expertise-skill">User Research</span>
-                      <span class="expertise-skill">Wireframing</span>
-                      <span class="expertise-skill">Design Systems</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="expertise-stats">
-                <div class="stat-item">
-                  <div class="stat-number" data-count="50">50+</div>
-                  <div class="stat-label">დასრულებული პროექტი</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number" data-count="3">3+</div>
-                  <div class="stat-label">წლიანი გამოცდილება</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number" data-count="15">15+</div>
-                  <div class="stat-label">ტექნოლოგია</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number" data-count="100">100%</div>
-                  <div class="stat-label">კმაყოფილი კლიენტები</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-          <div class="container">
-            <h2 class="section-title">ყველა პროექტი</h2>
-            <div class="projects-filter">
-              <button class="filter-btn active" data-filter="all">ყველა</button>
-              <button class="filter-btn" data-filter="web">
-                ვებ აპლიკაციები
-              </button>
-              <button class="filter-btn" data-filter="ecommerce">
-                ელექტრონული კომერცია
-              </button>
-              <button class="filter-btn" data-filter="business">
-                ბიზნეს საიტები
-              </button>
-              <button class="filter-btn" data-filter="portfolio">
-                პორტფოლიო
-              </button>
-            </div>
-
-            <div class="projects-grid">
-              <div class="project-card" data-category="business">
-                <div class="project-image">
-                  <div class="project-placeholder">🏭</div>
-                </div>
-                <div class="project-content">
-                  <h3 class="project-title">KutStone</h3>
-                  <p class="project-description">
-                    სრულფასოვანი ონლაინ მაღაზია მომხმარებელთა ავთენტიფიკაციით,
-                    გადახდის ინტეგრაციით და ადმინისტრატორის პანელით. აშენებულია
-                    HTML, Node.js, CSS და JavaScript-ის გამოყენებით.
-                  </p>
-                  <div class="project-tech">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">JavaScript</span>
-                  </div>
-                  <div class="project-links">
-                    <a
-                      href="https://n1k0devv.github.io/kutaisisqvisqarxana/"
-                      class="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                    <a
-                      href="https://github.com/N1kodevv/kutaisisqvisqarxana"
-                      class="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i class="fab fa-github"></i> Code
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="project-card" data-category="business">
-                <div class="project-image">
-                  <div class="project-placeholder">
-                    <i class="fas fa-hotel"></i>
-                  </div>
-                </div>
-                <div class="project-content">
-                  <h3 class="project-title">Kuresta</h3>
-                  <p class="project-description">
-                    თანამედროვე სასტუმროს საიტი, რომელიც ოპტიმიზირებულია ყველა
-                    მოწყობილობაზე. სტუმრებს შეუძლიათ საკომფორტოდ ოთახების
-                    დაჯავშნა და შეტყობინებების გაგზავნა პირდაპირ საიტის
-                    მეშვეობით.
-                  </p>
-                  <div class="project-tech">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">Email.js</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">JavaScript</span>
-                  </div>
-                  <div class="project-links">
-                    <a
-                      href="https://n1k0devv.github.io/sastumro/"
-                      class="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                    <a
-                      href="https://github.com/N1kodevv/sastumro"
-                      class="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i class="fab fa-github"></i> Code
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="project-card" data-category="business">
-                <div class="project-image">
-                  <div class="project-placeholder">
-                    <i class="fa-solid fa-tooth"></i>
-                  </div>
-                </div>
-                <div class="project-content">
-                  <h3 class="project-title">Dental Express</h3>
-                  <p class="project-description">
-                    ვებსაიტი სუფთა, კარგად ორგანიზებული და მარტივად სამართავია.
-                    სანდოობას ქმნის დეტალური სერვისები, გამჭვირვალე ფასები და
-                    პროფესიონალი გუნდი. თანამედროვე დიზაინი, ხარისხიანი ვიზუალი
-                    და მარტივი დაჯავშნის სისტემა მას მიმზიდველს ხდის.
-                  </p>
-                  <div class="project-tech">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">Email.js</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">JavaScript</span>
-                  </div>
-                  <div class="project-links">
-                    <a
-                      href="https://n1k0devv.github.io/dentisit/"
-                      class="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                    <a
-                      href="https://github.com/N1kodevv/dentisit"
-                      class="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i class="fab fa-github"></i> Code
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="project-card" data-category="ecommerce">
-                <div class="project-image">
-                  <div class="project-placeholder">
-                    <i class="fa-solid fa-computer"></i>
-                  </div>
-                </div>
-                <div class="project-content">
-                  <h3 class="project-title">techstore</h3>
-                  <p class="project-description">
-                    ვებსაიტს აქვს სუფთა, თანამედროვე ინტერფეისი მარტივი
-                    ნავიგაციით. მონიშნულია ინტერაქტიული ფუნქციები, როგორიცაა
-                    კომპიუტერის დამწყები, პროდუქტის ფილტრები და დეტალური
-                    სპეციფიკაციები. მომხმარებლებს შეუძლიათ სწრაფად დაუკავშირდნენ
-                    მხარდაჭერას, ნახონ აქციები და მარტივად შეასრულონ შეძენა
-                    რეაგირებადი დიზაინის საშუალებით.
-                  </p>
-                  <div class="project-tech">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">Email.js</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">JavaScript</span>
-                  </div>
-                  <div class="project-links">
-                    <a
-                      href="https://n1k0devv.github.io/pcshop/"
-                      class="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                    <a
-                      href="https://n1k0devv.github.io/pcshop/"
-                      class="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i class="fab fa-github"></i> Code
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="project-card" data-category="portfolio">
-                <div class="project-image">
-                  <div class="project-placeholder">
-                    <i class="fas fa-user"></i>
-                  </div>
-                </div>
-                <div class="project-content">
-                  <h3 class="project-title">პირადი პორტფოლიო</h3>
-                  <p class="project-description">
-                    თანამედროვე, ინტერაქტიული პორტფოლიო საიტი გლუვი ანიმაციებით,
-                    პარალაქს ეფექტებით და სრული რესპონსიული დიზაინით.
-                  </p>
-                  <div class="project-tech">
-                    <span class="tech-tag">HTML5</span>
-                    <span class="tech-tag">CSS3</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">GSAP</span>
-                  </div>
-                  <div class="project-links">
-                    <a
-                      href="https://n1kodevv.github.io/portfolio/"
-                      class="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                    <a
-                      href="https://github.com/N1kodevv/portfolio"
-                      class="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i class="fab fa-github"></i> Code
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="project-card" data-category="web">
-                <div class="project-image">
-                  <div class="project-placeholder">
-                    <i class="fa-solid fa-gamepad"></i>
-                  </div>
-                </div>
-                <div class="project-content">
-                  <h3 class="project-title">Tamashix</h3>
-                  <p class="project-description">
-                    სუფთა და მყისიერად გასაგებ ინტერფეისში. აქ ყოველი გვერდი
-                    დახვეწილი, ფუნქციონალური და ვიზუალურად მიმზიდველია. მარტივად
-                    სამართავი, სწრაფი და ეფექტური – იდეალურია როგორც
-                    კომპიუტერზე, ისე მობილურზე. სილამაზე და სიდიადე ერთმანეთში
-                    ნაზად ერწყმის, რათა ყოველი სტუმარი დადებით ემოციებს
-                    მიიღებდეს. Tamashix–ში ყველაფერი შექმნილია სიამოვნებისა და
-                    კომფორტისთვის.
-                  </p>
-                  <div class="project-tech">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">Ract</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">TypeScript</span>
-                  </div>
-                  <div class="project-links">
-                    <a
-                      href="https://n1k0devv.github.io/tamashi/"
-                      class="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                    <a
-                      href="https://n1k0devv.github.io/tamashi/"
-                      class="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i class="fab fa-github"></i> Code
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="projects-cta">
-              <h3>გაქვთ იდეა პროექტისთვის?</h3>
-              <p>მოდით ერთად განვახორციელოთ თქვენი ვიზია!</p>
-              <a href="#contact" class="btn btn-primary">დაიწყეთ პროექტი</a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-          <div class="container">
-            <h2 class="section-title">დაგიკავშირდით</h2>
-            <div class="contact-content">
-              <div class="contact-info">
-                <h3>მოდით ვიმუშაოთ ერთად</h3>
-                <p>
-                  ყოველ ახალ გამოწვევას და საინტერესო პროექტს ღიად ვეგებები. თუ
-                  გაქვთ შეკითხვა, თანამშრომლობის იდეა ან გსურთ პროფესიონალური
-                  კონტაქტი — სიამოვნებით დაგეხმარებით. დამიკავშირდით თავისუფლად!
-                </p>
-                <div class="contact-details">
-                  <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span
-                      ><a href="mailto:contact@n1kodevv.com"
-                        >n1kodevv1@gmail.com</a
-                      ></span
-                    >
-                  </div>
-                  <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>ხელმისაწვდომი ვარ დისტანციური მუშაობისთვის</span>
-                  </div>
-                </div>
-                <div class="social-links-contact">
-                  <a
-                    href="https://github.com/N1kodevv"
-                    target="_blank"
-                    class="social-link"
-                    aria-label="GitHub"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fab fa-github"></i>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/nikoloz-bregadze-892338388/"
-                    target="_blank"
-                    class="social-link"
-                    aria-label="LinkedIn"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fab fa-linkedin"></i>
-                  </a>
-                  <a
-                    href="https://twitter.com/N1kodevv"
-                    target="_blank"
-                    class="social-link"
-                    aria-label="Twitter"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                  <a
-                    href="https://instagram.com/N1kodevv"
-                    target="_blank"
-                    class="social-link"
-                    aria-label="Instagram"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                </div>
-              </div>
-              <form class="contact-form" id="contact-form" novalidate>
-                <div class="form-group">
-                  <label for="name">სახელი</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    autocomplete="name"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="email">ელ. ფოსტა</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    autocomplete="email"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="subject">თემა</label>
-                  <input type="text" id="subject" name="subject" required />
-                </div>
-                <div class="form-group">
-                  <label for="message">შეტყობინება</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    required
-                  ></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" id="submit-btn">
-                  <span class="btn-text">გაგზავნა</span>
-                  <span class="btn-loading" style="display: none">
-                    <i class="fas fa-spinner fa-spin"></i> იგზავნება...
-                  </span>
-                </button>
-              </form>
-            </div>
-          </div>
-        </section>
-
-        <!-- Enhanced Footer -->
-        <footer class="footer">
-          <div class="footer-content">
-            <div class="footer-main">
-              <div class="footer-brand">
-                <div class="footer-logo">
-                  <img
-                    src="images/Generated_Image_October_03__2025_-_7_24PM-removebg-preview.png"
-                    alt="N1kodevv Logo"
-                    onerror="this.style.display='none'"
-                  />
-                  <h3>N1kodevv</h3>
-                </div>
-                <p class="footer-description">
-                  ვქმნი თანამედროვე, ინოვაციურ ვებ გამოცდილებებს, რომლებიც
-                  აერთიანებს დიზაინს, ფუნქციონალურობას და წარმადობას. ყოველი
-                  პროექტი არის უნიკალური ისტორია ციფრულ სამყაროში.
-                </p>
-                <div class="footer-social">
-                  <a
-                    href="https://github.com/N1kodevv"
-                    target="_blank"
-                    class="footer-social-link"
-                    aria-label="GitHub"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fab fa-github"></i>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/nikoloz-bregadze-892338388/"
-                    target="_blank"
-                    class="footer-social-link"
-                    aria-label="LinkedIn"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fab fa-linkedin"></i>
-                  </a>
-                  <a
-                    href="https://twitter.com/N1kodevv"
-                    target="_blank"
-                    class="footer-social-link"
-                    aria-label="Twitter"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                  <a
-                    href="https://instagram.com/N1kodevv"
-                    target="_blank"
-                    class="footer-social-link"
-                    aria-label="Instagram"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                </div>
-              </div>
-
-              <div class="footer-section">
-                <h4>სერვისები</h4>
-                <ul class="footer-links">
-                  <li><a href="#expertise">ვებ დეველოპმენტი</a></li>
-                  <li><a href="#expertise">UI/UX დიზაინი</a></li>
-                  <li><a href="#expertise">მობილური აპები</a></li>
-                  <li><a href="#expertise">ელექტრონული კომერცია</a></li>
-                  <li><a href="#expertise">SEO ოპტიმიზაცია</a></li>
-                </ul>
-              </div>
-
-              <div class="footer-section">
-                <h4>რესურსები</h4>
-                <ul class="footer-links">
-                  <li><a href="#projects">პორტფოლიო</a></li>
-                  <li><a href="#strategy">სტრატეგია</a></li>
-                  <li><a href="#about">ჩემ შესახებ</a></li>
-                  <li><a href="#contact">კონტაქტი</a></li>
-                  <li><a href="#expertise">ექსპერტიზა</a></li>
-                </ul>
-              </div>
-
-              <div class="footer-section">
-                <h4>კონტაქტი</h4>
-                <ul class="footer-links">
-                  <li>
-                    <a href="mailto:contact@n1kodevv.com"
-                      >contact@n1kodevv.com</a
-                    >
-                  </li>
-                  <li><a href="#contact">პროექტის განხილვა</a></li>
-                  <li><a href="#contact">უფასო კონსულტაცია</a></li>
-                  <li><a href="#contact">ტექნიკური მხარდაჭერა</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="footer-bottom">
-              <p>
-                &copy; 2025 N1kodevv. ყველა უფლება დაცულია.
-              </p>
-            </div>
-          </div>
-        </footer>
-
-        <script>
-          // Initialize GSAP ScrollSmoother
-          if (typeof gsap !== "undefined" && gsap.registerPlugin) {
-            gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
-            // Create ScrollSmoother only if supported
-            try {
-              ScrollSmoother.create({
-                smooth: 1,
-                effects: true,
-                smoothTouch: 0.1,
-              });
-            } catch (error) {
-              console.warn("ScrollSmoother not supported on this device");
-            }
-          }
-        </script>
+        <div class="footer-bottom">
+          <p>&copy; 2025 N1kodevv. ყველა უფლება დაცულია.</p>
+        </div>
       </div>
-    </div>
+    </footer>
+
     <script type="module" src="./script.js"></script>
   </body>
 </html>
