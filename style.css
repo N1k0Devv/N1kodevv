@@ -4375,6 +4375,10 @@ body {
     transparent);
   animation: bottomGlow 2s ease-in-out infinite;
 }
+.contact-item a{
+  color: inherit;
+  text-decoration: underline;
+ }
 
 @keyframes bottomGlow {
   0%, 100% { width: 100px; opacity: 0.3; }
@@ -4559,8 +4563,12 @@ body {
   .cta-content h3 {
     font-size: 1.4rem;
   }
-
-
+  .hero-badge{
+    margin-top: 0px;
+  }
+  .marker-number{
+    left: 10px;
+  }
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
   }
