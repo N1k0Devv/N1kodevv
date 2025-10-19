@@ -426,13 +426,14 @@ body {
 .hero-badge {
   display: inline-flex;
   align-items: center;
+  margin-top: 100px;
   gap: 0.5rem;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   padding: 8px 16px;
   border-radius: 25px;
   font-size: 0.9rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -891,6 +892,7 @@ body {
 .social-links {
   display: flex;
   gap: 1rem;
+  padding-bottom: 20px;
 }
 
 .social-link {
@@ -4534,6 +4536,30 @@ body {
     border-radius: 15px;
     font-size: 1.1rem;
   }
+  .social-link{
+    margin-bottom: 20px;
+  }
+  .hero-scroll-indicator{
+    display: none;
+  }
+  .cta-content{
+    align-items: center;
+  }
+  .strategy-cta {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .cta-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta-content h3 {
+    font-size: 1.4rem;
+  }
+
 
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
@@ -4555,6 +4581,7 @@ body {
 
   .hero-visual {
     order: -1;
+    margin-top: 100px;
   }
 
   .hero-title {
