@@ -101,7 +101,7 @@ function addCriticalCSS() {
       transform: translate3d(0, 0, 0);
     }
     
-    /* Navigation Optimizations - removed conflicting contain/will-change properties */
+    /* Navigation Optimizations */
     .nav-menu, .hamburger {
       backface-visibility: hidden;
     }
@@ -165,12 +165,10 @@ function initializeNavigation() {
     link.addEventListener("click", () => closeMenu());
   });
 
-  // Close menu when clicking outside (hits the backdrop or empty space)
+  // Close menu when clicking outside
   document.addEventListener("click", (e) => {
     if (isMenuOpen) {
-      // Check if click is OUTSIDE the menu and NOT on the hamburger button
       if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-        console.log("Clicked backdrop/outside, closing menu");
         closeMenu();
       }
     }
@@ -271,7 +269,7 @@ function initializeScrollAnimations() {
 
   document
     .querySelectorAll(
-      ".project-card, .about-card, .contact-info, .contact-form"
+      ".project-card, .about-card, .contact-info, .contact-form, .expertise-card"
     )
     .forEach((el) => {
       el.classList.add("fade-in");
@@ -314,6 +312,7 @@ function animateCounter(el, target) {
 function initializeInteractiveEffects() {
   const typingEl = document.querySelector(".typing-text");
   if (typingEl) {
+    // განახლებული ტექსტი, რომელიც მოიცავს ყველა სერვისს
     const text = "ვებ დეველოპერი და გრაფიკული დიზაინერი";
     const cursor = typingEl.querySelector(".cursor");
     let i = 0;
@@ -361,7 +360,7 @@ function initializeProjectFilters() {
 function initializeContactForm() {
   const form = document.getElementById("contact-form");
   if (!form) return;
-  // Simple toast/banner helper (appended to body so it doesn't shift layout)
+  
   function showBanner(message, type = "success", timeout = 4200) {
     const existing = document.body.querySelector(".success-banner");
     if (existing) existing.remove();
@@ -385,7 +384,6 @@ function initializeContactForm() {
     banner.appendChild(msg);
     document.body.appendChild(banner);
 
-    // trigger show animation
     requestAnimationFrame(() => banner.classList.add("show"));
 
     if (timeout > 0)
@@ -395,7 +393,6 @@ function initializeContactForm() {
       }, timeout);
   }
 
-  // Inline error helpers for contact form
   function clearInlineError(el) {
     if (!el) return;
     const wrapper = el.closest(".form-group") || el.parentElement;
@@ -430,7 +427,7 @@ function initializeContactForm() {
       clearInlineError(el);
       const val = (el.value || "").trim();
       if (!val) {
-        showInlineError(el, "გთხოვთ შეავსოთ ეს поле.");
+        showInlineError(el, "გთხოვთ შეავსოთ ეს ველი.");
         valid = false;
       }
     });
@@ -438,18 +435,16 @@ function initializeContactForm() {
     if (email && email.value) {
       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!re.test(email.value.trim())) {
-        showInlineError(email, "გთხოვთ მიუთითოთ მართლი ელ. ფოსტა.");
+        showInlineError(email, "გთხოვთ მიუთითოთ მართებული ელ. ფოსტა.");
         valid = false;
       }
     }
 
-    // focus first invalid
     const firstInvalid = form.querySelector('[aria-invalid="true"]');
     if (firstInvalid) firstInvalid.focus();
     return valid;
   }
 
-  // Clear inline errors while typing
   form.querySelectorAll("input, textarea").forEach((el) => {
     el.addEventListener("input", () => clearInlineError(el));
   });
@@ -459,13 +454,10 @@ function initializeContactForm() {
     const btn = form.querySelector("#submit-btn");
     if (btn) btn.disabled = true;
 
-    // Small UX: animate button to indicate sending
     if (btn) btn.classList.add("sending");
 
-    // Validate required fields before attempting to send
     const isValid = validateContactForm();
     if (!isValid) {
-      // stop and restore button
       if (btn) {
         btn.disabled = false;
         btn.classList.remove("sending");
@@ -473,7 +465,6 @@ function initializeContactForm() {
       return;
     }
 
-    // Check config
     if (
       !window.EMAILJS_CONFIG ||
       (window.EMAILJS_CONFIG.PUBLIC_KEY &&
@@ -493,7 +484,6 @@ function initializeContactForm() {
         window.EMAILJS_CONFIG.TEMPLATE_ID,
         form
       );
-      // success animation: toast + button pulse
       showBanner("წერილი წარმატებით გაიგზავნა!", "success");
       if (btn) {
         btn.classList.remove("sending");
