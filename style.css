@@ -131,19 +131,16 @@ body.menu-open::after {
 }
 
 .nav-logo img {
-  width: 40px;
-  height: 40px;
+  width: 70px;
+  height: 70px;
   object-fit: cover;
-  border-radius: 8px;
   display: block;
   flex-shrink: 0;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
 }
 
 .nav-logo:hover img {
   transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
 .brand-text {
@@ -2448,10 +2445,6 @@ body.menu-open::after {
   margin-bottom: 1rem;
 }
 
-.contact-info h3:hover {
-  color: #fbbf24;
-}
-
 .contact-info p {
   margin-bottom: 2rem;
   opacity: 0.8;
@@ -2665,9 +2658,8 @@ body.menu-open::after {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 0.2rem;
   padding-bottom: 3rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
 }
 
@@ -2681,6 +2673,7 @@ body.menu-open::after {
 .footer-logo img {
   width: 50px;
   height: 50px;
+  object-fit: cover;
   border-radius: 12px;
 }
 
