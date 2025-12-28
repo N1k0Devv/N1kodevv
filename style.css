@@ -160,16 +160,7 @@ body.menu-open::after {
   position: relative;
 }
 
-.brand-text a::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
-  transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
+
 
 .brand-text a:hover {
   color: #1d4ed8;
@@ -3365,17 +3356,15 @@ body.menu-open::after {
 
 /* Style for the "N1" part */
 .n1-accent {
-  color: #764ba2; /* Using your purple brand color */
+  color: #E8A221; /* Using your purple brand color */
   /* Option 2: Use Gold -> color: #fbbf24; */
 }
 
 /* Optional: Add a hover effect for the N1 accent */
-.brand-text a:hover .n1-accent {
-  color: #fbbf24; /* Turns gold on hover */
-}
+
 /* Accent color for N1 branding */
 .n1-accent {
-  color: #764ba2; /* Your brand purple */
+  color: #E8A221; /* Your brand purple */
   font-family: 'Montserrat', sans-serif; /* Optional: matches your logo font */
   font-weight: 800; /* Optional: makes it extra bold */
 }
