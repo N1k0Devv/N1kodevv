@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap');
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -49,7 +50,8 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  /* Added 'Noto Sans Georgian' before sans-serif */
+  font-family: "Inter", "Noto Sans Georgian", sans-serif;
   line-height: 1.6;
   color: #333;
   background-color: #ffffff;
@@ -3156,5 +3158,440 @@ body.menu-open::after {
 
   .testimonials-grid {
     grid-template-columns: 1fr;
+  }
+}
+.plans {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+  padding: 1rem;
+}
+
+.pricing-card {
+  background: white;
+  border-radius: 25px;
+  padding: 3rem 2rem;
+  position: relative;
+  border: 1px solid #e5e7eb;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px rgba(102, 126, 234, 0.15);
+  border-color: #667eea;
+}
+
+/* Popular Card Highlight */
+.pricing-card.popular {
+  border: 2px solid #667eea;
+  transform: scale(1.05);
+  z-index: 2;
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+}
+
+.pricing-card.popular:hover {
+  transform: scale(1.05) translateY(-15px);
+  box-shadow: 0 30px 60px rgba(102, 126, 234, 0.25);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #1f2937;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.plan-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 1.8rem;
+  transition: all 0.4s ease;
+}
+
+.pricing-card:hover .plan-icon {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.plan-header h3 {
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #2563eb;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+}
+
+.price span {
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.plan-desc {
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.plan-features {
+  list-style: none;
+  margin-bottom: 2.5rem;
+  flex-grow: 1; /* Pushes button to bottom */
+}
+
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 1rem;
+  color: #374151;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.plan-features li i {
+  color: #10b981; /* Green checkmark */
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.plan-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Responsiveness for Plans */
+@media (max-width: 768px) {
+  .pricing-card.popular {
+    transform: scale(1);
+    margin: 1rem 0;
+  }
+  
+  .pricing-card.popular:hover {
+    transform: translateY(-10px);
+  }
+}
+/* =========================================
+   FIX: PLANS BUTTON VISIBILITY
+   ========================================= */
+/* Override btn-secondary specifically inside pricing cards to be visible on white */
+.pricing-card .btn-secondary {
+  background: transparent;
+  color: #667eea; /* Purple/Blue color matching your theme */
+  border: 2px solid #667eea;
+  box-shadow: none;
+}
+
+/* Hover effect for these buttons */
+.pricing-card .btn-secondary:hover {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* =========================================
+   FIX: LOGO TEXT ALIGNMENT
+   ========================================= */
+/* Update the .nav-logo rule to reduce the gap between icon and text */
+.nav-logo {
+  gap: 0.rem; /* Reduced from 1rem to pull text closer to the left */
+}
+
+/* Optional: Fine-tune the text container if needed */
+.brand-text {
+  margin-left: -15px;
+  margin-right: 10px; /* Pulls it slightly more left if needed */
+}
+
+/* =========================================
+   BRANDING UPDATE: FONT & COLOR
+   ========================================= */
+
+/* Update Brand Font to Montserrat Bold */
+.brand-text a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800; /* Extra Bold */
+  letter-spacing: -0.5px; /* Slight tightening for a modern look */
+}
+
+/* Style for the "N1" part */
+.n1-accent {
+  color: #764ba2; /* Using your purple brand color */
+  /* Option 2: Use Gold -> color: #fbbf24; */
+}
+
+/* Optional: Add a hover effect for the N1 accent */
+.brand-text a:hover .n1-accent {
+  color: #fbbf24; /* Turns gold on hover */
+}
+/* Accent color for N1 branding */
+.n1-accent {
+  color: #764ba2; /* Your brand purple */
+  font-family: 'Montserrat', sans-serif; /* Optional: matches your logo font */
+  font-weight: 800; /* Optional: makes it extra bold */
+}
+/* =========================================
+   HERO & FOOTER BRANDING UPDATES
+   ========================================= */
+
+/* 1. HERO SECTION ADJUSTMENTS */
+/* Ensure the "kodev" part (highlight) uses the new Brand Font */
+.hero .highlight {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+
+/* Force N1 to be WHITE in the Hero section (Purple on Purple would be invisible) */
+.hero .n1-accent {
+  color: #ffffff !important;
+}
+
+
+/* 2. FOOTER SECTION ADJUSTMENTS */
+/* Update Footer Title Font */
+.footer-logo h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* Fix N1 Color in Footer */
+/* The footer h3 uses a gradient text fill, which makes child elements transparent. 
+   We must force the N1 accent to have a solid purple fill. */
+.footer-logo .n1-accent {
+  -webkit-text-fill-color: #764ba2; /* Force Purple */
+  color: #764ba2;
+}
+/* =========================================
+   PRICING / PLANS IMPROVEMENTS
+   ========================================= */
+
+/* ბარათების ზოგადი სტილი და ჩრდილები */
+.pricing-card {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06); /* უფრო რბილი ჩრდილი */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(102, 126, 234, 0.15);
+}
+
+/* პოპულარული ბარათის გამოყოფა */
+.pricing-card.popular {
+  border: 2px solid #667eea; /* თქვენი ბრენდის ფერი */
+  position: relative;
+  z-index: 1;
+}
+
+.popular-badge {
+  background: linear-gradient(135deg, #667eea, #764ba2); /* ბრენდის გრადიენტი */
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  top: -16px;
+}
+
+/* სათაურის და ფასის სტილი */
+.plan-header h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  color: #1f2937; /* მუქი ფერი უკეთესი კითხვისთვის */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+
+.price span {
+  color: #6b7280;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* სიის ელემენტების დაშორება */
+.plan-features li {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+}
+
+/* Checkmark-ის ფერი */
+.plan-features li i {
+  color: #10b981; /* მწვანე ფერი */
+  margin-right: 12px;
+  font-size: 1.1rem;
+}
+
+/* ღილაკების განახლება (წინა კოდიდან) */
+.pricing-card .btn-secondary {
+  color: #667eea;
+  border-color: #667eea;
+}
+
+.pricing-card .btn-secondary:hover {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}/* =========================================
+   PRICING UPDATE: LIMITED OFFER STYLES
+   ========================================= */
+
+/* ძველი ფასის გადახაზვა */
+.old-price {
+  text-decoration: line-through;
+  color: #9ca3af; /* ნაცრისფერი */
+  font-size: 1.2rem;
+  margin-right: 8px;
+  font-weight: 400;
+}
+
+/* "ყველა სტარტაპ ფუნქცია" - გამორჩეული სტილი */
+.feature-highlight {
+  color: #4f46e5 !important; /* ბრენდის ფერი */
+  background: rgba(79, 70, 229, 0.05);
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.feature-highlight i {
+  color: #4f46e5 !important;
+}
+
+/* ბიზნეს ბარათის აქცენტირება */
+.pricing-card.popular {
+  border: 2px solid #4f46e5;
+  transform: scale(1.02); /* ოდნავ გადიდებული */
+  box-shadow: 0 25px 50px rgba(79, 70, 229, 0.15);
+}
+
+.pricing-card.popular:hover {
+  transform: scale(1.02) translateY(-10px);
+}
+
+/* ბეჯის განახლება */
+.popular-badge {
+  background: linear-gradient(135deg, #ef4444, #f87171); /* წითელი ტონები აქცენტისთვის */
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+/* =========================================
+   FIX: HORIZONTAL ALIGNMENT FOR 4 PLANS
+   ========================================= */
+
+.pricing-grid {
+  display: grid;
+  /* Reduced min-width from 320px to 240px so 4 items can fit */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem; /* Reduced gap from 2.5rem to save space */
+  margin-top: 3rem;
+  padding: 1rem 0; /* Removed side padding to maximize width */
+  align-items: stretch; /* Ensures all cards are same height */
+}
+
+/* Force exactly 4 columns on Laptop/Desktop screens */
+@media (min-width: 1100px) {
+  .pricing-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Optional: Adjust card padding slightly for compact layout */
+.pricing-card {
+  padding: 2.5rem 1.5rem; /* Slightly less side padding */
+} 
+/* =========================================
+   FIX: WIDER LAYOUT FOR PLANS
+   ========================================= */
+
+/* ვზრდით კონტეინერის ზომას მხოლოდ Plans სექციისთვის */
+.plans .container {
+  max-width: 1600px; /* სტანდარტული 1200px-ის ნაცვლად */
+  width: 95%; /* ეკრანის თითქმის სრული სიგანე */
+  padding: 0 20px;
+}
+
+/* ბარათების შიდა დაშორების შემცირება მეტი სივრცისთვის */
+.pricing-card {
+  padding: 2.5rem 1.5rem; /* გვერდებიდან დაშორება შემცირდა */
+}
+
+/* ტექსტის ზომის მცირე კორექცია, რომ არ გადავიდეს ახალ ხაზზე */
+.plan-features li {
+  font-size: 0.9rem;
+  white-space: nowrap; /* ცდილობს ტექსტი არ გაწყვიტოს */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 4 სვეტიანი განლაგება მხოლოდ დიდ ეკრანებზე */
+@media (min-width: 1280px) {
+  .pricing-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* მცირე ლეპტოპებზე (1024px-1280px) გადავიდეს 2 სვეტზე უკეთესი კითხვისთვის */
+@media (max-width: 1279px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2-2 განლაგება */
   }
 }

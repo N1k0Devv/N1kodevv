@@ -267,9 +267,10 @@ function initializeScrollAnimations() {
     { threshold: 0, rootMargin: "0px 0px -20px 0px" }
   );
 
+  // UPDATED: Added .pricing-card to the list of elements to animate
   document
     .querySelectorAll(
-      ".project-card, .about-card, .contact-info, .contact-form, .expertise-card"
+      ".project-card, .about-card, .contact-info, .contact-form, .expertise-card, .pricing-card"
     )
     .forEach((el) => {
       el.classList.add("fade-in");
