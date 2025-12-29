@@ -3584,3 +3584,257 @@ body.menu-open::after {
     grid-template-columns: repeat(2, 1fr); /* 2-2 განლაგება */
   }
 }
+/* =========================================
+   RESPONSIVE PLANS SECTION (FINAL FIX)
+   ========================================= */
+
+/* 1. Container & Section Base */
+.plans {
+  padding: 80px 0; /* Adjusted padding */
+}
+
+.plans .container {
+  max-width: 1400px; /* Optimal width for 4 cards */
+  width: 92%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* 2. Grid System - Default (Desktop) */
+.pricing-grid {
+  display: grid;
+  /* Force 4 columns by default on large screens */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 1rem 0;
+  align-items: stretch; /* Ensures all cards are equal height */
+}
+
+/* 3. Card Base Styles */
+.pricing-card {
+  height: 100%; /* Fill the grid cell height */
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem 1.5rem;
+  transition: all 0.3s ease;
+  width: 100%; /* Ensure it fills the column */
+}
+
+.plan-features {
+  flex-grow: 1; /* Pushes the button to the bottom */
+  margin-bottom: 2rem;
+}
+
+/* 4. Responsive Breakpoints */
+
+/* Laptop & Tablet Landscape (max-width: 1280px) */
+/* Switches to a 2x2 Layout */
+@media (max-width: 1280px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+    gap: 2rem;
+    max-width: 900px; /* Restrict width so 2 cards look good */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Mobile & Tablet Portrait (max-width: 768px) */
+/* Switches to a 1 Column Layout */
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr; /* 1 Column */
+    gap: 3rem; /* More space between stacked cards */
+    max-width: 450px;
+  }
+
+  .plans .container {
+    width: 90%;
+  }
+
+  .pricing-card {
+    padding: 2rem 1.5rem;
+  }
+
+  /* Reset the "Popular" card scaling for mobile to prevent overflow */
+  .pricing-card.popular {
+    transform: scale(1);
+    margin: 0;
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.15);
+    border: 2px solid #4f46e5;
+    z-index: 1;
+  }
+
+  /* Keep a subtle hover effect on mobile */
+  .pricing-card.popular:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Fix badge position on mobile */
+  .popular-badge {
+    top: -12px;
+    font-size: 0.8rem;
+    padding: 4px 12px;
+  }
+}/* =========================================
+   CENTER PACKAGES & CONTENT
+   ========================================= */
+
+/* 1. Center the grid on the page */
+.pricing-grid {
+  justify-content: center; /* Centers the columns if they don't fill the row */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 2. Center ALL content inside the cards */
+.pricing-card {
+  text-align: center; /* Centers text */
+  align-items: center; /* Centers flex items if direction is column */
+}
+
+/* 3. Center the Feature List Items */
+/* Currently they are left-aligned because of display: flex */
+.plan-features li {
+  justify-content: center; /* Centers the icon and text group horizontally */
+  text-align: center;      /* Centers the text itself if it wraps */
+  width: 100%;             /* Ensures the line takes full width to center properly */
+}
+
+/* Optional: Adjust icon spacing when centered */
+.plan-features li i {
+  margin-right: 8px; /* Adds space between icon and text */
+  margin-top: 4px;   /* optical alignment for checkmark */
+}
+/* =========================================
+   FIX: CENTERED PACKAGE WITH ALIGNED CHECKMARKS
+   ========================================= */
+
+/* 1. Make the list container shrink to fit the text, then center it */
+.plan-features {
+  width: fit-content;    /* Shrinks width to match the longest text line */
+  margin-left: auto;     /* Auto margins center the block horizontally */
+  margin-right: auto;
+  text-align: left;      /* Ensures text inside lines up to the left */
+}
+
+/* 2. Force list items to align left relative to the container */
+.plan-features li {
+  justify-content: flex-start; /* Aligns icon and text to the start (left) */
+  text-align: left;            /* Resets text alignment to left */
+  width: 100%;                 /* Ensures full width within the container */
+}
+
+/* 3. Keep the card content centered (Title, Price, Button) */
+.pricing-card {
+  text-align: center;
+  align-items: stretch; /* Ensures the card fills height properly */
+}
+
+/* 4. Ensure the button is centered specifically */
+.pricing-card .btn {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 280px; /* Optional: Keeps button from being too wide */
+}
+/* =========================================
+   STYLISH BURGER BAR (MOBILE MENU)
+   ========================================= */
+
+@media (max-width: 768px) {
+  /* 1. The Container Button */
+  .hamburger {
+    display: flex; /* Ensure it's visible on mobile */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 48px;  /* Fixed square size */
+    height: 48px;
+    padding: 0;   /* Reset padding to center bars */
+    
+    /* Glassmorphism Style */
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 14px; /* Smooth rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Soft shadow */
+    
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1002;
+    cursor: pointer;
+    overflow: hidden; /* Keeps animations contained */
+  }
+
+  /* 2. Hover Effect (Glow) */
+  .hamburger:hover {
+    transform: scale(1.05);
+    background: white;
+    border-color: #667eea;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); /* Purple glow */
+  }
+
+  /* 3. The Bars (Lines) */
+  .bar {
+    width: 24px;
+    height: 2.5px; /* Thinner, more elegant lines */
+    background: linear-gradient(90deg, #1f2937, #4b5563); /* Dark gray for contrast */
+    border-radius: 4px;
+    margin: 3px 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+
+  /* 4. Stylish "Staggered" Look (Middle bar shorter) */
+  .bar:nth-child(2) {
+    width: 16px; /* Middle bar is shorter */
+    transform: translateX(4px); /* Aligned slightly right */
+  }
+
+  /* Hover Animation: Expand the middle bar */
+  .hamburger:hover .bar:nth-child(2) {
+    width: 24px;
+    transform: translateX(0);
+    background: linear-gradient(90deg, #667eea, #764ba2); /* Gradient on hover */
+  }
+  
+  .hamburger:hover .bar:nth-child(1),
+  .hamburger:hover .bar:nth-child(3) {
+    background: linear-gradient(90deg, #667eea, #764ba2); /* Gradient on hover */
+  }
+
+  /* 5. ACTIVE STATE (When Menu is Open) */
+  .hamburger.active {
+    background: white;
+    border-color: #fbbf24; /* Gold accent border when open */
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.2);
+  }
+
+  /* Top Bar transforms to part of X */
+  .hamburger.active .bar:nth-child(1) {
+    width: 24px;
+    transform: translateY(8.5px) rotate(45deg);
+    background: #1f2937;
+  }
+
+  /* Middle Bar slides out */
+  .hamburger.active .bar:nth-child(2) {
+    width: 24px;
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  /* Bottom Bar transforms to part of X */
+  .hamburger.active .bar:nth-child(3) {
+    width: 24px;
+    transform: translateY(-8.5px) rotate(-45deg);
+    background: #1f2937;
+  }
+}
