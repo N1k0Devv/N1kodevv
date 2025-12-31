@@ -3838,3 +3838,68 @@ body.menu-open::after {
     background: #1f2937;
   }
 }
+/* =========================================
+   PLANS SECTION UPDATES: FONT & SPACING
+   ========================================= */
+
+.plans {
+  /* Ensure the whole section uses Noto Sans Georgian */
+  font-family: "Noto Sans Georgian", sans-serif !important;
+}
+
+.plan-header h3, 
+.plan-features li,
+.plan-btn {
+  font-family: "Noto Sans Georgian", sans-serif !important;
+}
+
+/* Compensate for removed description by adding vertical rhythm */
+.plan-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.plan-features {
+  margin-top: 1rem;
+}
+
+.plan-features li {
+  margin-bottom: 1.2rem; /* Increased spacing between features */
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Ensure the title remains bold and clean */
+.plan-header h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+/* =========================================
+   FIX: REMOVE GAPS & SET FONT
+   ========================================= */
+
+/* 1. Set the font for the entire section */
+.plans {
+  font-family: "Noto Sans Georgian", sans-serif !important;
+}
+
+/* 2. Reduce the gap between price and features */
+.plan-header {
+  margin-bottom: 0.5rem !important; /* Reduced from 2.5rem */
+  padding-bottom: 0.5rem !important; /* Reduced from 2.5rem */
+  border-bottom: none !important; /* Optional: removes the line for a cleaner look */
+}
+
+/* 3. Ensure list items follow the new font */
+.plan-features li {
+  font-family: "Noto Sans Georgian", sans-serif !important;
+  margin-bottom: 0.8rem; /* Keeps features clean but compact */
+  font-size: 0.95rem;
+}
+
+/* 4. Fix Title and Button font */
+.plan-header h3, 
+.plan-btn {
+  font-family: "Noto Sans Georgian", sans-serif !important;
+}
