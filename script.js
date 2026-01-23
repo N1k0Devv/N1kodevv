@@ -501,3 +501,46 @@ function initializeContactForm() {
     }
   });
 }
+// Countdown Timer for Limited Offer
+function initializeCountdown() {
+  // Set the date we're counting down to
+  const countDownDate = new Date("Jan 31, 2026 23:59:59").getTime();
+
+  const x = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+
+    // Time calculations
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    // Display results
+    const dEl = document.getElementById("days");
+    const hEl = document.getElementById("hours");
+    const mEl = document.getElementById("minutes");
+
+    if (dEl && hEl && mEl) {
+      dEl.innerHTML = days.toString().padStart(2, '0');
+      hEl.innerHTML = hours.toString().padStart(2, '0');
+      mEl.innerHTML = minutes.toString().padStart(2, '0');
+    }
+
+    // If countdown finished
+    if (distance < 0) {
+      clearInterval(x);
+      const timerDisplay = document.querySelector(".timer-display");
+      if (timerDisplay) timerDisplay.innerHTML = "შეთავაზება დასრულდა";
+    }
+  }, 1000);
+}
+
+// Call inside your DOMContentLoaded listener
+document.addEventListener("DOMContentLoaded", function() {
+  // ... existing code ...
+  if (typeof requestIdleCallback !== "undefined") {
+    requestIdleCallback(() => initializeCountdown(), { timeout: 3000 });
+  } else {
+    setTimeout(initializeCountdown, 500);
+  }
+});

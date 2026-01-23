@@ -3903,3 +3903,70 @@ body.menu-open::after {
 .plan-btn {
   font-family: "Noto Sans Georgian", sans-serif !important;
 }
+/* ================================
+   PLANS SECTION – FINAL CENTER FIX
+   ================================ */
+
+#plans {
+  display: flex;
+  justify-content: center;
+}
+
+#plans .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Center pricing grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-content: center;
+  margin: 3rem auto 0;
+}
+
+/* Center cards */
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+/* ================================
+   MOBILE PLANS FIX
+   ================================ */
+
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    gap: 2.5rem;
+  }
+
+  .pricing-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .plan-features {
+    width: 100%;
+  }
+
+  .plan-features li {
+    justify-content: flex-start;
+  }
+
+  /* Popular card fix (no overflow) */
+  .pricing-card.popular {
+    transform: none;
+    margin: 0;
+  }
+}
