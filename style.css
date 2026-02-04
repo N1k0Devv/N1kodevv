@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap");
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -158,9 +158,8 @@ body.menu-open::after {
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
+  margin-left: 15px;
 }
-
-
 
 .brand-text a:hover {
   color: #1d4ed8;
@@ -2548,7 +2547,9 @@ body.menu-open::after {
   font-weight: 600;
   transform: translateY(-12px) scale(0.98);
   opacity: 0;
-  transition: transform 420ms cubic-bezier(0.2, 0.9, 0.2, 1), opacity 420ms ease;
+  transition:
+    transform 420ms cubic-bezier(0.2, 0.9, 0.2, 1),
+    opacity 420ms ease;
   pointer-events: auto;
   z-index: 2200;
   max-width: 420px;
@@ -2606,7 +2607,8 @@ body.menu-open::after {
   cursor: progress;
   transform: translateY(0);
   opacity: 0.95;
-  box-shadow: 0 6px 18px rgba(102, 126, 234, 0.2) inset,
+  box-shadow:
+    0 6px 18px rgba(102, 126, 234, 0.2) inset,
     0 8px 30px rgba(102, 126, 234, 0.18);
 }
 
@@ -2854,7 +2856,8 @@ body.menu-open::after {
 
     /* Animation Properties */
     transform: translateX(100%); /* Start hidden to the right */
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    transition:
+      transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
       box-shadow 0.5s ease;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0);
 
@@ -3304,7 +3307,7 @@ body.menu-open::after {
     transform: scale(1);
     margin: 1rem 0;
   }
-  
+
   .pricing-card.popular:hover {
     transform: translateY(-10px);
   }
@@ -3334,7 +3337,7 @@ body.menu-open::after {
    ========================================= */
 /* Update the .nav-logo rule to reduce the gap between icon and text */
 .nav-logo {
-  gap: 0.rem; /* Reduced from 1rem to pull text closer to the left */
+  gap: 0rem; /* Reduced from 1rem to pull text closer to the left */
 }
 
 /* Optional: Fine-tune the text container if needed */
@@ -3349,14 +3352,14 @@ body.menu-open::after {
 
 /* Update Brand Font to Montserrat Bold */
 .brand-text a {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 800; /* Extra Bold */
   letter-spacing: -0.5px; /* Slight tightening for a modern look */
 }
 
 /* Style for the "N1" part */
 .n1-accent {
-  color: #E8A221; /* Using your purple brand color */
+  color: #e8a221; /* Using your purple brand color */
   /* Option 2: Use Gold -> color: #fbbf24; */
 }
 
@@ -3364,8 +3367,8 @@ body.menu-open::after {
 
 /* Accent color for N1 branding */
 .n1-accent {
-  color: #E8A221; /* Your brand purple */
-  font-family: 'Montserrat', sans-serif; /* Optional: matches your logo font */
+  color: #e8a221; /* Your brand purple */
+  font-family: "Montserrat", sans-serif; /* Optional: matches your logo font */
   font-weight: 800; /* Optional: makes it extra bold */
 }
 /* =========================================
@@ -3375,7 +3378,7 @@ body.menu-open::after {
 /* 1. HERO SECTION ADJUSTMENTS */
 /* Ensure the "kodev" part (highlight) uses the new Brand Font */
 .hero .highlight {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 800;
 }
 
@@ -3384,11 +3387,10 @@ body.menu-open::after {
   color: #ffffff !important;
 }
 
-
 /* 2. FOOTER SECTION ADJUSTMENTS */
 /* Update Footer Title Font */
 .footer-logo h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 800;
   letter-spacing: -0.5px;
 }
@@ -3408,7 +3410,9 @@ body.menu-open::after {
 .pricing-card {
   border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06); /* უფრო რბილი ჩრდილი */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .pricing-card:hover {
@@ -3433,7 +3437,7 @@ body.menu-open::after {
 
 /* სათაურის და ფასის სტილი */
 .plan-header h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
@@ -3441,7 +3445,7 @@ body.menu-open::after {
 
 .price {
   color: #1f2937; /* მუქი ფერი უკეთესი კითხვისთვის */
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 800;
 }
 
@@ -3476,7 +3480,7 @@ body.menu-open::after {
 .pricing-card .btn-secondary:hover {
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
-}/* =========================================
+} /* =========================================
    PRICING UPDATE: LIMITED OFFER STYLES
    ========================================= */
 
@@ -3515,7 +3519,11 @@ body.menu-open::after {
 
 /* ბეჯის განახლება */
 .popular-badge {
-  background: linear-gradient(135deg, #ef4444, #f87171); /* წითელი ტონები აქცენტისთვის */
+  background: linear-gradient(
+    135deg,
+    #ef4444,
+    #f87171
+  ); /* წითელი ტონები აქცენტისთვის */
   box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
   font-weight: 800;
   text-transform: uppercase;
@@ -3545,7 +3553,7 @@ body.menu-open::after {
 /* Optional: Adjust card padding slightly for compact layout */
 .pricing-card {
   padding: 2.5rem 1.5rem; /* Slightly less side padding */
-} 
+}
 /* =========================================
    FIX: WIDER LAYOUT FOR PLANS
    ========================================= */
@@ -3672,14 +3680,14 @@ body.menu-open::after {
   .pricing-card.popular:hover {
     transform: translateY(-5px);
   }
-  
+
   /* Fix badge position on mobile */
   .popular-badge {
     top: -12px;
     font-size: 0.8rem;
     padding: 4px 12px;
   }
-}/* =========================================
+} /* =========================================
    CENTER PACKAGES & CONTENT
    ========================================= */
 
@@ -3700,14 +3708,14 @@ body.menu-open::after {
 /* Currently they are left-aligned because of display: flex */
 .plan-features li {
   justify-content: center; /* Centers the icon and text group horizontally */
-  text-align: center;      /* Centers the text itself if it wraps */
-  width: 100%;             /* Ensures the line takes full width to center properly */
+  text-align: center; /* Centers the text itself if it wraps */
+  width: 100%; /* Ensures the line takes full width to center properly */
 }
 
 /* Optional: Adjust icon spacing when centered */
 .plan-features li i {
   margin-right: 8px; /* Adds space between icon and text */
-  margin-top: 4px;   /* optical alignment for checkmark */
+  margin-top: 4px; /* optical alignment for checkmark */
 }
 /* =========================================
    FIX: CENTERED PACKAGE WITH ALIGNED CHECKMARKS
@@ -3715,17 +3723,17 @@ body.menu-open::after {
 
 /* 1. Make the list container shrink to fit the text, then center it */
 .plan-features {
-  width: fit-content;    /* Shrinks width to match the longest text line */
-  margin-left: auto;     /* Auto margins center the block horizontally */
+  width: fit-content; /* Shrinks width to match the longest text line */
+  margin-left: auto; /* Auto margins center the block horizontally */
   margin-right: auto;
-  text-align: left;      /* Ensures text inside lines up to the left */
+  text-align: left; /* Ensures text inside lines up to the left */
 }
 
 /* 2. Force list items to align left relative to the container */
 .plan-features li {
   justify-content: flex-start; /* Aligns icon and text to the start (left) */
-  text-align: left;            /* Resets text alignment to left */
-  width: 100%;                 /* Ensures full width within the container */
+  text-align: left; /* Resets text alignment to left */
+  width: 100%; /* Ensures full width within the container */
 }
 
 /* 3. Keep the card content centered (Title, Price, Button) */
@@ -3754,19 +3762,19 @@ body.menu-open::after {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 48px;  /* Fixed square size */
+    width: 48px; /* Fixed square size */
     height: 48px;
-    padding: 0;   /* Reset padding to center bars */
-    
+    padding: 0; /* Reset padding to center bars */
+
     /* Glassmorphism Style */
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    
+
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 14px; /* Smooth rounded corners */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Soft shadow */
-    
+
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1002;
     cursor: pointer;
@@ -3785,7 +3793,11 @@ body.menu-open::after {
   .bar {
     width: 24px;
     height: 2.5px; /* Thinner, more elegant lines */
-    background: linear-gradient(90deg, #1f2937, #4b5563); /* Dark gray for contrast */
+    background: linear-gradient(
+      90deg,
+      #1f2937,
+      #4b5563
+    ); /* Dark gray for contrast */
     border-radius: 4px;
     margin: 3px 0;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -3802,12 +3814,20 @@ body.menu-open::after {
   .hamburger:hover .bar:nth-child(2) {
     width: 24px;
     transform: translateX(0);
-    background: linear-gradient(90deg, #667eea, #764ba2); /* Gradient on hover */
+    background: linear-gradient(
+      90deg,
+      #667eea,
+      #764ba2
+    ); /* Gradient on hover */
   }
-  
+
   .hamburger:hover .bar:nth-child(1),
   .hamburger:hover .bar:nth-child(3) {
-    background: linear-gradient(90deg, #667eea, #764ba2); /* Gradient on hover */
+    background: linear-gradient(
+      90deg,
+      #667eea,
+      #764ba2
+    ); /* Gradient on hover */
   }
 
   /* 5. ACTIVE STATE (When Menu is Open) */
@@ -3847,7 +3867,7 @@ body.menu-open::after {
   font-family: "Noto Sans Georgian", sans-serif !important;
 }
 
-.plan-header h3, 
+.plan-header h3,
 .plan-features li,
 .plan-btn {
   font-family: "Noto Sans Georgian", sans-serif !important;
@@ -3899,7 +3919,7 @@ body.menu-open::after {
 }
 
 /* 4. Fix Title and Button font */
-.plan-header h3, 
+.plan-header h3,
 .plan-btn {
   font-family: "Noto Sans Georgian", sans-serif !important;
 }
@@ -3968,5 +3988,114 @@ body.menu-open::after {
   .pricing-card.popular {
     transform: none;
     margin: 0;
+  }
+}
+/* =========================================
+   FINAL FIX: PC WIDE SCREEN LAYOUT (ULTIMATE)
+   ========================================= */
+
+/* 1. ვაიძულოთ კონტეინერი, რომ გაიშალოს ეკრანის 95%-ზე */
+#plans .container {
+  max-width: 1600px !important; /* 1200px-ის ნაცვლად */
+  width: 95% !important;
+  padding: 0 15px;
+}
+
+/* 2. გრიდის გასწორება */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) !important; /* მკაცრად 4 სვეტი */
+  gap: 1.5rem !important; /* ზომიერი დაშორება */
+  margin-top: 3rem;
+  max-width: 100% !important;
+  justify-content: center;
+}
+
+/* 3. ბარათების შიდა დაშორების შემცირება, რომ ტექსტი არ გადავიდეს */
+.pricing-card {
+  padding: 2.5rem 1rem !important; /* გვერდებიდან ადგილი შევამცირეთ */
+  width: 100%;
+}
+
+/* =========================================
+   LAPTOP ADAPTATION (მნიშვნელოვანია!)
+   ========================================= */
+/* თუ ეკრანი 1350px-ზე პატარაა (პატარა ლეპტოპები), 
+   4 სვეტი ძალიან ვიწრო იქნება, ამიტომ გადავიყვანოთ 2-ზე */
+@media (max-width: 1350px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 900px !important; /* ცენტრში ლამაზად რომ დაჯდეს */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* მობილურისთვის */
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 450px !important;
+  }
+
+  #plans .container {
+    max-width: 100% !important;
+  }
+}
+/* =========================================
+   FIX: ULTRA SMALL SCREENS (<400px)
+   ========================================= */
+
+@media (max-width: 400px) {
+  /* 1. კონტეინერის დაშორების შემცირება, რომ მეტი ადგილი მოვიგოთ */
+  #plans .container {
+    padding: 0 10px !important;
+    width: 100% !important;
+  }
+
+  /* 2. გრიდის იძულებითი გასწორება */
+  .pricing-grid {
+    display: flex !important;
+    flex-direction: column;
+    width: 100% !important;
+    gap: 1.5rem !important;
+    margin-top: 2rem !important;
+  }
+
+  /* 3. ბარათების ზომის კომპაქტურობა */
+  .pricing-card {
+    padding: 1.5rem 1rem !important; /* შიდა დაშორება განახევრდა */
+    width: 100% !important;
+    border-radius: 16px !important;
+    margin: 0 !important;
+  }
+
+  /* 4. ფონტების ზომის შემცირება, რომ ერთ ხაზზე ჩაეტიოს */
+  .plan-header h3 {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .price {
+    font-size: 1.8rem !important; /* ფასი უფრო პატარა იქნება */
+    flex-wrap: wrap; /* თუ მაინც არ ეტევა, ჩამოვიდეს ქვემოთ */
+    justify-content: center;
+  }
+  
+  .price span {
+    font-size: 0.85rem !important;
+  }
+
+  /* 5. სიის ელემენტების ტექსტის ზომა */
+  .plan-features li {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    white-space: normal !important; /* ტექსტს უფლებას აძლევს გადავიდეს ახალ ხაზზე */
+  }
+
+  /* 6. ღილაკის ზომა */
+  .plan-btn {
+    padding: 10px !important;
+    font-size: 0.9rem !important;
   }
 }
