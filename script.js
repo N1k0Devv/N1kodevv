@@ -315,8 +315,8 @@ function animateCounter(el, target) {
 function initializeInteractiveEffects() {
   const typingEl = document.querySelector(".typing-text");
   if (typingEl) {
-    // განახლებული ტექსტი, რომელიც მოიცავს ყველა სერვისს
-    const text = "ვებ დეველოპერი და გრაფიკული დიზაინერი";
+    // Hero typing copy aligned with agency positioning
+    const text = "ციფრული სააგენტო: ვებ დეველოპმენტი და ბრენდინგი";
     const cursor = typingEl.querySelector(".cursor");
     let i = 0;
     let content = "";
@@ -647,31 +647,6 @@ function initializeCalculatorFunnel() {
         { value: "booking_system", label: "დაჯავშნა / ჩაწერა" },
         { value: "cms_panel", label: "ადმინ პანელი / CMS" },
         { value: "analytics_pixel", label: "Analytics + Pixel" },
-      ],
-    },
-    {
-      key: "timeline",
-      shortTitle: "ვადები",
-      type: "single",
-      question: "როდის გჭირდებათ?",
-      options: [
-        { value: "asap", label: "ASAP (1–2 კვირა)" },
-        { value: "this_month", label: "ამ თვეში" },
-        { value: "one_two_months", label: "1–2 თვეში" },
-        { value: "exploring", label: "უბრალოდ ვარკვევ" },
-      ],
-    },
-    {
-      key: "budget",
-      shortTitle: "ბიუჯეტი",
-      type: "single",
-      question: "ბიუჯეტი (არასავალდებულო)",
-      options: [
-        { value: "lt_800", label: "<800 GEL" },
-        { value: "800_1500", label: "800–1500" },
-        { value: "1500_3000", label: "1500–3000" },
-        { value: "3000_plus", label: "3000+" },
-        { value: "not_say", label: "არ მინდა თქმა" },
       ],
     },
     {
@@ -1543,7 +1518,10 @@ function initializeCalculatorFunnel() {
   }
 
   function formatRange(min, max) {
-    return `₾${formatNumber(min)} - ₾${formatNumber(max)}`;
+    const gelToUsd = 0.37;
+    const usdMin = Math.round(min * gelToUsd);
+    const usdMax = Math.round(max * gelToUsd);
+    return `$${formatNumber(usdMin)} - $${formatNumber(usdMax)}`;
   }
 
   function formatNumber(value) {
@@ -1802,3 +1780,4 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(initializeCountdown, 500);
   }
 });
+
