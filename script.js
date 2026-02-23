@@ -272,7 +272,7 @@ function initializeScrollAnimations() {
   // Animate key cards and forms when entering viewport
   document
     .querySelectorAll(
-      ".project-card, .about-card, .contact-info, .contact-form, .expertise-card, .calculator-shell",
+      ".project-card, .about-card, .contact-info, .contact-form, .expertise-card, .calculator-shell, .plans-card, .plans-section-header",
     )
     .forEach((el) => {
       el.classList.add("fade-in");
