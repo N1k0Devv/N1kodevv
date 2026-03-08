@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("🚀 N1kodevv პორტფოლიო ჩაიტვირთა!");
 
   // Initialize core functionality first for better performance
+  initializeThemeToggle();
   initializePerformanceOptimizations();
   initializeNavigation();
   initializeSmoothScrolling();
@@ -24,6 +25,33 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(initializeProjectFilters, 440);
   }
 });
+
+// Theme Toggle Functionality
+function initializeThemeToggle() {
+  const themeToggle = document.getElementById("theme-toggle");
+  if (!themeToggle) return;
+
+  // Check for saved theme preference or use system preference
+  const savedTheme = localStorage.getItem("n1kodev_theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  
+  // Default to dark mode based on the new Tech Luxury aesthetic
+  const currentTheme = savedTheme || "dark";
+  
+  // Apply initial theme
+  document.documentElement.setAttribute("data-theme", currentTheme);
+
+  // Toggle theme on click
+  themeToggle.addEventListener("click", () => {
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    const newTheme = isDark ? "light" : "dark";
+    
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("n1kodev_theme", newTheme);
+    
+    // Optional: Log the theme switch, trigger analytic event, etc.
+  });
+}
 
 // Enhanced Performance Optimizations
 function initializePerformanceOptimizations() {
