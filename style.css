@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap");
+
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -56,6 +57,7 @@ body {
   color: #333;
   background-color: #ffffff;
   overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* Backdrop for Mobile Menu - Clickable Area */
@@ -66,7 +68,8 @@ body::after {
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  z-index: 990; /* Behind navbar (1000) */
+  z-index: 990;
+  /* Behind navbar (1000) */
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
@@ -215,12 +218,10 @@ body.menu-open::after {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(37, 99, 235, 0.1),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(37, 99, 235, 0.1),
+      transparent);
   transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -322,12 +323,10 @@ body.menu-open::after {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent);
   transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -416,13 +415,16 @@ body.menu-open::after {
 }
 
 @keyframes heroFloat {
+
   0%,
   100% {
     transform: translateY(0px) rotate(0deg);
   }
+
   33% {
     transform: translateY(-15px) rotate(1deg);
   }
+
   66% {
     transform: translateY(10px) rotate(-0.5deg);
   }
@@ -462,15 +464,18 @@ body.menu-open::after {
 }
 
 @keyframes heroParticles {
+
   0%,
   100% {
     opacity: 0;
     transform: translateY(0) scale(0);
   }
+
   25% {
     opacity: 1;
     transform: translateY(-50px) scale(1);
   }
+
   75% {
     opacity: 0.5;
     transform: translateY(-100px) scale(0.5);
@@ -519,20 +524,33 @@ body.menu-open::after {
 }
 
 @keyframes sparkle {
+
   0%,
   100% {
     transform: scale(1) rotate(0deg);
   }
+
   50% {
     transform: scale(1.2) rotate(180deg);
   }
 }
 
+.hero-greeting {
+  font-family: "Noto Sans Georgian", "Inter", sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 1.2rem;
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
 .hero-title {
-  font-size: 3.5rem;
-  font-weight: 700;
+  font-family: "Noto Sans Georgian", "Inter", sans-serif;
+  font-size: 3rem;
+  /* Reduced slightly from 3.5rem to fit the new longer SEO text better */
+  font-weight: 800;
   margin-bottom: 1rem;
-  line-height: 1.2;
+  line-height: 1.3;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -579,10 +597,12 @@ body.menu-open::after {
 }
 
 @keyframes blink {
+
   0%,
   50% {
     opacity: 1;
   }
+
   51%,
   100% {
     opacity: 0;
@@ -799,15 +819,19 @@ body.menu-open::after {
 .code-line:nth-child(1) {
   animation-delay: 0.5s;
 }
+
 .code-line:nth-child(2) {
   animation-delay: 1s;
 }
+
 .code-line:nth-child(3) {
   animation-delay: 1.5s;
 }
+
 .code-line:nth-child(4) {
   animation-delay: 2s;
 }
+
 .code-line:nth-child(5) {
   animation-delay: 2.5s;
 }
@@ -821,30 +845,39 @@ body.menu-open::after {
 .code-keyword {
   color: #ff6b9d;
 }
+
 .code-variable {
   color: #4ecdc4;
 }
+
 .code-operator {
   color: #ffe66d;
 }
+
 .code-function {
   color: #a8e6cf;
 }
+
 .code-bracket {
   color: #ffd93d;
 }
+
 .code-property {
   color: #6c5ce7;
 }
+
 .code-string {
   color: #fd79a8;
 }
+
 .code-comma {
   color: #fdcb6e;
 }
+
 .code-number {
   color: #00b894;
 }
+
 .code-semicolon {
   color: #e17055;
 }
@@ -859,6 +892,7 @@ body.menu-open::after {
 }
 
 @keyframes bounce {
+
   0%,
   20%,
   50%,
@@ -866,9 +900,11 @@ body.menu-open::after {
   100% {
     transform: translateX(-50%) translateY(0);
   }
+
   40% {
     transform: translateX(-50%) translateY(-10px);
   }
+
   60% {
     transform: translateX(-50%) translateY(-5px);
   }
@@ -992,12 +1028,10 @@ body.menu-open::after {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(102, 126, 234, 0.05),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(102, 126, 234, 0.05),
+      transparent);
   transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -1218,12 +1252,10 @@ body.menu-open::after {
 
 .line {
   position: absolute;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(251, 191, 36, 0.5),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(251, 191, 36, 0.5),
+      transparent);
   animation: strategyLines 4s ease-in-out infinite;
 }
 
@@ -1234,6 +1266,7 @@ body.menu-open::after {
   height: 2px;
   animation-delay: 0s;
 }
+
 .line-2 {
   top: 0;
   bottom: 0;
@@ -1241,6 +1274,7 @@ body.menu-open::after {
   width: 2px;
   animation-delay: 1.3s;
 }
+
 .line-3 {
   top: 50%;
   left: 50%;
@@ -1251,11 +1285,13 @@ body.menu-open::after {
 }
 
 @keyframes strategyLines {
+
   0%,
   100% {
     opacity: 0;
     transform: scale(0.8);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.2);
@@ -1599,7 +1635,8 @@ body.menu-open::after {
 }
 
 .cta-content {
-  min-width: 0; /* Allows content to shrink */
+  min-width: 0;
+  /* Allows content to shrink */
 }
 
 .cta-content h3 {
@@ -1653,11 +1690,9 @@ body.menu-open::after {
 }
 
 .intro-card {
-  background: linear-gradient(
-    135deg,
-    rgba(102, 126, 234, 0.05),
-    rgba(118, 75, 162, 0.05)
-  );
+  background: linear-gradient(135deg,
+      rgba(102, 126, 234, 0.05),
+      rgba(118, 75, 162, 0.05));
   padding: 3rem;
   border-radius: 25px;
   text-align: center;
@@ -1885,10 +1920,12 @@ body.menu-open::after {
 }
 
 @keyframes ctaFloat {
+
   0%,
   100% {
     transform: translateY(0px) rotate(0deg);
   }
+
   50% {
     transform: translateY(-10px) rotate(1deg);
   }
@@ -1897,7 +1934,8 @@ body.menu-open::after {
 .cta-content {
   position: relative;
   z-index: 2;
-  min-width: 0; /* Allows content to shrink */
+  min-width: 0;
+  /* Allows content to shrink */
 }
 
 .cta-content h3 {
@@ -2532,6 +2570,7 @@ body.menu-open::after {
   font-size: 0.9rem;
   margin-top: 0.25rem;
 }
+
 .success-banner {
   position: fixed;
   top: 24px;
@@ -2586,9 +2625,11 @@ body.menu-open::after {
   0% {
     transform: scale(0.6);
   }
+
   60% {
     transform: scale(1.04);
   }
+
   100% {
     transform: scale(1);
   }
@@ -2621,12 +2662,15 @@ body.menu-open::after {
   0% {
     transform: scale(1);
   }
+
   30% {
     transform: scale(1.06);
   }
+
   60% {
     transform: scale(0.98);
   }
+
   100% {
     transform: scale(1);
   }
@@ -2756,6 +2800,7 @@ body.menu-open::after {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -2764,6 +2809,7 @@ body.menu-open::after {
 
 /* ENHANCED RESPONSIVE DESIGN FOR MOBILE */
 @media (max-width: 1024px) {
+
   /* Tablet adjustments for CTA sections */
   .strategy-cta {
     grid-template-columns: 1fr;
@@ -2842,7 +2888,8 @@ body.menu-open::after {
   .nav-menu {
     position: fixed;
     top: 0;
-    right: 0; /* Slide in from the RIGHT */
+    right: 0;
+    /* Slide in from the RIGHT */
     bottom: 0;
     width: 80%;
     max-width: 320px;
@@ -2855,13 +2902,15 @@ body.menu-open::after {
     gap: 1rem;
 
     /* Animation Properties */
-    transform: translateX(100%); /* Start hidden to the right */
+    transform: translateX(100%);
+    /* Start hidden to the right */
     transition:
       transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
       box-shadow 0.5s ease;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0);
 
-    z-index: 1005; /* HIGH Z-Index to ensure it's on top */
+    z-index: 1005;
+    /* HIGH Z-Index to ensure it's on top */
     border-left: 1px solid rgba(102, 126, 234, 0.1);
 
     /* Reset desktop styles */
@@ -2871,7 +2920,8 @@ body.menu-open::after {
   }
 
   .nav-menu.active {
-    transform: translateX(0); /* Slide into view */
+    transform: translateX(0);
+    /* Slide into view */
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
   }
 
@@ -2892,21 +2942,27 @@ body.menu-open::after {
   .nav-menu.active li:nth-child(1) {
     transition-delay: 0.1s;
   }
+
   .nav-menu.active li:nth-child(2) {
     transition-delay: 0.15s;
   }
+
   .nav-menu.active li:nth-child(3) {
     transition-delay: 0.2s;
   }
+
   .nav-menu.active li:nth-child(4) {
     transition-delay: 0.25s;
   }
+
   .nav-menu.active li:nth-child(5) {
     transition-delay: 0.3s;
   }
+
   .nav-menu.active li:nth-child(6) {
     transition-delay: 0.35s;
   }
+
   .nav-menu.active li:nth-child(7) {
     transition-delay: 0.4s;
   }
@@ -2924,10 +2980,12 @@ body.menu-open::after {
   .hamburger.active .bar:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
   }
+
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
     transform: scale(0);
   }
+
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-11px) rotate(-45deg);
   }
@@ -2937,13 +2995,16 @@ body.menu-open::after {
     grid-template-columns: 1fr;
     text-align: center;
   }
+
   .hero-visual {
     order: -1;
     margin-top: 100px;
   }
+
   .hero-title {
     font-size: 2.5rem;
   }
+
   .hero-buttons {
     flex-direction: column;
   }
@@ -2964,9 +3025,11 @@ body.menu-open::after {
   .skills-grid {
     gap: 1.5rem;
   }
+
   .expertise-stats {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .results-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2974,6 +3037,7 @@ body.menu-open::after {
   .projects-filter {
     gap: 0.5rem;
   }
+
   .filter-btn {
     padding: 8px 16px;
     font-size: 0.9rem;
@@ -2982,12 +3046,15 @@ body.menu-open::after {
   .footer-social {
     justify-content: center;
   }
+
   .hero-scroll-indicator {
     display: none;
   }
+
   .cta-content {
     align-items: center;
   }
+
   .hero-badge {
     margin-top: 0;
   }
@@ -2996,9 +3063,11 @@ body.menu-open::after {
     grid-template-columns: 1fr;
     text-align: center;
   }
+
   .timeline::before {
     display: none;
   }
+
   .timeline-item:nth-child(even) {
     direction: ltr;
   }
@@ -3012,7 +3081,8 @@ body.menu-open::after {
   }
 
   .cta-visual {
-    order: -1; /* Put visual above content on mobile */
+    order: -1;
+    /* Put visual above content on mobile */
   }
 
   .cta-icon {
@@ -3086,13 +3156,16 @@ body.menu-open::after {
   .principles-grid {
     grid-template-columns: 1fr;
   }
+
   .results-grid {
     grid-template-columns: 1fr;
   }
+
   .hero-stats {
     flex-direction: column;
     gap: 1rem;
   }
+
   .code-animation {
     padding: 1rem;
     font-size: 0.8rem;
@@ -3154,6 +3227,7 @@ body.menu-open::after {
     grid-template-columns: 1fr;
   }
 }
+
 .plans {
   padding: 100px 0;
   background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
@@ -3273,7 +3347,8 @@ body.menu-open::after {
 .plan-features {
   list-style: none;
   margin-bottom: 2.5rem;
-  flex-grow: 1; /* Pushes button to bottom */
+  flex-grow: 1;
+  /* Pushes button to bottom */
 }
 
 .plan-features li {
@@ -3287,7 +3362,8 @@ body.menu-open::after {
 }
 
 .plan-features li i {
-  color: #10b981; /* Green checkmark */
+  color: #10b981;
+  /* Green checkmark */
   margin-top: 4px;
   flex-shrink: 0;
 }
@@ -3312,13 +3388,15 @@ body.menu-open::after {
     transform: translateY(-10px);
   }
 }
+
 /* =========================================
    FIX: PLANS BUTTON VISIBILITY
    ========================================= */
 /* Override btn-secondary specifically inside pricing cards to be visible on white */
 .pricing-card .btn-secondary {
   background: transparent;
-  color: #667eea; /* Purple/Blue color matching your theme */
+  color: #667eea;
+  /* Purple/Blue color matching your theme */
   border: 2px solid #667eea;
   box-shadow: none;
 }
@@ -3337,13 +3415,15 @@ body.menu-open::after {
    ========================================= */
 /* Update the .nav-logo rule to reduce the gap between icon and text */
 .nav-logo {
-  gap: 0rem; /* Reduced from 1rem to pull text closer to the left */
+  gap: 0rem;
+  /* Reduced from 1rem to pull text closer to the left */
 }
 
 /* Optional: Fine-tune the text container if needed */
 .brand-text {
   margin-left: -15px;
-  margin-right: 10px; /* Pulls it slightly more left if needed */
+  margin-right: 10px;
+  /* Pulls it slightly more left if needed */
 }
 
 /* =========================================
@@ -3353,13 +3433,16 @@ body.menu-open::after {
 /* Update Brand Font to Montserrat Bold */
 .brand-text a {
   font-family: "Montserrat", sans-serif;
-  font-weight: 800; /* Extra Bold */
-  letter-spacing: -0.5px; /* Slight tightening for a modern look */
+  font-weight: 800;
+  /* Extra Bold */
+  letter-spacing: -0.5px;
+  /* Slight tightening for a modern look */
 }
 
 /* Style for the "N1" part */
 .n1-accent {
-  color: #e8a221; /* Using your purple brand color */
+  color: #e8a221;
+  /* Using your purple brand color */
   /* Option 2: Use Gold -> color: #fbbf24; */
 }
 
@@ -3367,19 +3450,35 @@ body.menu-open::after {
 
 /* Accent color for N1 branding */
 .n1-accent {
-  color: #e8a221; /* Your brand purple */
-  font-family: "Montserrat", sans-serif; /* Optional: matches your logo font */
-  font-weight: 800; /* Optional: makes it extra bold */
+  color: #e8a221;
+  /* Your brand purple */
+  font-family: "Montserrat", sans-serif;
+  /* Optional: matches your logo font */
+  font-weight: 800;
+  /* Optional: makes it extra bold */
 }
+
 /* =========================================
    HERO & FOOTER BRANDING UPDATES
    ========================================= */
 
-/* 1. HERO SECTION ADJUSTMENTS */
-/* Ensure the "kodev" part (highlight) uses the new Brand Font */
+/* Ensure the "kodev" brand name piece uses the brand font generally */
 .hero .highlight {
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+.hero-greeting .n1-accent,
+.hero-greeting .highlight {
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.hero-title .n1-accent,
+.hero-title .highlight {
+  font-family: inherit;
+  font-weight: inherit;
 }
 
 /* Force N1 to be WHITE in the Hero section (Purple on Purple would be invisible) */
@@ -3399,9 +3498,11 @@ body.menu-open::after {
 /* The footer h3 uses a gradient text fill, which makes child elements transparent. 
    We must force the N1 accent to have a solid purple fill. */
 .footer-logo .n1-accent {
-  -webkit-text-fill-color: #764ba2; /* Force Purple */
+  -webkit-text-fill-color: #764ba2;
+  /* Force Purple */
   color: #764ba2;
 }
+
 /* =========================================
    PRICING / PLANS IMPROVEMENTS
    ========================================= */
@@ -3409,7 +3510,8 @@ body.menu-open::after {
 /* ბარათების ზოგადი სტილი და ჩრდილები */
 .pricing-card {
   border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06); /* უფრო რბილი ჩრდილი */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+  /* უფრო რბილი ჩრდილი */
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -3422,13 +3524,15 @@ body.menu-open::after {
 
 /* პოპულარული ბარათის გამოყოფა */
 .pricing-card.popular {
-  border: 2px solid #667eea; /* თქვენი ბრენდის ფერი */
+  border: 2px solid #667eea;
+  /* თქვენი ბრენდის ფერი */
   position: relative;
   z-index: 1;
 }
 
 .popular-badge {
-  background: linear-gradient(135deg, #667eea, #764ba2); /* ბრენდის გრადიენტი */
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  /* ბრენდის გრადიენტი */
   font-size: 0.85rem;
   letter-spacing: 1px;
   padding: 6px 16px;
@@ -3444,7 +3548,8 @@ body.menu-open::after {
 }
 
 .price {
-  color: #1f2937; /* მუქი ფერი უკეთესი კითხვისთვის */
+  color: #1f2937;
+  /* მუქი ფერი უკეთესი კითხვისთვის */
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
 }
@@ -3466,7 +3571,8 @@ body.menu-open::after {
 
 /* Checkmark-ის ფერი */
 .plan-features li i {
-  color: #10b981; /* მწვანე ფერი */
+  color: #10b981;
+  /* მწვანე ფერი */
   margin-right: 12px;
   font-size: 1.1rem;
 }
@@ -3480,14 +3586,17 @@ body.menu-open::after {
 .pricing-card .btn-secondary:hover {
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
-} /* =========================================
+}
+
+/* =========================================
    PRICING UPDATE: LIMITED OFFER STYLES
    ========================================= */
 
 /* ძველი ფასის გადახაზვა */
 .old-price {
   text-decoration: line-through;
-  color: #9ca3af; /* ნაცრისფერი */
+  color: #9ca3af;
+  /* ნაცრისფერი */
   font-size: 1.2rem;
   margin-right: 8px;
   font-weight: 400;
@@ -3495,7 +3604,8 @@ body.menu-open::after {
 
 /* "ყველა სტარტაპ ფუნქცია" - გამორჩეული სტილი */
 .feature-highlight {
-  color: #4f46e5 !important; /* ბრენდის ფერი */
+  color: #4f46e5 !important;
+  /* ბრენდის ფერი */
   background: rgba(79, 70, 229, 0.05);
   padding: 8px 12px;
   border-radius: 8px;
@@ -3509,7 +3619,8 @@ body.menu-open::after {
 /* ბიზნეს ბარათის აქცენტირება */
 .pricing-card.popular {
   border: 2px solid #4f46e5;
-  transform: scale(1.02); /* ოდნავ გადიდებული */
+  transform: scale(1.02);
+  /* ოდნავ გადიდებული */
   box-shadow: 0 25px 50px rgba(79, 70, 229, 0.15);
 }
 
@@ -3519,16 +3630,16 @@ body.menu-open::after {
 
 /* ბეჯის განახლება */
 .popular-badge {
-  background: linear-gradient(
-    135deg,
-    #ef4444,
-    #f87171
-  ); /* წითელი ტონები აქცენტისთვის */
+  background: linear-gradient(135deg,
+      #ef4444,
+      #f87171);
+  /* წითელი ტონები აქცენტისთვის */
   box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
   font-weight: 800;
   text-transform: uppercase;
   font-size: 0.8rem;
 }
+
 /* =========================================
    FIX: HORIZONTAL ALIGNMENT FOR 4 PLANS
    ========================================= */
@@ -3537,10 +3648,13 @@ body.menu-open::after {
   display: grid;
   /* Reduced min-width from 320px to 240px so 4 items can fit */
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem; /* Reduced gap from 2.5rem to save space */
+  gap: 1.5rem;
+  /* Reduced gap from 2.5rem to save space */
   margin-top: 3rem;
-  padding: 1rem 0; /* Removed side padding to maximize width */
-  align-items: stretch; /* Ensures all cards are same height */
+  padding: 1rem 0;
+  /* Removed side padding to maximize width */
+  align-items: stretch;
+  /* Ensures all cards are same height */
 }
 
 /* Force exactly 4 columns on Laptop/Desktop screens */
@@ -3552,28 +3666,34 @@ body.menu-open::after {
 
 /* Optional: Adjust card padding slightly for compact layout */
 .pricing-card {
-  padding: 2.5rem 1.5rem; /* Slightly less side padding */
+  padding: 2.5rem 1.5rem;
+  /* Slightly less side padding */
 }
+
 /* =========================================
    FIX: WIDER LAYOUT FOR PLANS
    ========================================= */
 
 /* ვზრდით კონტეინერის ზომას მხოლოდ Plans სექციისთვის */
 .plans .container {
-  max-width: 1600px; /* სტანდარტული 1200px-ის ნაცვლად */
-  width: 95%; /* ეკრანის თითქმის სრული სიგანე */
+  max-width: 1600px;
+  /* სტანდარტული 1200px-ის ნაცვლად */
+  width: 95%;
+  /* ეკრანის თითქმის სრული სიგანე */
   padding: 0 20px;
 }
 
 /* ბარათების შიდა დაშორების შემცირება მეტი სივრცისთვის */
 .pricing-card {
-  padding: 2.5rem 1.5rem; /* გვერდებიდან დაშორება შემცირდა */
+  padding: 2.5rem 1.5rem;
+  /* გვერდებიდან დაშორება შემცირდა */
 }
 
 /* ტექსტის ზომის მცირე კორექცია, რომ არ გადავიდეს ახალ ხაზზე */
 .plan-features li {
   font-size: 0.9rem;
-  white-space: nowrap; /* ცდილობს ტექსტი არ გაწყვიტოს */
+  white-space: nowrap;
+  /* ცდილობს ტექსტი არ გაწყვიტოს */
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -3589,20 +3709,24 @@ body.menu-open::after {
 /* მცირე ლეპტოპებზე (1024px-1280px) გადავიდეს 2 სვეტზე უკეთესი კითხვისთვის */
 @media (max-width: 1279px) {
   .pricing-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2-2 განლაგება */
+    grid-template-columns: repeat(2, 1fr);
+    /* 2-2 განლაგება */
   }
 }
+
 /* =========================================
    RESPONSIVE PLANS SECTION (FINAL FIX)
    ========================================= */
 
 /* 1. Container & Section Base */
 .plans {
-  padding: 80px 0; /* Adjusted padding */
+  padding: 80px 0;
+  /* Adjusted padding */
 }
 
 .plans .container {
-  max-width: 1400px; /* Optimal width for 4 cards */
+  max-width: 1400px;
+  /* Optimal width for 4 cards */
   width: 92%;
   margin: 0 auto;
   padding: 0 15px;
@@ -3616,23 +3740,27 @@ body.menu-open::after {
   gap: 2rem;
   margin-top: 3rem;
   padding: 1rem 0;
-  align-items: stretch; /* Ensures all cards are equal height */
+  align-items: stretch;
+  /* Ensures all cards are equal height */
 }
 
 /* 3. Card Base Styles */
 .pricing-card {
-  height: 100%; /* Fill the grid cell height */
+  height: 100%;
+  /* Fill the grid cell height */
   display: flex;
   flex-direction: column;
   background: white;
   border-radius: 20px;
   padding: 2.5rem 1.5rem;
   transition: all 0.3s ease;
-  width: 100%; /* Ensure it fills the column */
+  width: 100%;
+  /* Ensure it fills the column */
 }
 
 .plan-features {
-  flex-grow: 1; /* Pushes the button to the bottom */
+  flex-grow: 1;
+  /* Pushes the button to the bottom */
   margin-bottom: 2rem;
 }
 
@@ -3642,9 +3770,11 @@ body.menu-open::after {
 /* Switches to a 2x2 Layout */
 @media (max-width: 1280px) {
   .pricing-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 Columns */
     gap: 2rem;
-    max-width: 900px; /* Restrict width so 2 cards look good */
+    max-width: 900px;
+    /* Restrict width so 2 cards look good */
     margin-left: auto;
     margin-right: auto;
   }
@@ -3654,8 +3784,10 @@ body.menu-open::after {
 /* Switches to a 1 Column Layout */
 @media (max-width: 768px) {
   .pricing-grid {
-    grid-template-columns: 1fr; /* 1 Column */
-    gap: 3rem; /* More space between stacked cards */
+    grid-template-columns: 1fr;
+    /* 1 Column */
+    gap: 3rem;
+    /* More space between stacked cards */
     max-width: 450px;
   }
 
@@ -3687,59 +3819,77 @@ body.menu-open::after {
     font-size: 0.8rem;
     padding: 4px 12px;
   }
-} /* =========================================
+}
+
+/* =========================================
    CENTER PACKAGES & CONTENT
    ========================================= */
 
 /* 1. Center the grid on the page */
 .pricing-grid {
-  justify-content: center; /* Centers the columns if they don't fill the row */
+  justify-content: center;
+  /* Centers the columns if they don't fill the row */
   margin-left: auto;
   margin-right: auto;
 }
 
 /* 2. Center ALL content inside the cards */
 .pricing-card {
-  text-align: center; /* Centers text */
-  align-items: center; /* Centers flex items if direction is column */
+  text-align: center;
+  /* Centers text */
+  align-items: center;
+  /* Centers flex items if direction is column */
 }
 
 /* 3. Center the Feature List Items */
 /* Currently they are left-aligned because of display: flex */
 .plan-features li {
-  justify-content: center; /* Centers the icon and text group horizontally */
-  text-align: center; /* Centers the text itself if it wraps */
-  width: 100%; /* Ensures the line takes full width to center properly */
+  justify-content: center;
+  /* Centers the icon and text group horizontally */
+  text-align: center;
+  /* Centers the text itself if it wraps */
+  width: 100%;
+  /* Ensures the line takes full width to center properly */
 }
 
 /* Optional: Adjust icon spacing when centered */
 .plan-features li i {
-  margin-right: 8px; /* Adds space between icon and text */
-  margin-top: 4px; /* optical alignment for checkmark */
+  margin-right: 8px;
+  /* Adds space between icon and text */
+  margin-top: 4px;
+  /* optical alignment for checkmark */
 }
+
 /* =========================================
    FIX: CENTERED PACKAGE WITH ALIGNED CHECKMARKS
    ========================================= */
 
 /* 1. Make the list container shrink to fit the text, then center it */
 .plan-features {
-  width: fit-content; /* Shrinks width to match the longest text line */
-  margin-left: auto; /* Auto margins center the block horizontally */
+  width: fit-content;
+  /* Shrinks width to match the longest text line */
+  margin-left: auto;
+  /* Auto margins center the block horizontally */
   margin-right: auto;
-  text-align: left; /* Ensures text inside lines up to the left */
+  text-align: left;
+  /* Ensures text inside lines up to the left */
 }
 
 /* 2. Force list items to align left relative to the container */
 .plan-features li {
-  justify-content: flex-start; /* Aligns icon and text to the start (left) */
-  text-align: left; /* Resets text alignment to left */
-  width: 100%; /* Ensures full width within the container */
+  justify-content: flex-start;
+  /* Aligns icon and text to the start (left) */
+  text-align: left;
+  /* Resets text alignment to left */
+  width: 100%;
+  /* Ensures full width within the container */
 }
 
 /* 3. Keep the card content centered (Title, Price, Button) */
 .pricing-card {
   text-align: center;
-  align-items: stretch; /* Ensures the card fills height properly */
+  align-items: stretch;
+  /* Ensures the card fills height properly */
 }
 
 /* 4. Ensure the button is centered specifically */
@@ -3749,22 +3899,28 @@ body.menu-open::after {
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 280px; /* Optional: Keeps button from being too wide */
+  max-width: 280px;
+  /* Optional: Keeps button from being too wide */
 }
+
 /* =========================================
    STYLISH BURGER BAR (MOBILE MENU)
    ========================================= */
 
 @media (max-width: 768px) {
+
   /* 1. The Container Button */
   .hamburger {
-    display: flex; /* Ensure it's visible on mobile */
+    display: flex;
+    /* Ensure it's visible on mobile */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 48px; /* Fixed square size */
+    width: 48px;
+    /* Fixed square size */
     height: 48px;
-    padding: 0; /* Reset padding to center bars */
+    padding: 0;
+    /* Reset padding to center bars */
 
     /* Glassmorphism Style */
     background: rgba(255, 255, 255, 0.85);
@@ -3772,13 +3928,16 @@ body.menu-open::after {
     -webkit-backdrop-filter: blur(12px);
 
     border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 14px; /* Smooth rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Soft shadow */
+    border-radius: 14px;
+    /* Smooth rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    /* Soft shadow */
 
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1002;
     cursor: pointer;
-    overflow: hidden; /* Keeps animations contained */
+    overflow: hidden;
+    /* Keeps animations contained */
   }
 
   /* 2. Hover Effect (Glow) */
@@ -3786,18 +3945,19 @@ body.menu-open::after {
     transform: scale(1.05);
     background: white;
     border-color: #667eea;
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); /* Purple glow */
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    /* Purple glow */
   }
 
   /* 3. The Bars (Lines) */
   .bar {
     width: 24px;
-    height: 2.5px; /* Thinner, more elegant lines */
-    background: linear-gradient(
-      90deg,
-      #1f2937,
-      #4b5563
-    ); /* Dark gray for contrast */
+    height: 2.5px;
+    /* Thinner, more elegant lines */
+    background: linear-gradient(90deg,
+        #1f2937,
+        #4b5563);
+    /* Dark gray for contrast */
     border-radius: 4px;
     margin: 3px 0;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -3806,34 +3966,35 @@ body.menu-open::after {
 
   /* 4. Stylish "Staggered" Look (Middle bar shorter) */
   .bar:nth-child(2) {
-    width: 16px; /* Middle bar is shorter */
-    transform: translateX(4px); /* Aligned slightly right */
+    width: 16px;
+    /* Middle bar is shorter */
+    transform: translateX(4px);
+    /* Aligned slightly right */
   }
 
   /* Hover Animation: Expand the middle bar */
   .hamburger:hover .bar:nth-child(2) {
     width: 24px;
     transform: translateX(0);
-    background: linear-gradient(
-      90deg,
-      #667eea,
-      #764ba2
-    ); /* Gradient on hover */
+    background: linear-gradient(90deg,
+        #667eea,
+        #764ba2);
+    /* Gradient on hover */
   }
 
   .hamburger:hover .bar:nth-child(1),
   .hamburger:hover .bar:nth-child(3) {
-    background: linear-gradient(
-      90deg,
-      #667eea,
-      #764ba2
-    ); /* Gradient on hover */
+    background: linear-gradient(90deg,
+        #667eea,
+        #764ba2);
+    /* Gradient on hover */
   }
 
   /* 5. ACTIVE STATE (When Menu is Open) */
   .hamburger.active {
     background: white;
-    border-color: #fbbf24; /* Gold accent border when open */
+    border-color: #fbbf24;
+    /* Gold accent border when open */
     box-shadow: 0 4px 15px rgba(251, 191, 36, 0.2);
   }
 
@@ -3858,6 +4019,7 @@ body.menu-open::after {
     background: #1f2937;
   }
 }
+
 /* =========================================
    PLANS SECTION UPDATES: FONT & SPACING
    ========================================= */
@@ -3884,7 +4046,8 @@ body.menu-open::after {
 }
 
 .plan-features li {
-  margin-bottom: 1.2rem; /* Increased spacing between features */
+  margin-bottom: 1.2rem;
+  /* Increased spacing between features */
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -3895,6 +4058,7 @@ body.menu-open::after {
   letter-spacing: -0.02em;
   color: #111827;
 }
+
 /* =========================================
    FIX: REMOVE GAPS & SET FONT
    ========================================= */
@@ -3906,15 +4070,19 @@ body.menu-open::after {
 
 /* 2. Reduce the gap between price and features */
 .plan-header {
-  margin-bottom: 0.5rem !important; /* Reduced from 2.5rem */
-  padding-bottom: 0.5rem !important; /* Reduced from 2.5rem */
-  border-bottom: none !important; /* Optional: removes the line for a cleaner look */
+  margin-bottom: 0.5rem !important;
+  /* Reduced from 2.5rem */
+  padding-bottom: 0.5rem !important;
+  /* Reduced from 2.5rem */
+  border-bottom: none !important;
+  /* Optional: removes the line for a cleaner look */
 }
 
 /* 3. Ensure list items follow the new font */
 .plan-features li {
   font-family: "Noto Sans Georgian", sans-serif !important;
-  margin-bottom: 0.8rem; /* Keeps features clean but compact */
+  margin-bottom: 0.8rem;
+  /* Keeps features clean but compact */
   font-size: 0.95rem;
 }
 
@@ -3923,6 +4091,7 @@ body.menu-open::after {
 .plan-btn {
   font-family: "Noto Sans Georgian", sans-serif !important;
 }
+
 /* ================================
    PLANS SECTION – FINAL CENTER FIX
    ================================ */
@@ -3954,6 +4123,7 @@ body.menu-open::after {
   align-items: center;
   text-align: center;
 }
+
 /* ================================
    MOBILE PLANS FIX
    ================================ */
@@ -3990,13 +4160,15 @@ body.menu-open::after {
     margin: 0;
   }
 }
+
 /* =========================================
    FINAL FIX: PC WIDE SCREEN LAYOUT (ULTIMATE)
    ========================================= */
 
 /* 1. ვაიძულოთ კონტეინერი, რომ გაიშალოს ეკრანის 95%-ზე */
 #plans .container {
-  max-width: 1600px !important; /* 1200px-ის ნაცვლად */
+  max-width: 1600px !important;
+  /* 1200px-ის ნაცვლად */
   width: 95% !important;
   padding: 0 15px;
 }
@@ -4004,8 +4176,10 @@ body.menu-open::after {
 /* 2. გრიდის გასწორება */
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr) !important; /* მკაცრად 4 სვეტი */
-  gap: 1.5rem !important; /* ზომიერი დაშორება */
+  grid-template-columns: repeat(4, 1fr) !important;
+  /* მკაცრად 4 სვეტი */
+  gap: 1.5rem !important;
+  /* ზომიერი დაშორება */
   margin-top: 3rem;
   max-width: 100% !important;
   justify-content: center;
@@ -4013,7 +4187,8 @@ body.menu-open::after {
 
 /* 3. ბარათების შიდა დაშორების შემცირება, რომ ტექსტი არ გადავიდეს */
 .pricing-card {
-  padding: 2.5rem 1rem !important; /* გვერდებიდან ადგილი შევამცირეთ */
+  padding: 2.5rem 1rem !important;
+  /* გვერდებიდან ადგილი შევამცირეთ */
   width: 100%;
 }
 
@@ -4025,7 +4200,8 @@ body.menu-open::after {
 @media (max-width: 1350px) {
   .pricing-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    max-width: 900px !important; /* ცენტრში ლამაზად რომ დაჯდეს */
+    max-width: 900px !important;
+    /* ცენტრში ლამაზად რომ დაჯდეს */
     margin-left: auto;
     margin-right: auto;
   }
@@ -4042,11 +4218,13 @@ body.menu-open::after {
     max-width: 100% !important;
   }
 }
+
 /* =========================================
    FIX: ULTRA SMALL SCREENS (<400px)
    ========================================= */
 
 @media (max-width: 400px) {
+
   /* 1. კონტეინერის დაშორების შემცირება, რომ მეტი ადგილი მოვიგოთ */
   #plans .container {
     padding: 0 10px !important;
@@ -4064,7 +4242,8 @@ body.menu-open::after {
 
   /* 3. ბარათების ზომის კომპაქტურობა */
   .pricing-card {
-    padding: 1.5rem 1rem !important; /* შიდა დაშორება განახევრდა */
+    padding: 1.5rem 1rem !important;
+    /* შიდა დაშორება განახევრდა */
     width: 100% !important;
     border-radius: 16px !important;
     margin: 0 !important;
@@ -4077,8 +4256,10 @@ body.menu-open::after {
   }
 
   .price {
-    font-size: 1.8rem !important; /* ფასი უფრო პატარა იქნება */
-    flex-wrap: wrap; /* თუ მაინც არ ეტევა, ჩამოვიდეს ქვემოთ */
+    font-size: 1.8rem !important;
+    /* ფასი უფრო პატარა იქნება */
+    flex-wrap: wrap;
+    /* თუ მაინც არ ეტევა, ჩამოვიდეს ქვემოთ */
     justify-content: center;
   }
 
@@ -4090,7 +4271,8 @@ body.menu-open::after {
   .plan-features li {
     font-size: 0.85rem !important;
     line-height: 1.4 !important;
-    white-space: normal !important; /* ტექსტს უფლებას აძლევს გადავიდეს ახალ ხაზზე */
+    white-space: normal !important;
+    /* ტექსტს უფლებას აძლევს გადავიდეს ახალ ხაზზე */
   }
 
   /* 6. ღილაკის ზომა */
@@ -4526,6 +4708,7 @@ body.menu-open::after {
     opacity: 0;
     transform: translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -4533,10 +4716,12 @@ body.menu-open::after {
 }
 
 @keyframes calculatorBadgePulse {
+
   0%,
   100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.06);
   }
@@ -4595,15 +4780,14 @@ body.menu-open::after {
 
 /* === BEGIN SURVEY CSS === */
 .calculator-shell {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.03),
-    rgba(255, 255, 255, 0.02)
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.02));
   border-radius: 14px;
   padding: 18px;
   box-shadow: 0 8px 30px rgba(2, 6, 23, 0.08);
 }
+
 .calculator-estimate {
   display: block;
   background: rgba(255, 255, 255, 0.02);
@@ -4612,19 +4796,23 @@ body.menu-open::after {
   margin-bottom: 12px;
   overflow: hidden;
 }
+
 .calculator-estimate:not(.is-visible) {
   display: none;
 }
+
 .calculator-estimate-head {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 8px;
 }
+
 .calculator-estimate-label {
   font-size: 0.9rem;
   color: #94a3b8;
 }
+
 .calculator-estimate-badge {
   background: linear-gradient(90deg, #10b981, #06b6d4);
   color: #fff;
@@ -4633,27 +4821,29 @@ body.menu-open::after {
   font-weight: 700;
   font-size: 0.8rem;
 }
+
 .calculator-estimate-prices {
   display: flex;
   gap: 12px;
   align-items: center;
 }
+
 .calculator-estimate-old {
   color: #94a3b8;
   text-decoration: line-through;
   font-size: 0.95rem;
 }
+
 .calculator-estimate-today {
-  background: linear-gradient(
-    90deg,
-    rgba(37, 99, 235, 0.08),
-    rgba(99, 102, 241, 0.04)
-  );
+  background: linear-gradient(90deg,
+      rgba(37, 99, 235, 0.08),
+      rgba(99, 102, 241, 0.04));
   padding: 8px 12px;
   border-radius: 8px;
   color: #0f172a;
   font-weight: 700;
 }
+
 .calculator-estimate-note {
   font-size: 0.8rem;
   color: #64748b;
@@ -4665,9 +4855,11 @@ body.menu-open::after {
   gap: 8px;
   justify-content: flex-end;
 }
+
 .calculator-actions .btn {
   min-width: 100px;
 }
+
 .calculator-actions #calculator-back {
   background: transparent;
   color: #334155;
@@ -4679,10 +4871,12 @@ body.menu-open::after {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .calculator-actions {
     justify-content: space-between;
   }
 }
+
 /* === END SURVEY CSS === */
 
 /* === PLANS PREMIUM SECTION === */
@@ -4790,11 +4984,9 @@ body.menu-open::after {
   height: 220px;
   right: -75px;
   bottom: -95px;
-  background: radial-gradient(
-    circle,
-    rgba(102, 126, 234, 0.2) 0%,
-    rgba(102, 126, 234, 0) 72%
-  );
+  background: radial-gradient(circle,
+      rgba(102, 126, 234, 0.2) 0%,
+      rgba(102, 126, 234, 0) 72%);
   opacity: 0;
   transform: translateY(14px);
   pointer-events: none;
@@ -4871,11 +5063,9 @@ body.menu-open::after {
   padding: 0.45rem 0.8rem;
   border-radius: 14px;
   border: 1px solid rgba(102, 126, 234, 0.22);
-  background: linear-gradient(
-    135deg,
-    rgba(102, 126, 234, 0.1) 0%,
-    rgba(255, 255, 255, 0.9) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(102, 126, 234, 0.1) 0%,
+      rgba(255, 255, 255, 0.9) 100%);
   font-size: 2.15rem;
   line-height: 1;
   font-weight: 800;
@@ -4891,7 +5081,7 @@ body.menu-open::after {
   color: #764ba2;
 }
 
-#plans .plans-price > span:last-child {
+#plans .plans-price>span:last-child {
   margin-bottom: 0.25rem;
   font-size: 0.9rem;
   font-weight: 600;
@@ -4948,11 +5138,9 @@ body.menu-open::after {
 #plans .plans-card-featured {
   transform: translateY(-8px);
   padding-top: 2.35rem;
-  background: linear-gradient(
-    180deg,
-    rgba(102, 126, 234, 0.1) 0%,
-    rgba(255, 255, 255, 0.98) 58%
-  );
+  background: linear-gradient(180deg,
+      rgba(102, 126, 234, 0.1) 0%,
+      rgba(255, 255, 255, 0.98) 58%);
   border-color: rgba(102, 126, 234, 0.48);
   box-shadow: 0 24px 52px rgba(102, 126, 234, 0.26);
 }
@@ -4974,15 +5162,13 @@ body.menu-open::after {
   color: #4f46e5;
   text-shadow: 0 8px 18px rgba(102, 126, 234, 0.24);
   border-color: rgba(102, 126, 234, 0.3);
-  background: linear-gradient(
-    135deg,
-    rgba(102, 126, 234, 0.16) 0%,
-    rgba(255, 255, 255, 0.95) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(102, 126, 234, 0.16) 0%,
+      rgba(255, 255, 255, 0.95) 100%);
 }
 
 #plans .plans-card-featured .plans-currency,
-#plans .plans-card-featured .plans-price > span:last-child {
+#plans .plans-card-featured .plans-price>span:last-child {
   color: #6b7280;
 }
 
@@ -5022,11 +5208,9 @@ body.menu-open::after {
 #plans .plans-card-qr {
   padding-top: 2.35rem;
   border-color: rgba(16, 185, 129, 0.35);
-  background: linear-gradient(
-    180deg,
-    rgba(16, 185, 129, 0.07) 0%,
-    rgba(255, 255, 255, 0.97) 62%
-  );
+  background: linear-gradient(180deg,
+      rgba(16, 185, 129, 0.07) 0%,
+      rgba(255, 255, 255, 0.97) 62%);
 }
 
 #plans .plans-card-qr .plans-tier {
@@ -5043,11 +5227,9 @@ body.menu-open::after {
   color: #047857;
   text-shadow: 0 8px 18px rgba(16, 185, 129, 0.2);
   border-color: rgba(16, 185, 129, 0.3);
-  background: linear-gradient(
-    135deg,
-    rgba(16, 185, 129, 0.12) 0%,
-    rgba(255, 255, 255, 0.9) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(16, 185, 129, 0.12) 0%,
+      rgba(255, 255, 255, 0.9) 100%);
 }
 
 #plans .plans-card-qr .plans-currency {
@@ -5134,4 +5316,445 @@ body.menu-open::after {
   #plans .plans-note {
     margin-top: 1.4rem;
   }
+}
+
+/* ========================================================================= */
+/* THEME TOGGLE & DARK MODE OVERRIDES                                        */
+/* ========================================================================= */
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.theme-toggle {
+  background: white;
+  border: 1px solid #e5e7eb;
+  color: #1f2937;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.theme-toggle i {
+  position: absolute;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-size: 1.1rem;
+}
+
+.theme-toggle .light-icon {
+  opacity: 0;
+  transform: translateY(20px) rotate(-90deg);
+}
+
+.theme-toggle .dark-icon {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg);
+}
+
+/* DARK THEME VARS & OVERRIDES */
+[data-theme="dark"] {
+  --bg-primary: #0b0f19;
+  --bg-secondary: #0f172a;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --border-color: rgba(255, 255, 255, 0.05);
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --glass-bg: rgba(11, 15, 25, 0.85);
+  --accent-primary: #fbbf24;
+  --accent-secondary: #f59e0b;
+}
+
+[data-theme="dark"] body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Navbar */
+[data-theme="dark"] .navbar {
+  background: var(--glass-bg);
+  border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .navbar.scrolled {
+  background: var(--bg-primary);
+  border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .brand-text a {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .brand-text a:hover {
+  color: var(--accent-primary);
+}
+
+[data-theme="dark"] .nav-link {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+  color: var(--accent-primary);
+  background: rgba(251, 191, 36, 0.1);
+}
+
+[data-theme="dark"] .nav-link::before {
+  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.05), transparent);
+}
+
+[data-theme="dark"] .nav-link::after {
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+}
+
+/* Theme Toggle Button dark state */
+[data-theme="dark"] .theme-toggle {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .theme-toggle .light-icon {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg);
+  color: var(--accent-primary);
+}
+
+[data-theme="dark"] .theme-toggle .dark-icon {
+  opacity: 0;
+  transform: translateY(-20px) rotate(90deg);
+}
+
+/* Hero Section */
+[data-theme="dark"] .hero {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .hero::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.1) 0%, rgba(15, 23, 42, 0) 50%);
+  pointer-events: none;
+}
+
+/* General Typography */
+[data-theme="dark"] .section-title {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .section-title:hover {
+  color: var(--accent-primary);
+}
+
+[data-theme="dark"] .section-subtitle {
+  color: var(--text-secondary);
+}
+
+/* Section Backgrounds */
+[data-theme="dark"] .about,
+[data-theme="dark"] .why-choose,
+[data-theme="dark"] .expertise,
+[data-theme="dark"] .projects,
+[data-theme="dark"] .contact,
+[data-theme="dark"] .testimonials {
+  background: var(--bg-primary);
+}
+
+[data-theme="dark"] .strategy,
+[data-theme="dark"] .why-website,
+[data-theme="dark"] #plans {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Cards & Components */
+[data-theme="dark"] .about-card,
+[data-theme="dark"] .skill-category,
+[data-theme="dark"] .advantage-card,
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .expertise-card,
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .pricing-card,
+[data-theme="dark"] .contact-info,
+[data-theme="dark"] .contact-form,
+[data-theme="dark"] .contact-card,
+[data-theme="dark"] .plans-card {
+  background: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Special Case: Pricing Featured Card */
+[data-theme="dark"] .plans-card-featured {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(245, 158, 11, 0.05));
+  border: 2px solid var(--accent-primary) !important;
+  box-shadow: 0 10px 40px rgba(251, 191, 36, 0.15) !important;
+}
+
+[data-theme="dark"] .plans-card-featured .plans-desc,
+[data-theme="dark"] .plans-card-featured .plans-features li,
+[data-theme="dark"] .plans-card-featured .plans-currency,
+[data-theme="dark"] .plans-card-featured .plans-price>span:last-child {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .plans-card-featured .plans-price {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .plans-card-featured h3 {
+  color: #fbbf24 !important;
+}
+
+[data-theme="dark"] .plans-card-qr {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .plans-card-qr .plans-desc,
+[data-theme="dark"] .plans-card-qr .plans-features li {
+  color: var(--text-secondary) !important;
+}
+
+/* Text Colors inside Cards */
+[data-theme="dark"] .about-card h3,
+[data-theme="dark"] .skills h3,
+[data-theme="dark"] .category-header h4,
+[data-theme="dark"] .advantage-header h3,
+[data-theme="dark"] .testimonials h3,
+[data-theme="dark"] .author-info h4,
+[data-theme="dark"] .expertise-header h3,
+[data-theme="dark"] .project-title,
+[data-theme="dark"] .plan-header h3,
+[data-theme="dark"] .price,
+[data-theme="dark"] .price span,
+[data-theme="dark"] .contact-details h3,
+[data-theme="dark"] .form-group label,
+[data-theme="dark"] .plans-card h3 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .about-description,
+[data-theme="dark"] .advantage-content p,
+[data-theme="dark"] .testimonial-content p,
+[data-theme="dark"] .author-info span,
+[data-theme="dark"] .expertise-details p,
+[data-theme="dark"] .expertise-description,
+[data-theme="dark"] .project-description,
+[data-theme="dark"] .plans-desc,
+[data-theme="dark"] .plans-card .plans-desc,
+[data-theme="dark"] .plans-currency,
+[data-theme="dark"] .plans-price>span:last-child,
+[data-theme="dark"] .form-control {
+  color: var(--text-secondary) !important;
+}
+
+/* Specific Pricing elements dark mode fixes */
+[data-theme="dark"] .plans-price {
+  color: var(--text-primary) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  text-shadow: none !important;
+}
+
+[data-theme="dark"] .plans-card-featured .plans-price {
+  background: rgba(251, 191, 36, 0.1) !important;
+  border-color: rgba(251, 191, 36, 0.3) !important;
+}
+
+[data-theme="dark"] .plans-card-qr .plans-price {
+  background: rgba(16, 185, 129, 0.15) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+[data-theme="dark"] .plans-tier {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .plans-card-featured .plans-tier {
+  background: rgba(251, 191, 36, 0.2) !important;
+  color: #fbbf24 !important;
+}
+
+[data-theme="dark"] .plans-card-qr .plans-tier,
+[data-theme="dark"] .plans-card-qr .plans-price {
+  background: rgba(16, 185, 129, 0.15) !important;
+  color: #34d399 !important;
+}
+
+[data-theme="dark"] .plans-features li {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .plans-kicker {
+  background: rgba(139, 92, 246, 0.15) !important;
+  color: #a78bfa !important;
+  border-color: rgba(139, 92, 246, 0.3) !important;
+}
+
+[data-theme="dark"] .plans-card-featured .plans-kicker {
+  background: rgba(251, 191, 36, 0.2) !important;
+  color: #fbbf24 !important;
+  border-color: rgba(251, 191, 36, 0.4) !important;
+}
+
+[data-theme="dark"] .plans-icon {
+  background: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .plans-card-featured .plans-icon {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b) !important;
+  color: #0b0f19 !important;
+  box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3) !important;
+}
+
+[data-theme="dark"] .plans-card-qr {
+  background: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .plans-card-qr .plans-icon {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: #f8fafc !important;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Tags and Filters */
+[data-theme="dark"] .expertise-skill,
+[data-theme="dark"] .tech-tag {
+  background: rgba(251, 191, 36, 0.15) !important;
+  /* Gold transparent */
+  color: #fbbf24 !important;
+  /* Gold text */
+  border: 1px solid rgba(251, 191, 36, 0.3) !important;
+}
+
+[data-theme="dark"] .expertise-card:hover .expertise-skill,
+[data-theme="dark"] .project-card:hover .tech-tag {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b) !important;
+  color: #0b0f19 !important;
+}
+
+[data-theme="dark"] .filter-btn {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .filter-btn:hover,
+[data-theme="dark"] .filter-btn.active {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: #0b0f19;
+  border-color: transparent;
+}
+
+/* Form Controls */
+[data-theme="dark"] .form-control {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-control:focus {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-primary);
+}
+
+[data-theme="dark"] .contact-info-item {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .social-links .social-link {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Feature Lists */
+[data-theme="dark"] .advantage-content li {
+  color: var(--text-primary);
+}
+
+/* Typings and Headings in Hero */
+[data-theme="dark"] .hero-title,
+[data-theme="dark"] .hero-subtitle {
+  color: var(--text-primary);
+}
+
+/* CTA sections */
+[data-theme="dark"] .strategy-cta,
+[data-theme="dark"] .why-choose-cta,
+[data-theme="dark"] .cta-section {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .cta-content h3,
+[data-theme="dark"] .cta-content p {
+  color: var(--text-primary);
+}
+
+/* Buttons */
+[data-theme="dark"] .btn-primary {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
+  color: #000 !important;
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3) !important;
+  border: 1px solid rgba(251, 191, 36, 0.5) !important;
+}
+
+[data-theme="dark"] .btn-primary::before {
+  background: linear-gradient(135deg, var(--accent-secondary), #d97706) !important;
+}
+
+[data-theme="dark"] .btn-secondary {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(20px) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: var(--accent-primary) !important;
+  color: var(--accent-primary) !important;
+}
+
+[data-theme="dark"] .nav-cta-btn {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
+  color: #0b0f19 !important;
+  box-shadow: 0 4px 20px rgba(251, 191, 36, 0.4) !important;
+}
+
+[data-theme="dark"] .nav-cta-btn::before {
+  background: linear-gradient(135deg, var(--accent-secondary), #b45309) !important;
 }
