@@ -196,7 +196,8 @@ body.menu-open::after {
 }
 
 .nav-link {
-  color: #374151;
+  color: var(--text-primary, #374151);
+  /* Updated to use css variable for dark mode support */
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
@@ -209,6 +210,10 @@ body.menu-open::after {
   white-space: nowrap;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   overflow: hidden;
+}
+
+[data-theme="dark"] .nav-link {
+  color: var(--text-primary);
 }
 
 .nav-link::before {
@@ -2919,6 +2924,11 @@ body.menu-open::after {
     visibility: visible;
   }
 
+  [data-theme="dark"] .nav-menu {
+    background: var(--bg-primary);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
   .nav-menu.active {
     transform: translateX(0);
     /* Slide into view */
@@ -5503,13 +5513,18 @@ body.menu-open::after {
 [data-theme="dark"] .expertise-card,
 [data-theme="dark"] .project-card,
 [data-theme="dark"] .pricing-card,
-[data-theme="dark"] .contact-info,
 [data-theme="dark"] .contact-form,
 [data-theme="dark"] .contact-card,
 [data-theme="dark"] .plans-card {
   background: var(--card-bg) !important;
   border-color: var(--border-color) !important;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .contact-info {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 /* Special Case: Pricing Featured Card */
