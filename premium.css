@@ -1,0 +1,224 @@
+/* Premium "Tech Luxury" Overrides */
+:root {
+  --bg-dark: #07090f;
+  --bg-card: rgba(20, 24, 39, 0.6);
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --gold-primary: #d4af37; /* Metallic gold */
+  --gold-glow: rgba(212, 175, 55, 0.25);
+  --blue-accent: #2563eb;
+}
+
+body {
+  background-color: var(--bg-dark) !important;
+  color: var(--text-main) !important;
+}
+
+/* Base Texture to give a sleek tech feel */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Typography & Headers */
+h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-title, .expertise-card h3 {
+  color: #ffffff !important;
+}
+.section-subtitle, .hero-description, .about-description, .project-description, .plans-desc, .expertise-details p {
+  color: var(--text-muted) !important;
+}
+
+.highlight, .n1-accent {
+  background: linear-gradient(45deg, #fceabb, #f8b500) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* Sections Backgrounds Make Deep Dark */
+.hero, .about, .strategy, .why-choose, .services, .projects, .plans, .expertise, .contact {
+  background: var(--bg-dark) !important;
+}
+
+.hero {
+  background: radial-gradient(circle at center top, #111524 0%, var(--bg-dark) 100%) !important;
+}
+
+.about::before {
+  display: none !important; 
+}
+
+/* Cards & Glassmorphism */
+.about-card, .skill-category, .advantage-card, .project-card, .plans-card, .expertise-card, .timeline-content, .result-item, .principle-card {
+  background: var(--bg-card) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 16px !important;
+}
+
+.about-card:hover, .skill-category:hover, .project-card:hover, .plans-card:hover, .expertise-card:hover, .timeline-content:hover {
+  border-color: rgba(212, 175, 55, 0.2) !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 20px var(--gold-glow) !important;
+  transform: translateY(-4px) !important;
+}
+
+/* Buttons completely revamped */
+.btn-primary, .plans-btn-primary, #submit-btn {
+  background: linear-gradient(135deg, #d4af37, #b8962e) !important;
+  color: #000 !important;
+  box-shadow: 0 8px 25px var(--gold-glow) !important;
+  border: none !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  border-radius: 8px !important;
+  padding: 16px 32px !important;
+}
+
+.btn-primary:hover, .plans-btn-primary:hover, #submit-btn:hover {
+  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  padding: 16px 32px !important;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: var(--gold-primary) !important;
+  color: var(--gold-primary) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(7, 9, 15, 0.8) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.navbar.scrolled {
+  background: rgba(7, 9, 15, 0.95) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8) !important;
+}
+
+.nav-link {
+  color: var(--text-main) !important;
+}
+
+.nav-link.active, .nav-link:hover {
+  color: var(--gold-primary) !important;
+  background: rgba(212, 175, 55, 0.05) !important;
+  box-shadow: none !important;
+}
+
+.nav-link::after {
+  background: var(--gold-primary) !important;
+}
+
+/* Icons & Decorations */
+.card-icon, .category-icon, .advantage-icon, .expertise-icon, .plans-icon, .result-icon, .principle-icon, .marker-icon {
+  background: rgba(212, 175, 55, 0.08) !important;
+  border: 1px solid rgba(212, 175, 55, 0.2) !important;
+}
+
+.card-icon i, .category-icon i, .advantage-icon i, .expertise-icon i, .plans-icon i, .result-icon i, .principle-icon i, .marker-icon i {
+  color: var(--gold-primary) !important;
+}
+
+.stat-number, .timeline-content h4, .principle-card h4, .result-number {
+  color: var(--gold-primary) !important;
+}
+
+/* Specific elements adjustments */
+.timeline::before {
+  background: linear-gradient(180deg, var(--gold-primary), transparent) !important;
+}
+
+.marker-number {
+  background: var(--gold-primary) !important;
+  color: #000 !important;
+}
+
+.section-title::after {
+  background: var(--gold-primary) !important;
+}
+
+.hero-badge {
+  background: rgba(212, 175, 55, 0.1) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  color: var(--gold-primary) !important;
+}
+
+.hero-badge i {
+  color: var(--gold-primary) !important;
+}
+
+.footer {
+  background: #040508 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.footer-description, .footer-links a {
+  color: var(--text-muted) !important;
+}
+
+.footer-links a:hover {
+  color: var(--gold-primary) !important;
+}
+
+/* Input Fields */
+.form-group input, .form-group textarea {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  border-color: var(--gold-primary) !important;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2) !important;
+}
+
+.form-group label {
+  color: var(--text-muted) !important;
+}
+
+.contact-item {
+  color: var(--text-main) !important;
+}
+.contact-item i {
+  color: var(--gold-primary) !important;
+}
+
+/* Tech Tags */
+.tech-tag {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  color: #fff !important;
+}
+
+/* Social Links */
+.social-link {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+.social-link:hover {
+  background: var(--gold-primary) !important;
+  color: #000 !important;
+}
+.social-link:hover i {
+  color: #000 !important;
+}
