@@ -90,6 +90,21 @@
 </head>
 
 <body>
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+  <!-- Floating Action Buttons -->
+  <div class="fab-group" aria-label="Quick actions">
+    <a href="https://wa.me/995558699889" class="fab-btn fab-whatsapp" target="_blank" rel="noopener noreferrer"
+      aria-label="დაგვიკავშირდით WhatsApp-ზე">
+      <span class="fab-pulse"></span>
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <button id="scroll-top-btn" class="fab-btn fab-scroll-top" aria-label="დაბრუნება თავში">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+  </div>
+
   <nav class="navbar" id="navbar" aria-label="Main navigation">
     <div class="nav-container">
       <div class="nav-logo">
@@ -101,7 +116,7 @@
       </div>
       <ul class="nav-menu" id="nav-menu">
         <li>
-          <a href="#home" class="nav-link active"><i class="fas fa-home"></i> მთავარი</a>
+          <a href="#home" class="nav-link"><i class="fas fa-home"></i> მთავარი</a>
         </li>
         <li>
           <a href="#about" class="nav-link"><i class="fas fa-user"></i> ჩვენ შესახებ</a>
@@ -805,6 +820,11 @@
             <div class="project-placeholder">
               <i class="fa-solid fa-industry"></i>
             </div>
+            <div class="project-overlay">
+              <a href="https://n1k0devv.github.io/kutaisisqvisqarxana/" class="overlay-demo-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
           </div>
           <div class="project-content">
             <h3 class="project-title">ქვის ქარხანა</h3>
@@ -829,6 +849,11 @@
           <div class="project-image">
             <div class="project-placeholder">
               <i class="fas fa-hotel"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="https://n1k0devv.github.io/sastumro/" class="overlay-demo-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
             </div>
           </div>
           <div class="project-content">
@@ -856,6 +881,11 @@
             <div class="project-placeholder">
               <i class="fa-solid fa-tooth"></i>
             </div>
+            <div class="project-overlay">
+              <a href="https://n1k0devv.github.io/dentisit/" class="overlay-demo-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
           </div>
           <div class="project-content">
             <h3 class="project-title">კლინიკა</h3>
@@ -881,6 +911,11 @@
           <div class="project-image">
             <div class="project-placeholder">
               <i class="fa-solid fa-dumbbell"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="https://n1k0devv.github.io/gym1.github.io/" class="overlay-demo-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
             </div>
           </div>
           <div class="project-content">
@@ -908,6 +943,11 @@
             <div class="project-placeholder">
               <i class="fas fa-home"></i>
             </div>
+            <div class="project-overlay">
+              <a href="https://n1k0devv.github.io/realestate/" class="overlay-demo-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
           </div>
           <div class="project-content">
             <h3 class="project-title">უძრავი ქონება</h3>
@@ -933,6 +973,11 @@
           <div class="project-image">
             <div class="project-placeholder">
               <i class="fas fa-utensils"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="https://n1k0devv.github.io/restorani/" class="overlay-demo-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
             </div>
           </div>
           <div class="project-content">
@@ -1128,21 +1173,22 @@
           </div>
         </div>
         <form class="contact-form" id="contact-form" novalidate>
-          <div class="form-group">
+          <div class="form-group form-float">
+            <input type="text" id="from_name" name="from_name" required autocomplete="name" placeholder=" " />
             <label for="from_name">სახელი</label>
-            <input type="text" id="from_name" name="from_name" required autocomplete="name" />
           </div>
-          <div class="form-group">
+          <div class="form-group form-float">
+            <input type="email" id="reply_to" name="reply_to" required autocomplete="email" placeholder=" " />
             <label for="reply_to">ელ. ფოსტა</label>
-            <input type="email" id="reply_to" name="reply_to" required autocomplete="email" />
           </div>
-          <div class="form-group">
+          <div class="form-group form-float">
+            <input type="text" id="subject" name="subject" required placeholder=" " />
             <label for="subject">თემა</label>
-            <input type="text" id="subject" name="subject" required />
           </div>
-          <div class="form-group">
+          <div class="form-group form-float">
+            <textarea id="message" name="message" rows="5" required maxlength="500" placeholder=" "></textarea>
             <label for="message">შეტყობინება</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <span class="char-count" aria-live="polite">0 / 500</span>
           </div>
           <button type="submit" class="btn btn-primary" id="submit-btn">
             <span class="btn-text">გაგზავნა</span>

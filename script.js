@@ -7,20 +7,27 @@ document.addEventListener("DOMContentLoaded", function () {
   initializePerformanceOptimizations();
   initializeNavigation();
   initializeSmoothScrolling();
+  initializeScrollProgress();
+  initializeScrollToTop();
+  initializeScrollSpy();
 
   // Ultra-aggressive deferring for minimal lag
   if (typeof requestIdleCallback !== "undefined") {
     requestIdleCallback(() => initializeScrollAnimations(), { timeout: 1000 });
-    requestIdleCallback(() => initializeInteractiveEffects(), {
-      timeout: 1500,
-    });
+    requestIdleCallback(() => initializeStaggerAnimations(), { timeout: 1100 });
+    requestIdleCallback(() => initializeInteractiveEffects(), { timeout: 1500 });
     requestIdleCallback(() => initializeContactForm(), { timeout: 2000 });
+    requestIdleCallback(() => initializeFloatingLabels(), { timeout: 2100 });
+    requestIdleCallback(() => initializeCharCounter(), { timeout: 2200 });
     requestIdleCallback(() => initializeCalculatorFunnel(), { timeout: 2400 });
     requestIdleCallback(() => initializeProjectFilters(), { timeout: 2800 });
   } else {
     setTimeout(initializeScrollAnimations, 50);
+    setTimeout(initializeStaggerAnimations, 60);
     setTimeout(initializeInteractiveEffects, 150);
     setTimeout(initializeContactForm, 300);
+    setTimeout(initializeFloatingLabels, 320);
+    setTimeout(initializeCharCounter, 340);
     setTimeout(initializeCalculatorFunnel, 360);
     setTimeout(initializeProjectFilters, 440);
   }
@@ -1808,4 +1815,144 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(initializeCountdown, 500);
   }
 });
+
+// ============================================================
+// UX OVERHAUL — NEW PREMIUM FUNCTIONS
+// ============================================================
+
+// 1. Scroll Progress Bar
+function initializeScrollProgress() {
+  const bar = document.getElementById("scroll-progress");
+  if (!bar) return;
+
+  let ticking = false;
+  function updateBar() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width = pct + "%";
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(updateBar);
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
+// 2. Scroll-to-Top Button
+function initializeScrollToTop() {
+  const btn = document.getElementById("scroll-top-btn");
+  if (!btn) return;
+
+  let ticking = false;
+  function updateVisibility() {
+    btn.classList.toggle("visible", window.scrollY > 400);
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(updateVisibility);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+// 3. Scroll-Spy — Active Nav Links Track Current Section
+function initializeScrollSpy() {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+  if (!sections.length || !navLinks.length) return;
+
+  const spy = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute("id");
+          navLinks.forEach((link) => {
+            const href = link.getAttribute("href");
+            const isMatch = href === "#" + id;
+            link.classList.toggle("active", isMatch);
+          });
+        }
+      });
+    },
+    {
+      rootMargin: "-45% 0px -45% 0px",
+      threshold: 0,
+    }
+  );
+
+  sections.forEach((section) => spy.observe(section));
+}
+
+// 4. Floating Labels for Contact Form
+function initializeFloatingLabels() {
+  const floatGroups = document.querySelectorAll(".form-float");
+  if (!floatGroups.length) return;
+
+  floatGroups.forEach((group) => {
+    const input = group.querySelector("input, textarea");
+    if (!input) return;
+
+    // Check existing value on load (handles autofill)
+    function checkValue() {
+      group.classList.toggle("has-value", input.value.trim() !== "");
+    }
+
+    input.addEventListener("input", checkValue);
+    input.addEventListener("change", checkValue);
+    // Initial check after a short delay for autofill
+    setTimeout(checkValue, 300);
+  });
+}
+
+// 5. Character Counter for Message Textarea
+function initializeCharCounter() {
+  const textarea = document.getElementById("message");
+  const counter = document.querySelector(".char-count");
+  if (!textarea || !counter) return;
+
+  const max = parseInt(textarea.getAttribute("maxlength"), 10) || 500;
+
+  function update() {
+    const len = textarea.value.length;
+    counter.textContent = len + " / " + max;
+    counter.classList.remove("warning", "danger");
+    if (len >= max) {
+      counter.classList.add("danger");
+    } else if (len >= max * 0.8) {
+      counter.classList.add("warning");
+    }
+  }
+
+  textarea.addEventListener("input", update);
+  update(); // init
+}
+
+// 6. Staggered Card Reveal Animations
+function initializeStaggerAnimations() {
+  const gridSelectors = [
+    ".advantages-grid .advantage-card",
+    ".expertise-areas .expertise-card",
+    ".projects-grid .project-card",
+    ".plans-grid .plans-card",
+    ".skills-grid .skill-category",
+  ];
+
+  gridSelectors.forEach((selector) => {
+    const cards = document.querySelectorAll(selector);
+    cards.forEach((card, i) => {
+      const staggerIndex = Math.min(i + 1, 9);
+      card.classList.add("stagger-" + staggerIndex);
+    });
+  });
+}
 
