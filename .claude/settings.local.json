@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm install:*)",
+      "Bash(pnpm dev:*)",
+      "Bash(node:*)",
+      "Read(//c/Users/6469n/OneDrive/Dokumenty-GitHub-N1kodevv/**)",
+      "Bash(sed -n '1335,1345p' \"C:/Users/6469n/OneDrive/Dokumenty/GitHub/N1kodevv/style.css\")"
+    ]
+  }
+}

@@ -307,7 +307,7 @@ function initializeScrollAnimations() {
   // Animate key cards and forms when entering viewport
   document
     .querySelectorAll(
-      ".project-card, .about-card, .contact-info, .contact-form, .expertise-card, .calculator-shell, .plans-card, .plans-section-header",
+      ".project-card, .about-card, .contact-info, .contact-form, .expertise-card, .calculator-shell",
     )
     .forEach((el) => {
       el.classList.add("fade-in");
@@ -1943,7 +1943,6 @@ function initializeStaggerAnimations() {
     ".advantages-grid .advantage-card",
     ".expertise-areas .expertise-card",
     ".projects-grid .project-card",
-    ".plans-grid .plans-card",
     ".skills-grid .skill-category",
   ];
 

@@ -1,63 +1,108 @@
-/* Premium "Tech Luxury" Overrides */
+/* =====================================================
+   PREMIUM.CSS
+   Dark mode properly scoped + theme-agnostic utilities
+   ===================================================== */
+
+/* 1. CSS Variables (always available) */
 :root {
+  --gold-primary: #d4af37;
+  --gold-glow: rgba(212, 175, 55, 0.25);
   --bg-dark: #07090f;
   --bg-card: rgba(20, 24, 39, 0.6);
   --text-main: #f3f4f6;
   --text-muted: #9ca3af;
-  --gold-primary: #d4af37; /* Metallic gold */
-  --gold-glow: rgba(212, 175, 55, 0.25);
-  --blue-accent: #2563eb;
 }
 
-body {
+/* =====================================================
+   2. DARK MODE OVERRIDES — scoped to [data-theme="dark"]
+   ===================================================== */
+
+[data-theme="dark"] body {
   background-color: var(--bg-dark) !important;
   color: var(--text-main) !important;
 }
 
-/* Base Texture to give a sleek tech feel */
-body::before {
+/* Dot texture */
+[data-theme="dark"] body::before {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 30px 30px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 32px 32px;
   pointer-events: none;
-  z-index: 10;
+  z-index: -1;
 }
 
-/* Typography & Headers */
-h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-title, .expertise-card h3 {
+/* Typography */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .hero-title,
+[data-theme="dark"] .about-card h3,
+[data-theme="dark"] .project-title,
+[data-theme="dark"] .expertise-card h3 {
   color: #ffffff !important;
 }
-.section-subtitle, .hero-description, .about-description, .project-description, .plans-desc, .expertise-details p {
+
+[data-theme="dark"] .section-subtitle,
+[data-theme="dark"] .hero-description,
+[data-theme="dark"] .about-description,
+[data-theme="dark"] .project-description,
+[data-theme="dark"] .plans-desc,
+[data-theme="dark"] .expertise-details p {
   color: var(--text-muted) !important;
 }
 
-.highlight, .n1-accent {
+[data-theme="dark"] .highlight,
+[data-theme="dark"] .n1-accent {
   background: linear-gradient(45deg, #fceabb, #f8b500) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
 }
 
-/* Sections Backgrounds Make Deep Dark */
-.hero, .about, .strategy, .why-choose, .services, .projects, .plans, .expertise, .contact {
+/* Section backgrounds */
+[data-theme="dark"] .hero,
+[data-theme="dark"] .about,
+[data-theme="dark"] .strategy,
+[data-theme="dark"] .why-choose,
+[data-theme="dark"] .services,
+[data-theme="dark"] .projects,
+[data-theme="dark"] .plans,
+[data-theme="dark"] .expertise,
+[data-theme="dark"] .contact {
   background: var(--bg-dark) !important;
 }
 
-.hero {
+[data-theme="dark"] .hero {
   background: radial-gradient(circle at center top, #111524 0%, var(--bg-dark) 100%) !important;
 }
 
-.about::before {
-  display: none !important; 
+[data-theme="dark"] .about::before {
+  display: none !important;
+}
+
+[data-theme="dark"] .contact {
+  background: #050709 !important;
 }
 
 /* Cards & Glassmorphism */
-.about-card, .skill-category, .advantage-card, .project-card, .plans-card, .expertise-card, .timeline-content, .result-item, .principle-card {
+[data-theme="dark"] .about-card,
+[data-theme="dark"] .skill-category,
+[data-theme="dark"] .advantage-card,
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .plans-card,
+[data-theme="dark"] .expertise-card,
+[data-theme="dark"] .timeline-content,
+[data-theme="dark"] .result-item,
+[data-theme="dark"] .principle-card {
   background: var(--bg-card) !important;
   border: 1px solid rgba(255, 255, 255, 0.05) !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
@@ -65,14 +110,21 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-ti
   border-radius: 16px !important;
 }
 
-.about-card:hover, .skill-category:hover, .project-card:hover, .plans-card:hover, .expertise-card:hover, .timeline-content:hover {
+[data-theme="dark"] .about-card:hover,
+[data-theme="dark"] .skill-category:hover,
+[data-theme="dark"] .project-card:hover,
+[data-theme="dark"] .plans-card:hover,
+[data-theme="dark"] .expertise-card:hover,
+[data-theme="dark"] .timeline-content:hover {
   border-color: rgba(212, 175, 55, 0.2) !important;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 20px var(--gold-glow) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px var(--gold-glow) !important;
   transform: translateY(-4px) !important;
 }
 
-/* Buttons completely revamped */
-.btn-primary, .plans-btn-primary, #submit-btn {
+/* Buttons */
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .plans-btn-primary,
+[data-theme="dark"] #submit-btn {
   background: linear-gradient(135deg, #d4af37, #b8962e) !important;
   color: #000 !important;
   box-shadow: 0 8px 25px var(--gold-glow) !important;
@@ -84,12 +136,13 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-ti
   padding: 16px 32px !important;
 }
 
-.btn-primary:hover, .plans-btn-primary:hover, #submit-btn:hover {
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] .plans-btn-primary:hover,
+[data-theme="dark"] #submit-btn:hover {
   box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4) !important;
-  transform: translateY(-2px) scale(1.02) !important;
 }
 
-.btn-secondary {
+[data-theme="dark"] .btn-secondary {
   background: rgba(255, 255, 255, 0.03) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   color: #fff !important;
@@ -97,154 +150,238 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-ti
   padding: 16px 32px !important;
 }
 
-.btn-secondary:hover {
+[data-theme="dark"] .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.08) !important;
   border-color: var(--gold-primary) !important;
   color: var(--gold-primary) !important;
-  transform: translateY(-2px) !important;
 }
 
 /* Navbar */
-.navbar {
-  background: rgba(7, 9, 15, 0.8) !important;
+[data-theme="dark"] .navbar {
+  background: rgba(7, 9, 15, 0.85) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
-.navbar.scrolled {
-  background: rgba(7, 9, 15, 0.95) !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.8) !important;
+[data-theme="dark"] .navbar.scrolled {
+  background: rgba(7, 9, 15, 0.97) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
 }
 
-.nav-link {
+[data-theme="dark"] .nav-link {
   color: var(--text-main) !important;
 }
 
-.nav-link.active, .nav-link:hover {
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
   color: var(--gold-primary) !important;
   background: rgba(212, 175, 55, 0.05) !important;
   box-shadow: none !important;
 }
 
-.nav-link::after {
+[data-theme="dark"] .nav-link::after {
   background: var(--gold-primary) !important;
 }
 
+[data-theme="dark"] .brand-text a {
+  color: var(--gold-primary) !important;
+}
+
+[data-theme="dark"] .brand-text a:hover {
+  color: #e5c448 !important;
+}
+
 /* Icons & Decorations */
-.card-icon, .category-icon, .advantage-icon, .expertise-icon, .plans-icon, .result-icon, .principle-icon, .marker-icon {
+[data-theme="dark"] .card-icon,
+[data-theme="dark"] .category-icon,
+[data-theme="dark"] .advantage-icon,
+[data-theme="dark"] .expertise-icon,
+[data-theme="dark"] .plans-icon,
+[data-theme="dark"] .result-icon,
+[data-theme="dark"] .principle-icon,
+[data-theme="dark"] .marker-icon {
   background: rgba(212, 175, 55, 0.08) !important;
   border: 1px solid rgba(212, 175, 55, 0.2) !important;
 }
 
-.card-icon i, .category-icon i, .advantage-icon i, .expertise-icon i, .plans-icon i, .result-icon i, .principle-icon i, .marker-icon i {
+[data-theme="dark"] .card-icon i,
+[data-theme="dark"] .category-icon i,
+[data-theme="dark"] .advantage-icon i,
+[data-theme="dark"] .expertise-icon i,
+[data-theme="dark"] .plans-icon i,
+[data-theme="dark"] .result-icon i,
+[data-theme="dark"] .principle-icon i,
+[data-theme="dark"] .marker-icon i {
   color: var(--gold-primary) !important;
 }
 
-.stat-number, .timeline-content h4, .principle-card h4, .result-number {
+[data-theme="dark"] .stat-number,
+[data-theme="dark"] .timeline-content h4,
+[data-theme="dark"] .principle-card h4,
+[data-theme="dark"] .result-number {
   color: var(--gold-primary) !important;
 }
 
-/* Specific elements adjustments */
-.timeline::before {
+[data-theme="dark"] .timeline::before {
   background: linear-gradient(180deg, var(--gold-primary), transparent) !important;
 }
 
-.marker-number {
+[data-theme="dark"] .marker-number {
   background: var(--gold-primary) !important;
   color: #000 !important;
 }
 
-.section-title::after {
+[data-theme="dark"] .section-title::after {
   background: var(--gold-primary) !important;
 }
 
-.hero-badge {
+[data-theme="dark"] .hero-badge {
   background: rgba(212, 175, 55, 0.1) !important;
   border: 1px solid rgba(212, 175, 55, 0.3) !important;
   color: var(--gold-primary) !important;
 }
 
-.hero-badge i {
+[data-theme="dark"] .hero-badge i {
   color: var(--gold-primary) !important;
 }
 
-.footer {
+/* Footer */
+[data-theme="dark"] .footer {
   background: #040508 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
-.footer-description, .footer-links a {
+[data-theme="dark"] .footer-description,
+[data-theme="dark"] .footer-links a {
   color: var(--text-muted) !important;
 }
 
-.footer-links a:hover {
+[data-theme="dark"] .footer-links a:hover {
   color: var(--gold-primary) !important;
 }
 
-/* Input Fields */
-.form-group input, .form-group textarea {
+/* Forms */
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea {
   background: rgba(255, 255, 255, 0.03) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   color: #fff !important;
   border-radius: 8px !important;
 }
 
-.form-group input:focus, .form-group textarea:focus {
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group textarea:focus {
   border-color: var(--gold-primary) !important;
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.2) !important;
 }
 
-.form-group label {
+[data-theme="dark"] .form-group label {
   color: var(--text-muted) !important;
 }
 
-.contact-item {
+[data-theme="dark"] .contact-item {
   color: var(--text-main) !important;
 }
-.contact-item i {
+
+[data-theme="dark"] .contact-item i {
   color: var(--gold-primary) !important;
 }
 
-/* Tech Tags */
-.tech-tag {
+[data-theme="dark"] .contact-info a {
+  color: var(--text-main) !important;
+  text-decoration: none;
+}
+
+[data-theme="dark"] .contact-info a:hover {
+  color: var(--gold-primary) !important;
+}
+
+/* Tags */
+[data-theme="dark"] .tech-tag {
   background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   color: #fff !important;
 }
 
-/* Social Links */
-.social-link {
+[data-theme="dark"] .skill-tag,
+[data-theme="dark"] .expertise-skill {
+  background: rgba(212, 175, 55, 0.08) !important;
+  border: 1px solid rgba(212, 175, 55, 0.15) !important;
+  color: var(--text-main) !important;
+}
+
+/* Social links */
+[data-theme="dark"] .social-link {
   background: rgba(255, 255, 255, 0.05) !important;
 }
-.social-link:hover {
+
+[data-theme="dark"] .social-link:hover {
   background: var(--gold-primary) !important;
   color: #000 !important;
 }
-.social-link:hover i {
+
+[data-theme="dark"] .social-link:hover i {
   color: #000 !important;
 }
 
-/* ============================================================
-   UX OVERHAUL — NEW PREMIUM COMPONENTS
-   ============================================================ */
+/* Hamburger bars */
+[data-theme="dark"] .bar {
+  background: rgba(212, 175, 55, 0.85) !important;
+}
 
-/* 1. Scroll Progress Bar
-   ---------------------------------------------------------- */
+[data-theme="dark"] .hamburger:hover {
+  background: rgba(212, 175, 55, 0.08) !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15) !important;
+}
+
+/* Plans featured */
+[data-theme="dark"] .plans-card-featured {
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.15),
+              0 24px 60px rgba(0, 0, 0, 0.5),
+              0 0 40px rgba(212, 175, 55, 0.08) !important;
+}
+
+/* Hero greeting in dark */
+[data-theme="dark"] .hero-greeting {
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  opacity: 0.65 !important;
+  color: var(--gold-primary) !important;
+}
+
+/* Projects note */
+[data-theme="dark"] .projects-note {
+  color: var(--text-muted) !important;
+}
+
+/* why-choose CTA section */
+[data-theme="dark"] .why-choose-cta {
+  background: linear-gradient(135deg, #111a2e 0%, #1a1208 100%) !important;
+  border: 1px solid rgba(212, 175, 55, 0.12) !important;
+}
+
+/* =====================================================
+   3. UTILITY COMPONENTS (theme-agnostic)
+   ===================================================== */
+
+/* Scroll Progress Bar */
 #scroll-progress {
   position: fixed;
   top: 0;
   left: 0;
-  height: 3px;
+  height: 2px;
   width: 0%;
   background: linear-gradient(90deg, var(--gold-primary), #f8b500, #ffe066);
   z-index: 10000;
   transition: width 0.1s linear;
   border-radius: 0 2px 2px 0;
-  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
   pointer-events: none;
 }
 
-/* 2. Floating Action Button Group
-   ---------------------------------------------------------- */
+/* Floating Action Button Group */
 .fab-group {
   position: fixed;
   bottom: 32px;
@@ -273,7 +410,6 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-ti
   position: relative;
 }
 
-/* WhatsApp FAB */
 .fab-whatsapp {
   background: #25d366;
   color: #fff !important;
@@ -288,11 +424,10 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-ti
 }
 
 .fab-whatsapp:hover {
-  transform: scale(1.12) translateY(-3px);
+  transform: scale(1.1) translateY(-2px);
   box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
 }
 
-/* Pulse ring on WhatsApp button */
 .fab-pulse {
   position: absolute;
   inset: 0;
@@ -304,11 +439,10 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-ti
 
 @keyframes fabPulse {
   0%   { transform: scale(1);   opacity: 0.7; }
-  70%  { transform: scale(1.7); opacity: 0;   }
-  100% { transform: scale(1.7); opacity: 0;   }
+  70%  { transform: scale(1.7); opacity: 0; }
+  100% { transform: scale(1.7); opacity: 0; }
 }
 
-/* Scroll-to-Top FAB */
 #scroll-top-btn {
   background: linear-gradient(135deg, var(--gold-primary), #b8962e);
   color: #000 !important;
@@ -335,8 +469,7 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-ti
   box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5) !important;
 }
 
-/* 3. Project Card Hover Overlay
-   ---------------------------------------------------------- */
+/* Project Card Hover Overlay */
 .project-image {
   position: relative;
   overflow: hidden;
@@ -386,8 +519,7 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-ti
   color: #fff !important;
 }
 
-/* 4. Floating Label Form Fields
-   ---------------------------------------------------------- */
+/* Floating Label Form Fields */
 .form-float {
   position: relative;
 }
@@ -404,7 +536,6 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-ti
   top: 50%;
   transform: translateY(-50%);
   font-size: 1rem;
-  color: var(--text-muted) !important;
   pointer-events: none;
   transition: top 0.22s ease, font-size 0.22s ease, color 0.22s ease, transform 0.22s ease;
   background: transparent;
@@ -412,13 +543,11 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-ti
   line-height: 1;
 }
 
-/* Textarea label starts near top */
 .form-float textarea ~ label {
   top: 26px;
   transform: none;
 }
 
-/* Floated state — input:focus or placeholder not shown (has value) */
 .form-float input:focus ~ label,
 .form-float input:not(:placeholder-shown) ~ label,
 .form-float textarea:focus ~ label,
@@ -431,19 +560,16 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-ti
   font-weight: 600;
 }
 
-/* Keep focus border gold */
 .form-float input:focus,
 .form-float textarea:focus {
   border-color: var(--gold-primary) !important;
 }
 
-/* 5. Character Counter
-   ---------------------------------------------------------- */
+/* Character Counter */
 .char-count {
   display: block;
   text-align: right;
   font-size: 0.75rem;
-  color: var(--text-muted);
   margin-top: 5px;
   transition: color 0.2s ease;
   letter-spacing: 0.3px;
@@ -459,8 +585,7 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-ti
   font-weight: 700;
 }
 
-/* 6. Staggered Card Animations
-   ---------------------------------------------------------- */
+/* Staggered Card Animations */
 .stagger-1 { transition-delay: 0ms !important; }
 .stagger-2 { transition-delay: 100ms !important; }
 .stagger-3 { transition-delay: 200ms !important; }
@@ -471,8 +596,7 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-ti
 .stagger-8 { transition-delay: 700ms !important; }
 .stagger-9 { transition-delay: 800ms !important; }
 
-/* 7. Hamburger → X Animation
-   ---------------------------------------------------------- */
+/* Hamburger base */
 .hamburger {
   transition: transform 0.3s ease;
 }
@@ -480,8 +604,9 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-ti
 .bar {
   display: block;
   height: 2px;
+  width: 25px;
   border-radius: 2px;
-  background: currentColor;
+  margin: 4px 0;
   transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               opacity 0.25s ease,
               width 0.3s ease;
@@ -501,8 +626,7 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-ti
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* 8. Mobile responsiveness for FABs
-   ---------------------------------------------------------- */
+/* Mobile responsiveness for FABs */
 @media (max-width: 480px) {
   .fab-group {
     bottom: 20px;
@@ -517,14 +641,108 @@ h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .about-card h3, .project-ti
   }
 }
 
-/* 9. Scroll-spy active state using gold instead of blue
-   ---------------------------------------------------------- */
-.nav-link.active {
-  color: var(--gold-primary) !important;
-  background: rgba(212, 175, 55, 0.08) !important;
+/* =====================================================
+   4. DESIGN IMPROVEMENTS (theme-agnostic)
+   ===================================================== */
+
+/* Hide icons from nav links on desktop — cleaner */
+@media (min-width: 769px) {
+  .nav-link i {
+    display: none !important;
+  }
+  .nav-link {
+    padding: 10px 16px !important;
+    gap: 0 !important;
+  }
 }
 
-.nav-link.active::after {
-  background: var(--gold-primary) !important;
-  width: 80% !important;
+/* Balance headlines */
+h1, h2, .section-title, .hero-title {
+  text-wrap: balance;
+}
+
+.section-title {
+  letter-spacing: -0.015em !important;
+  line-height: 1.2 !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Section title underline — shorter, cleaner */
+.section-title::after {
+  width: 40px !important;
+  height: 2px !important;
+}
+
+/* Hero title larger on desktop */
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 4rem !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.025em !important;
+  }
+}
+
+/* Hero subtitle — leaner */
+.hero-subtitle i {
+  display: none !important;
+}
+
+/* Plans badge style */
+.plans-badge {
+  font-weight: 700 !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  padding: 5px 12px !important;
+  border-radius: 4px !important;
+}
+
+/* Tags — crisper */
+.skill-tag,
+.expertise-skill,
+.tech-tag {
+  font-size: 0.75rem !important;
+  letter-spacing: 0.03em !important;
+  border-radius: 4px !important;
+  padding: 4px 10px !important;
+}
+
+/* Button interactions */
+.btn:active {
+  transform: scale(0.98) translateY(1px) !important;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* Focus rings */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold-primary) !important;
+  outline-offset: 3px !important;
+}
+
+/* Section spacing */
+.projects .section-title,
+.contact .section-title {
+  margin-bottom: 3rem !important;
+}
+
+/* Hero badge top spacing */
+.hero-badge {
+  margin-top: 80px !important;
+}
+
+/* Projects note */
+.projects-note {
+  font-size: 0.85rem !important;
+  font-style: italic;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
 }
