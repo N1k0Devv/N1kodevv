@@ -1,0 +1,3 @@
+# GitHub blocks files > 100MB; host videos externally (e.g. Vimeo) or use Git LFS
+*.mp4
+*.mov
