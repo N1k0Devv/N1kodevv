@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite --mode dev",
-    "build": "vite build",
+    "generate:blog": "node scripts/generate-blog.mjs",
+    "build": "node scripts/generate-blog.mjs && vite build",
     "lint": "echo 'linted'"
   },
   "keywords": [],
