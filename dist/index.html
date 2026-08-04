@@ -150,7 +150,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800&family=Noto+Sans+Georgian:wght@300;400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&family=Noto+Sans+Georgian:wght@200;400;600&display=swap"
     rel="stylesheet" />
 
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
@@ -161,15 +161,17 @@
   <noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </noscript>
-
+
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript" src="./emailjs-config.js"></script>
-  <script type="module" crossorigin src="/assets/main-B5rgJOaT.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/premium-CQ97Q1Uq.css">
+  <script type="module" crossorigin src="/assets/main-IAx8KxXM.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-xYHMrTTk.css">
 </head>
 
 <body>
+  <canvas id="particle-field" aria-hidden="true"></canvas>
+
   <!-- Scroll Progress Bar -->
   <div id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
 
@@ -234,7 +236,16 @@
 
   <section id="home" class="hero">
     <div class="hero-bg-animation"></div>
-    <div class="hero-particles"></div>
+    <div class="hero-particles">
+      <canvas
+        id="hero-particles-canvas"
+        class="hero-particles-canvas"
+        aria-hidden="true"
+      ></canvas>
+      <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-three" aria-hidden="true"></div>
+    </div>
     <div class="hero-container">
       <div class="hero-content">
         <div class="hero-badge">
@@ -298,7 +309,7 @@
       <div class="hero-visual">
         <div class="hero-video-wrap">
           <iframe class="hero-video" title="N1kodev — ვიდეო (Vimeo)"
-            src="https://player.vimeo.com/video/1189625236?badge=0&amp;autopause=0&amp;title=0&amp;byline=0&amp;portrait=0"
+            src="https://player.vimeo.com/video/1215431892?badge=0&amp;autopause=0&amp;title=0&amp;byline=0&amp;portrait=0"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
             allowfullscreen
             loading="lazy"
@@ -957,6 +968,37 @@
             <div class="project-links">
               <a href="https://flowdaily.org" class="project-link" target="_blank"
                 rel="noopener noreferrer" aria-label="იხილეთ flowdaily.org პროექტი">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="business">
+          <div class="project-image">
+            <div class="project-placeholder">
+              <i class="fas fa-couch"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="https://aveji.org" class="overlay-demo-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">aveji.org</h3>
+            <p class="project-description">
+              ავეჯის დამზადების ვებსაიტი ინდივიდუალური შეკვეთებით — GRT, ქუთაისი.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">SEO</span>
+            </div>
+            <div class="project-links">
+              <a href="https://aveji.org" class="project-link" target="_blank"
+                rel="noopener noreferrer" aria-label="იხილეთ aveji.org პროექტი">
                 <i class="fas fa-external-link-alt"></i> Live Demo
               </a>
             </div>

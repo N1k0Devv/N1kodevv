@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     requestIdleCallback(() => initializeScrollAnimations(), { timeout: 1000 });
     requestIdleCallback(() => initializeStaggerAnimations(), { timeout: 1100 });
     requestIdleCallback(() => initializeInteractiveEffects(), { timeout: 1500 });
+    requestIdleCallback(() => initializeHeroBackgroundMotion(), { timeout: 1700 });
     requestIdleCallback(() => initializeContactForm(), { timeout: 2000 });
     requestIdleCallback(() => initializeFloatingLabels(), { timeout: 2100 });
     requestIdleCallback(() => initializeCharCounter(), { timeout: 2200 });
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(initializeScrollAnimations, 50);
     setTimeout(initializeStaggerAnimations, 60);
     setTimeout(initializeInteractiveEffects, 150);
+    setTimeout(initializeHeroBackgroundMotion, 220);
     setTimeout(initializeContactForm, 300);
     setTimeout(initializeFloatingLabels, 320);
     setTimeout(initializeCharCounter, 340);
@@ -367,6 +369,141 @@ function initializeInteractiveEffects() {
     }
     setTimeout(type, 800);
   }
+}
+
+function initializeHeroBackgroundMotion() {
+  const hero = document.querySelector(".hero");
+  const heroBackground = document.querySelector(".hero-bg-animation");
+  const particlesLayer = document.querySelector(".hero-particles");
+  const canvas = document.getElementById("hero-particles-canvas");
+
+  if (!hero || !heroBackground || !particlesLayer || !canvas) return;
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReducedMotion) return;
+
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  const pointer = { x: 0.5, y: 0.5, targetX: 0.5, targetY: 0.5 };
+  const particles = [];
+  let width = 0;
+  let height = 0;
+  let animationFrame = null;
+  let scrollProgress = 0;
+
+  function createParticle() {
+    return {
+      x: Math.random() * width,
+      y: Math.random() * height,
+      radius: Math.random() * 2.4 + 0.8,
+      speedX: (Math.random() - 0.5) * 0.16,
+      speedY: (Math.random() - 0.5) * 0.16,
+      alpha: Math.random() * 0.4 + 0.18,
+      hue: Math.random() > 0.2 ? 42 : 228,
+      drift: Math.random() * Math.PI * 2,
+    };
+  }
+
+  function resizeCanvas() {
+    const rect = hero.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = Math.max(Math.floor(rect.width), 1);
+    height = Math.max(Math.floor(rect.height), 1);
+
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    const particleCount = Math.min(Math.max(Math.floor(width / 18), 28), 70);
+    particles.length = 0;
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(createParticle());
+    }
+  }
+
+  function updatePointer(clientX, clientY) {
+    const rect = hero.getBoundingClientRect();
+    pointer.targetX = Math.min(Math.max((clientX - rect.left) / rect.width, 0), 1);
+    pointer.targetY = Math.min(Math.max((clientY - rect.top) / rect.height, 0), 1);
+  }
+
+  function updateScrollState() {
+    const rect = hero.getBoundingClientRect();
+    const traveled = Math.min(Math.max(-rect.top, 0), rect.height);
+    scrollProgress = rect.height > 0 ? traveled / rect.height : 0;
+  }
+
+  function animate() {
+    animationFrame = requestAnimationFrame(animate);
+    ctx.clearRect(0, 0, width, height);
+
+    pointer.x += (pointer.targetX - pointer.x) * 0.045;
+    pointer.y += (pointer.targetY - pointer.y) * 0.045;
+
+    const pointerShiftX = (pointer.x - 0.5) * 26;
+    const pointerShiftY = (pointer.y - 0.5) * 26;
+    const scrollShiftY = scrollProgress * 38;
+    const scrollShiftX = scrollProgress * -10;
+    particlesLayer.style.setProperty("--pointer-x", `${pointer.x * 100}%`);
+    particlesLayer.style.setProperty("--pointer-y", `${pointer.y * 100}%`);
+    heroBackground.style.transform = `translate3d(${scrollShiftX}px, ${-scrollShiftY * 0.45}px, 0) scale(${1 + scrollProgress * 0.04})`;
+    particlesLayer.style.transform = `translate3d(${pointerShiftX * 0.18}px, ${(pointerShiftY * 0.18) - scrollShiftY * 0.6}px, 0)`;
+
+    for (const particle of particles) {
+      particle.drift += 0.01;
+      particle.x += particle.speedX + Math.cos(particle.drift) * 0.05;
+      particle.y += particle.speedY + Math.sin(particle.drift) * 0.05;
+
+      if (particle.x < -10) particle.x = width + 10;
+      if (particle.x > width + 10) particle.x = -10;
+      if (particle.y < -10) particle.y = height + 10;
+      if (particle.y > height + 10) particle.y = -10;
+
+      const dx = particle.x - pointer.x * width;
+      const dy = particle.y - pointer.y * height;
+      const distance = Math.hypot(dx, dy);
+      const glowBoost = Math.max(0, 1 - distance / 170);
+      const parallaxOffsetY = scrollShiftY * (0.14 + particle.radius * 0.03);
+
+      ctx.beginPath();
+      ctx.fillStyle = `hsla(${particle.hue}, 90%, ${particle.hue === 42 ? "68%" : "72%"}, ${particle.alpha + glowBoost * 0.22})`;
+      ctx.arc(
+        particle.x - pointerShiftX * 0.35 * glowBoost,
+        particle.y - pointerShiftY * 0.35 * glowBoost - parallaxOffsetY,
+        particle.radius + glowBoost * 1.1,
+        0,
+        Math.PI * 2
+      );
+      ctx.fill();
+    }
+  }
+
+  hero.addEventListener("pointermove", (event) => {
+    updatePointer(event.clientX, event.clientY);
+  });
+
+  hero.addEventListener("pointerleave", () => {
+    pointer.targetX = 0.5;
+    pointer.targetY = 0.5;
+  });
+
+  window.addEventListener("resize", resizeCanvas, { passive: true });
+  window.addEventListener("scroll", updateScrollState, { passive: true });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden && animationFrame) {
+      cancelAnimationFrame(animationFrame);
+      animationFrame = null;
+    } else if (!document.hidden && !animationFrame) {
+      animate();
+    }
+  });
+
+  resizeCanvas();
+  updateScrollState();
+  animate();
 }
 
 function initializeProjectFilters() {

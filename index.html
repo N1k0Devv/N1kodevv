@@ -234,7 +234,16 @@
 
   <section id="home" class="hero">
     <div class="hero-bg-animation"></div>
-    <div class="hero-particles"></div>
+    <div class="hero-particles">
+      <canvas
+        id="hero-particles-canvas"
+        class="hero-particles-canvas"
+        aria-hidden="true"
+      ></canvas>
+      <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-three" aria-hidden="true"></div>
+    </div>
     <div class="hero-container">
       <div class="hero-content">
         <div class="hero-badge">
@@ -298,7 +307,7 @@
       <div class="hero-visual">
         <div class="hero-video-wrap">
           <iframe class="hero-video" title="N1kodev — ვიდეო (Vimeo)"
-            src="https://player.vimeo.com/video/1189625236?badge=0&amp;autopause=0&amp;title=0&amp;byline=0&amp;portrait=0"
+            src="https://player.vimeo.com/video/1215431892?badge=0&amp;autopause=0&amp;title=0&amp;byline=0&amp;portrait=0"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
             allowfullscreen
             loading="lazy"
@@ -957,6 +966,37 @@
             <div class="project-links">
               <a href="https://flowdaily.org" class="project-link" target="_blank"
                 rel="noopener noreferrer" aria-label="იხილეთ flowdaily.org პროექტი">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="business">
+          <div class="project-image">
+            <div class="project-placeholder">
+              <i class="fas fa-couch"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="https://aveji.org" class="overlay-demo-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">aveji.org</h3>
+            <p class="project-description">
+              ავეჯის დამზადების ვებსაიტი ინდივიდუალური შეკვეთებით — GRT, ქუთაისი.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">SEO</span>
+            </div>
+            <div class="project-links">
+              <a href="https://aveji.org" class="project-link" target="_blank"
+                rel="noopener noreferrer" aria-label="იხილეთ aveji.org პროექტი">
                 <i class="fas fa-external-link-alt"></i> Live Demo
               </a>
             </div>
